@@ -37,7 +37,7 @@ public class MainApp extends Application {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
+            loader.setLocation(MainApp.class.getResource("/GUI/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
 
             // Show the scene containing the root layout.
@@ -97,6 +97,7 @@ public class MainApp extends Application {
      */
 	public MainApp () {
 		try {
+			showPersonOverview();
 			Datenbank.loadData();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
