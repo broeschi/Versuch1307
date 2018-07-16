@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/hsqldb-2.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/jackcess-2.1.11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/ucanaccess-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/ant-javafx.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/dt.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/javafx-mx.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/jconsole.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/packager.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/sa-jdi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_172/lib/tools.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/charsets.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/deploy.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/javaws.jar"/>
@@ -36,5 +24,10 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/sunmscapi.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/sunpkcs11.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/zipfs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/ucanaccess-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/hsqldb-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwicklung_I/jackcess-2.1.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
