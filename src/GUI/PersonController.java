@@ -78,7 +78,7 @@ public class PersonController {
    public void setPerson(Person person) {
         this.person = person;
 
-        VornameField.setText(person.getAdrVorname());
+        Vorname.setText(person.getAdrVorname());
         NameField.setText(person.getAdrName());
  //       streetField.setText(person.getStreet());
  //       postalCodeField.setText(Integer.toString(person.getPostalCode()));

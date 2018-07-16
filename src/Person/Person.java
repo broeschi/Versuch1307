@@ -1,26 +1,48 @@
 package Person;
 
+import java.time.LocalDate;
 import java.util.Date;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /** Klasse zum Bilden der Teilnehmer*/
 public class Person {
 	
-	public Person(String adrName, String adrVorname, Date adrGebDat, String adrStrasse, Double adrNr, Double adrPLZ,
-			String adrWohnort) {
-		super();
-		this.adrName = adrName;
-		this.adrVorname = adrVorname;
-		this.adrGebDat = adrGebDat;
-		this.adrStrasse = adrStrasse;
-		this.adrNr = adrNr;
-		this.adrPLZ = adrPLZ;
-		this.adrWohnort = adrWohnort;
-	}
+    private final StringProperty Vorname;
+    private final StringProperty Name;
+    //private final StringProperty Adresse;
+    //private final IntegerProperty plz;
+    //private final StringProperty city;
+    //private final ObjectProperty<LocalDate> birthday;
+    
+    public Person() {
+    	this (null, null);
+    }
+    
+    public Person(String adrName, String adrVorname) {
+        this.Name = new SimpleStringProperty(adrName);
+        this.Vorname = new SimpleStringProperty(adrVorname);
+        
+        
+    }
+    
+    
+
+    public void setAdrName(String adrName) {
+        this.adrName.set(adrName);
+    }
+
+    public StringProperty NameProperty() {
+        return adrName;
+    }
+
+
 
 	/** Nachname des Teilnemers*/
-	public String adrName;
+	public StringProperty adrName;
 	
 	/** Vorname des Teilnemers*/
 	public StringProperty adrVorname;
@@ -40,11 +62,11 @@ public class Person {
 	/** Wohnort des Teilnemers*/
 	public String adrWohnort;
 
-	public String getAdrName() {
+	public StringProperty getAdrName() {
 		return adrName;
 	}
 
-	public void setAdrName(String adrName) {
+	public void setAdrName(StringProperty adrName) {
 		this.adrName = adrName;
 	}
 
@@ -56,7 +78,7 @@ public class Person {
 		return adrVorname;
 	}
 
-	public void setAdrVorname(String adrVorname) {
+	public void setAdrVorname(StringProperty adrVorname) {
 		this.adrVorname = adrVorname;
 	}
 
