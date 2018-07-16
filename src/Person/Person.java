@@ -2,6 +2,8 @@ package Person;
 
 import java.util.Date;
 
+import javafx.beans.property.StringProperty;
+
 /** Klasse zum Bilden der Teilnehmer*/
 public class Person {
 	
@@ -21,7 +23,7 @@ public class Person {
 	public String adrName;
 	
 	/** Vorname des Teilnemers*/
-	public String adrVorname;
+	public StringProperty adrVorname;
 	
 	/** Geburstdatum des Teilnemers*/
 	public Date adrGebDat;
@@ -46,7 +48,11 @@ public class Person {
 		this.adrName = adrName;
 	}
 
-	public String getAdrVorname() {
+	public StringProperty getAdrVorname() {
+		return adrVorname;
+	}
+	
+	public StringProperty VornameProperty() {
 		return adrVorname;
 	}
 

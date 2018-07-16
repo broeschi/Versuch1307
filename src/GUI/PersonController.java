@@ -47,12 +47,11 @@ public class PersonController {
      */
     @FXML
     private void initialize() {
-    	try {
-        	// Initialize the person table with the two columns.
-            firstNameColumn.setCellValueFactory(
-            		cellData -> cellData.getValue().firstNameProperty());
-            lastNameColumn.setCellValueFactory(
-            		cellData -> cellData.getValue().lastNameProperty());
+    	  	// Initialize the person table with the two columns.
+            Vorname.setCellValueFactory(
+            		cellData -> cellData.getValue().VornameProperty());
+            //lastNameColumn.setCellValueFactory(
+            //		cellData -> cellData.getValue().lastNameProperty());
             
             // Clear person details.
             // showPersonDetails(null);
