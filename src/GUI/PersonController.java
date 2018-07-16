@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Person.Person;
 //import ch.makery.adress.util.DateUtil;
+import Start.MainApp;
 
 
 /**
@@ -30,9 +31,15 @@ public class PersonController {
 	
 	
 	
-    private Stage dialogStage;
-    private Person person;
-    private boolean okClicked = false;
+    private MainApp mainapp;
+    
+    /**
+     * The constructor.
+     * The constructor is called before the initialize() method.
+     */
+    public PersonController() {
+    }
+
 
     /**
      * Initializes the controller class. This method is automatically called
@@ -40,13 +47,19 @@ public class PersonController {
      */
     @FXML
     private void initialize() {
-    	try {
-			Datenbank.loadData();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }
+    	  	// Initialize the person table with the two columns.
+            Vorname.setCellValueFactory(
+            		cellData -> cellData.getValue().VornameProperty());
+            //lastNameColumn.setCellValueFactory(
+            //		cellData -> cellData.getValue().lastNameProperty());
+            
+            // Clear person details.
+            // showPersonDetails(null);
+
+            // Listen for selection changes and show the person details when changed.
+    		//personTable.getSelectionModel().selectedItemProperty().addListener(
+    		//		(observable, oldValue, newValue) -> showPersonDetails(newValue));
+        }
 
     /**
      * Sets the stage of this dialog.
@@ -65,7 +78,7 @@ public class PersonController {
    public void setPerson(Person person) {
         this.person = person;
 
-        VornameField.setText(person.getAdrVorname());
+        Vorname.setText(person.getAdrVorname());
         NameField.setText(person.getAdrName());
  //       streetField.setText(person.getStreet());
  //       postalCodeField.setText(Integer.toString(person.getPostalCode()));

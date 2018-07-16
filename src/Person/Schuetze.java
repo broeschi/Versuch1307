@@ -9,7 +9,7 @@ public class Schuetze extends Person {
 
 	public Schuetze(String adrName, String adrVorname, Date adrGebDat, String adrStrasse, Double adrNr, Double adrPLZ,
 			String adrWohnort, String adrGrad, String adrEinteilung, String adrAHV) {
-		super(adrName, adrVorname, adrGebDat, adrStrasse, adrNr, adrPLZ, adrWohnort);
+		super(adrName, adrVorname);
 		this.adrGrad = adrGrad;
 		this.adrEinteilung = adrEinteilung;
 		this.adrAHV = adrAHV;

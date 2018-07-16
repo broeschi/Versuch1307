@@ -23,7 +23,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
+        this.primaryStage.setTitle("Vereinsverwaltung");
 
         initRootLayout();
 
@@ -97,8 +97,10 @@ public class MainApp extends Application {
      */
 	public MainApp () {
 		try {
-			showPersonOverview();
 			Datenbank.loadData();
+			
+			
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
