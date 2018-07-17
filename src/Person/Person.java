@@ -32,20 +32,20 @@ public class Person {
     
 
     public void setAdrName(String adrName) {
-        this.adrName.set(adrName);
+        this.Name.set(adrName);
     }
 
     public StringProperty NameProperty() {
-        return adrName;
+        return Name;
     }
 
 
 
 	/** Nachname des Teilnemers*/
-	public StringProperty adrName;
+	public String adrName;
 	
 	/** Vorname des Teilnemers*/
-	public StringProperty adrVorname;
+	public String adrVorname;
 	
 	/** Geburstdatum des Teilnemers*/
 	public Date adrGebDat;
@@ -61,6 +61,9 @@ public class Person {
 	
 	/** Wohnort des Teilnemers*/
 	public String adrWohnort;
+	
+	
+	
 
 	public StringProperty getAdrName() {
 		return adrName;
@@ -78,8 +81,8 @@ public class Person {
 		return adrVorname;
 	}
 
-	public void setAdrVorname(StringProperty adrVorname) {
-		this.adrVorname = adrVorname;
+	public void setAdrVorname(String vorname2) {
+		this.adrVorname = vorname2;
 	}
 
 	public Date getAdrGebDat() {

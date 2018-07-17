@@ -64,7 +64,7 @@ public class MainApp extends Application {
             
             // Give the controller access to the main app.
             PersonController controller = loader.getController();
-            //controller.setMainApp(this);
+            controller.setMainApp(this);
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -98,9 +98,7 @@ public class MainApp extends Application {
 	public MainApp () {
 		try {
 			Datenbank.loadData();
-			
-			
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

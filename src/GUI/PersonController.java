@@ -6,6 +6,8 @@ import datenbank.Datenbank;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Person.Person;
@@ -29,9 +31,17 @@ public class PersonController {
 	@FXML
     private TextField VornameField;
 	
+	@FXML
+    private TableView<Person> personTable;
 	
+	@FXML
+    private TableColumn<Person, String> VornameColumn;
+
+	@FXML
+    private TableColumn<Person, String> NameColumn;
 	
-    private MainApp mainapp;
+	// referenziert auf die Main Applikation
+    private MainApp mainApp;
     
     /**
      * The constructor.
@@ -48,10 +58,8 @@ public class PersonController {
     @FXML
     private void initialize() {
     	  	// Initialize the person table with the two columns.
-            Vorname.setCellValueFactory(
-            		cellData -> cellData.getValue().VornameProperty());
-            //lastNameColumn.setCellValueFactory(
-            //		cellData -> cellData.getValue().lastNameProperty());
+            VornameColumn.setCellValueFactory(cellData -> cellData.getValue().VornameProperty());
+            NameColumn.setCellValueFactory(cellData -> cellData.getValue().NameProperty());
             
             // Clear person details.
             // showPersonDetails(null);
@@ -60,6 +68,18 @@ public class PersonController {
     		//personTable.getSelectionModel().selectedItemProperty().addListener(
     		//		(observable, oldValue, newValue) -> showPersonDetails(newValue));
         }
+    /**
+     * Is called by the main application to give a reference back to itself.
+     * 
+     * @param mainApp
+     */
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+
+        // Add observable list data to the table
+        personTable.setItems(mainApp.getPersonData());
+    }
+
 
     /**
      * Sets the stage of this dialog.
