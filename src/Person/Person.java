@@ -1,18 +1,20 @@
 package Person;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
 
 /** Klasse zum Bilden der Teilnehmer*/
 public class Person {
 	
-    private final StringProperty Vorname;
-    private final StringProperty Name;
+    private final StringProperty adrVorname;
+    private final StringProperty adrName;
     //private final StringProperty Adresse;
     //private final IntegerProperty plz;
     //private final StringProperty city;
@@ -20,108 +22,53 @@ public class Person {
     
     public Person() {
     	this (null, null);
+    	
     }
     
     public Person(String adrName, String adrVorname) {
-        this.Name = new SimpleStringProperty(adrName);
-        this.Vorname = new SimpleStringProperty(adrVorname);
-        
-        
+        this.adrName = new SimpleStringProperty(adrName);
+        this.adrVorname = new SimpleStringProperty(adrVorname);
+            
     }
     
     
 
-    public void setAdrName(String adrName) {
-        this.Name.set(adrName);
-    }
-
-    public StringProperty NameProperty() {
-        return Name;
-    }
 
 
 
-	/** Nachname des Teilnemers*/
-	public String adrName;
 	
-	/** Vorname des Teilnemers*/
-	public String adrVorname;
-	
-	/** Geburstdatum des Teilnemers*/
-	public Date adrGebDat;
-	
-	/** Strasse des Teilnemers*/
-	public String adrStrasse;
-	
-	/** Hausnummer des Teilnemers*/
-	public Double adrNr;
-	
-	/** CH Postleitzahl des Teilnemers*/
-	public Double adrPLZ;
-	
-	/** Wohnort des Teilnemers*/
-	public String adrWohnort;
 	
 	
 	
 
-	public StringProperty getAdrName() {
+	public StringProperty AdrNameProperty() {
 		return adrName;
 	}
 
-	public void setAdrName(StringProperty adrName) {
-		this.adrName = adrName;
+	public String getAdrName() {
+		return adrName.get();
 	}
 
-	public StringProperty getAdrVorname() {
+	public void setAdrName(String adrName) {
+		this.adrName.set(adrName);
+	}
+
+	public StringProperty AdrVornameProperty() {
 		return adrVorname;
 	}
+	
+	public String getAdrVorname() {
+		return adrVorname.get();
+	}
+	
 	
 	public StringProperty VornameProperty() {
 		return adrVorname;
 	}
-
-	public void setAdrVorname(String vorname2) {
-		this.adrVorname = vorname2;
+	
+	public void setAdrVorname(String adrVorname) {
+		this.adrVorname.set(adrVorname);
 	}
 
-	public Date getAdrGebDat() {
-		return adrGebDat;
-	}
 
-	public void setAdrGebDat(Date adrGebDat) {
-		this.adrGebDat = adrGebDat;
-	}
-
-	public String getAdrStrasse() {
-		return adrStrasse;
-	}
-
-	public void setAdrStrasse(String adrStrasse) {
-		this.adrStrasse = adrStrasse;
-	}
-
-	public Double getAdrNr() {
-		return adrNr;
-	}
-
-	public void setAdrNr(Double adrNr) {
-		this.adrNr = adrNr;
-	}
-
-	public Double getAdrPLZ() {
-		return adrPLZ;
-	}
-
-	public void setAdrPLZ(Double adrPLZ) {
-		this.adrPLZ = adrPLZ;
-	}
-
-	public String getAdrWohnort() {
-		return adrWohnort;
-	}
-
-	public void setAdrWohnort(String adrWohnort) {
-		this.adrWohnort = adrWohnort;
-	}
 }

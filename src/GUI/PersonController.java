@@ -6,6 +6,7 @@ import datenbank.Datenbank;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -40,6 +41,14 @@ public class PersonController {
 	@FXML
     private TableColumn<Person, String> NameColumn;
 	
+	@FXML
+	private Label VornameLabel;
+	
+	@FXML
+	private Label NameLabel;
+
+	
+	
 	// referenziert auf die Main Applikation
     private MainApp mainApp;
     
@@ -59,14 +68,14 @@ public class PersonController {
     private void initialize() {
     	  	// Initialize the person table with the two columns.
             VornameColumn.setCellValueFactory(cellData -> cellData.getValue().VornameProperty());
-            NameColumn.setCellValueFactory(cellData -> cellData.getValue().NameProperty());
+            NameColumn.setCellValueFactory(cellData -> cellData.getValue().AdrNameProperty());
             
             // Clear person details.
             // showPersonDetails(null);
 
             // Listen for selection changes and show the person details when changed.
-    		//personTable.getSelectionModel().selectedItemProperty().addListener(
-    		//		(observable, oldValue, newValue) -> showPersonDetails(newValue));
+    		personTable.getSelectionModel().selectedItemProperty().addListener(
+    				(observable, oldValue, newValue) -> showPersonDetails(newValue));
         }
     /**
      * Is called by the main application to give a reference back to itself.
@@ -79,59 +88,40 @@ public class PersonController {
         // Add observable list data to the table
         personTable.setItems(mainApp.getPersonData());
     }
-
-
+    
     /**
-     * Sets the stage of this dialog.
+     * Fills all text fields to show details about the person.
+     * If the specified person is null, all text fields are cleared.
      * 
-     * @param dialogStage
+     * @param person the person or null
      */
-    public void setDialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
+        private void showPersonDetails(Person person) {
+            if (person != null) {
+                // Fill the labels with info from the person object.
+                VornameLabel.setText(person.getAdrVorname());
+                NameLabel.setText(person.getAdrName());
+                //streetLabel.setText(person.getStreet());
+                //postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
+                //cityLabel.setText(person.getCity());
+                //birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+               
+            } else {
+                // Person is null, remove all the text.
+                VornameLabel.setText("");
+                NameLabel.setText("");
+                //streetLabel.setText("");
+                //postalCodeLabel.setText("");
+                //cityLabel.setText("");
+                //birthdayLabel.setText("");
+            }
+        }
 
-    /**
-     * Sets the person to be edited in the dialog.
-     * 
-     * @param person
-     */
-   public void setPerson(Person person) {
-        this.person = person;
+    
+    
 
-        Vorname.setText(person.getAdrVorname());
-        NameField.setText(person.getAdrName());
- //       streetField.setText(person.getStreet());
- //       postalCodeField.setText(Integer.toString(person.getPostalCode()));
- //       cityField.setText(person.getCity());
- //       birthdayField.setText(DateUtil.format(person.getBirthday()));
- //       birthdayField.setPromptText("dd.mm.yyyy");
-    }
 
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     * 
-     * @return
-     */
-    public boolean isOkClicked() {
-        return okClicked;
-    }
-
-    /**
-     * Called when the user clicks ok.
-     */
-  //  @FXML
-  //  private void handleOk() {
-  //      if (isInputValid()) {
-  //          person.setFirstName(firstNameField.getText());
-  //          person.setLastName(lastNameField.getText());
-  //          person.setStreet(streetField.getText());
-  //          person.setPostalCode(Integer.parseInt(postalCodeField.getText()));
-  //          person.setCity(cityField.getText());
-  //          person.setBirthday(DateUtil.parse(birthdayField.getText()));
-//
-//            okClicked = true;
-//            dialogStage.close();
- //       }
  
+ 
+  
 
 }
