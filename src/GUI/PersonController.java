@@ -116,6 +116,12 @@ public class PersonController {
             }
         }
 
+
+	public boolean isOkClicked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
     
     
 

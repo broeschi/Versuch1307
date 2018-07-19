@@ -42,8 +42,8 @@
                      <children>
                         <Label text="Name" />
                         <Label text="Vorname" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="NameLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="VornameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>

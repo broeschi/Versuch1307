@@ -94,15 +94,11 @@ public class MainApp extends Application {
 	private ObservableList<Person> personData = FXCollections.observableArrayList();
 	/**
      * Constructor
+	 * @throws Exception 
      */
-	public MainApp () {
-		try {
-			Datenbank.loadData();
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public MainApp () throws Exception {
+		personData.addAll(datenbank.Datenbank.loadData()) ;
+		 
 		
 		
 	}
