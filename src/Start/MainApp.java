@@ -64,7 +64,7 @@ public class MainApp extends Application {
             
             // Give the controller access to the main app.
             PersonController controller = loader.getController();
-            //controller.setMainApp(this);
+            controller.setMainApp(this);
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -94,17 +94,11 @@ public class MainApp extends Application {
 	private ObservableList<Person> personData = FXCollections.observableArrayList();
 	/**
      * Constructor
+	 * @throws Exception 
      */
-	public MainApp () {
-		try {
-			Datenbank.loadData();
-			
-			
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public MainApp () throws Exception {
+		personData.addAll(datenbank.Datenbank.loadData()) ;
+		 
 		
 		
 	}
@@ -134,8 +128,8 @@ public class MainApp extends Application {
 
 	        // Set the person into the controller.
 	        PersonController controller = loader.getController();
-	        controller.setDialogStage(dialogStage);
-	        controller.setPerson(person);
+	        //controller.setDialogStage(dialogStage);
+	        //controller.setPerson(person);
 
 	        // Show the dialog and wait until the user closes it
 	        dialogStage.showAndWait();
