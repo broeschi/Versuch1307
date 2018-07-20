@@ -46,8 +46,18 @@ public class PersonController {
 	
 	@FXML
 	private Label NameLabel;
-
 	
+	@FXML
+	private Label AdresseLabel;
+
+	@FXML
+	private Label AdresseNrLabel;
+	
+	@FXML
+	private Label plzLabel;
+	
+	@FXML
+	private Label WohnortLabel;
 	
 	// referenziert auf die Main Applikation
     private MainApp mainApp;
@@ -71,7 +81,7 @@ public class PersonController {
             NameColumn.setCellValueFactory(cellData -> cellData.getValue().AdrNameProperty());
             
             // Clear person details.
-            // showPersonDetails(null);
+            showPersonDetails(null);
 
             // Listen for selection changes and show the person details when changed.
     		personTable.getSelectionModel().selectedItemProperty().addListener(
@@ -100,18 +110,20 @@ public class PersonController {
                 // Fill the labels with info from the person object.
                 VornameLabel.setText(person.getAdrVorname());
                 NameLabel.setText(person.getAdrName());
-                //streetLabel.setText(person.getStreet());
-                //postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
-                //cityLabel.setText(person.getCity());
+                AdresseLabel.setText(person.getAdrStrasse());
+                AdresseNrLabel.setText(person.getAdrNr());
+                plzLabel.setText(Integer.toString(person.getAdrPLZ()));
+                WohnortLabel.setText(person.getAdrWohnort());
                 //birthdayLabel.setText(DateUtil.format(person.getBirthday()));
                
             } else {
                 // Person is null, remove all the text.
                 VornameLabel.setText("");
                 NameLabel.setText("");
-                //streetLabel.setText("");
-                //postalCodeLabel.setText("");
-                //cityLabel.setText("");
+                AdresseLabel.setText("");
+                AdresseNrLabel.setText("");
+                plzLabel.setText("");
+                WohnortLabel.setText("");
                 //birthdayLabel.setText("");
             }
         }
