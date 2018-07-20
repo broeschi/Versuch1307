@@ -25,7 +25,7 @@ public class Datenbank {
      * @author Rudolf Broger
      * @throws Exception
      */
-    public static List <Person> loadData() throws Exception {
+    public static ArrayList <Person> loadData() throws Exception {
 
     	ArrayList<Person> personen = new ArrayList<Person>(); 
     	
@@ -41,10 +41,6 @@ public class Datenbank {
     		personen.add(p);
     		 
     	 }
-    	 System.out.print(personen);	 //table.getColumn(null);
-    
-    	// Connection conn=DriverManager.getConnection(
-    	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
     	 
     	return personen;
     	     
