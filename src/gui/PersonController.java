@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import datenbank.Datenbank;
 //import ch.makery.address.model.Person;

@@ -2,7 +2,7 @@ package Start;
 
 import java.io.IOException;
 
-import GUI.PersonController;
+import gui.PersonController;
 import Person.Person;
 import datenbank.Datenbank;
 import javafx.application.Application;
