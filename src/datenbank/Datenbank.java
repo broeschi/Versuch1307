@@ -29,8 +29,8 @@ public class Datenbank {
 
     	ArrayList<Person> personen = new ArrayList<Person>(); 
     	
-    	 Database db = DatabaseBuilder.open(new File("C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb"));
-    	 //Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
+    	 //Database db = DatabaseBuilder.open(new File("C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb"));
+    	 Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb"));
 
     	 Table table = db.getTable("tblAdressen");
 		 

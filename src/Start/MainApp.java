@@ -84,7 +84,7 @@ public class MainApp extends Application {
     }
 
 	public ObservableList<Person> getPersonData() {
-		// TODO Auto-generated method stub
+		
 		return personData;
 	}
 	
@@ -94,6 +94,7 @@ public class MainApp extends Application {
 	private ObservableList<Person> personData = FXCollections.observableArrayList();
 	/**
      * Constructor
+     * initiale Daten aus der DB laden
 	 * @throws Exception 
      */
 	public MainApp () throws Exception {
