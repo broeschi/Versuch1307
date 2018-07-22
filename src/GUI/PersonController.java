@@ -5,6 +5,7 @@ import datenbank.Datenbank;
 //import ch.makery.adress.util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
@@ -12,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -99,26 +101,29 @@ public class PersonController {
      */
     @FXML
     private void handleSearchPerson() {
-        Person tempPerson = new Person(0, null, null, null, null, 0, null);
-        boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
-        if (okClicked) {
-            try{
-            	FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(MainApp.class.getResource("PersonSuchen.fxml"));
-                AnchorPane personOverview = (AnchorPane) loader.load();
+    	try{
+    		FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/GUI/PersonSuchen.fxml"));
+            AnchorPane ps = (AnchorPane) loader.load();
+            
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Person suchen");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        //dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(ps);
+	        dialogStage.setScene(scene);
+     
                 
                 
                 
                 
-                
-                
-            } catch (IOException e) {
-                e.printStackTrace();
+          } catch (IOException e) {
+            e.printStackTrace();
             }
         }
 
         
-    }
+    
 
     /**
      * Is called by the main application to give a reference back to itself.
