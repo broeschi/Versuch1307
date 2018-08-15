@@ -101,6 +101,9 @@ public class PersonController {
      */
     @FXML
     private void handleSearchPerson() {
+    	
+    
+    	
     	try{
     		FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/GUI/PersonSuchen.fxml"));
