@@ -102,6 +102,9 @@ public class PersonController {
     @FXML
     private void handleSearchPerson() {
     	
+    	//Person selectedPerson = personTable.getSelectionModel().getSelectedItems();
+    	 mainApp.showPersonSuchen(null);
+    	
     
     	
     	try{
