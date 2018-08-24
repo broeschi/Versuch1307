@@ -1,11 +1,14 @@
 package GUI;
 
 import Person.Person;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import Start.MainApp;
 
 
 
@@ -82,6 +85,10 @@ public class PersonSuchenDialogController {
      */
     @FXML
     private void handleOk() {
+    	
+    	
+    	
+    	
         if (isInputValid()) {
             person.setAdrVorname(firstNameField.getText());
             person.setAdrName(lastNameField.getText());
@@ -95,7 +102,8 @@ public class PersonSuchenDialogController {
         }
     }
 
-    /**
+
+	/**
      * Called when the user clicks cancel.
      */
     @FXML
@@ -159,4 +167,10 @@ public class PersonSuchenDialogController {
             return false;
         }
     }
+
+	public ObservableList<Person> setPersonenList(ObservableList<Person> personData) {
+		ObservableList<Person> personFilter = FXCollections.observableArrayList();
+		personFilter.addAll(personData);
+		return personFilter;
+	}
 }

@@ -1,6 +1,8 @@
 package GUI;
 
 import datenbank.Datenbank;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 //import ch.makery.address.model.Person;
 //import ch.makery.adress.util.DateUtil;
 import javafx.fxml.FXML;
@@ -94,6 +96,8 @@ public class PersonController {
     		personTable.getSelectionModel().selectedItemProperty().addListener(
     				(observable, oldValue, newValue) -> showPersonDetails(newValue));
         }
+
+      
     
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
@@ -103,7 +107,12 @@ public class PersonController {
     private void handleSearchPerson() {
     	
     	//Person selectedPerson = personTable.getSelectionModel().getSelectedItems();
-    	 mainApp.showPersonSuchen(null);
+    	 //mainApp.showPersonSuchen(null);
+    	String name = new String();
+    	name = NameField.getText();
+    	ObservableList<Person> filter =  FXCollections.observableArrayList();
+    	
+    	((PersonController) filter).setPersonenList(MainApp.personData);
     	
     
     	
@@ -149,7 +158,7 @@ public class PersonController {
      * 
      * @param person the person or null
      */
-        private void showPersonDetails(Person person) {
+        void showPersonDetails(Person person) {
             if (person != null) {
                 // Fill the labels with info from the person object.
                 VornameLabel.setText(person.getAdrVorname());
@@ -179,7 +188,11 @@ public class PersonController {
 	}
 
     
-    
+	public ObservableList<Person> setPersonenList(ObservableList<Person> personData) {
+		ObservableList<Person> personFilter = FXCollections.observableArrayList();
+		personFilter.addAll(personData);
+		return personFilter;
+	}    
 
 
  

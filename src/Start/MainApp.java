@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -94,7 +95,11 @@ public class MainApp extends Application {
 	/**
      * The data as an observable list of Persons.
      */
-	private ObservableList<Person> personData = FXCollections.observableArrayList();
+	
+	
+	public static ObservableList<Person> personData = FXCollections.observableArrayList();
+	
+
 	/**
      * Constructor
      * initiale Daten aus der DB laden
@@ -145,6 +150,8 @@ public class MainApp extends Application {
 	    }
 	}
 	public boolean showPersonSuchen(Person person) {
+		
+		
 	    try {
 	        // Load the fxml file and create a new stage for the popup dialog.
 	        FXMLLoader loader = new FXMLLoader();
@@ -161,11 +168,15 @@ public class MainApp extends Application {
 
 	        // Set the person into the controller.
 	        PersonSuchenDialogController controller = loader.getController();
+	        controller.setPersonenList(personData);
+	        
 	        controller.setDialogStage(dialogStage);
 	        
 
 	        // Show the dialog and wait until the user closes it
 	        dialogStage.showAndWait();
+	        ;
+	        
 
 	        return controller.isOkClicked();
 	    } catch (IOException e) {
