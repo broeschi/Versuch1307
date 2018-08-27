@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PersonController">
@@ -15,7 +16,6 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="285.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleSearchPerson" text="Suchen" />
                   <TableView fx:id="personTable" layoutX="14.0" layoutY="14.0" prefHeight="898.0" prefWidth="354.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                     <columns>
                       <TableColumn fx:id="NameColumn" prefWidth="177.0" text="Name" />
@@ -25,7 +25,12 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField fx:id="NameField" accessibleRole="DATE_PICKER" layoutX="14.0" layoutY="2.0" onAction="#handleSearchPerson" onInputMethodTextChanged="#handleSearchPerson" />
+                  <HBox id="HBox" alignment="CENTER" prefHeight="25.0" prefWidth="334.0" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0">
+                     <children>
+                        <Label text="Tabelle Filtern" />
+                        <TextField fx:id="filterField" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -42,6 +47,24 @@
                   <Label layoutX="10.0" layoutY="113.0" text="PLZ/Wohnort" AnchorPane.leftAnchor="10.0" />
                   <Label fx:id="plzLabel" layoutX="134.0" layoutY="112.0" text="Label" />
                   <Label fx:id="WohnortLabel" layoutX="173.0" layoutY="112.0" text="Label" />
+                  <Separator layoutX="10.0" layoutY="153.0" prefHeight="6.0" prefWidth="648.0" />
+                  <Label layoutX="12.0" layoutY="136.0" text="Übersicht Resultate" AnchorPane.leftAnchor="10.0" />
+                  <TableView layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Jahr" />
+                      <TableColumn prefWidth="75.0" text="OP" />
+                        <TableColumn prefWidth="75.0" text="Wiederholung 1" />
+                        <TableColumn prefWidth="75.0" text="Wiederholung 2" />
+                        <TableColumn prefWidth="75.0" text="FS" />
+                        <TableColumn prefWidth="75.0" text="Figurentreffer" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="306.0" layoutY="47.0" text="AHV Nr." />
+                  <Label fx:id="AHVLabel" layoutX="391.0" layoutY="46.0" text="Label" />
+                  <Label layoutX="305.0" layoutY="69.0" text="Mil Einteilung" />
+                  <Label fx:id="EinteilungLabel" layoutX="391.0" layoutY="69.0" text="Label" />
+                  <Label layoutX="306.0" layoutY="91.0" text="Min Grad" />
+                  <Label fx:id="GradLabel" layoutX="391.0" layoutY="91.0" text="Label" />
                </children>
             </AnchorPane>
         </items>

@@ -3,6 +3,8 @@ package GUI;
 import datenbank.Datenbank;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 //import ch.makery.address.model.Person;
 //import ch.makery.adress.util.DateUtil;
 import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Cell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -68,6 +71,28 @@ public class PersonController {
 	@FXML
 	private Label WohnortLabel;
 	
+	@FXML
+	private Label AHVLabel;
+	
+	@FXML
+	private Label EinteilungLabel;
+
+	@FXML
+	private Label GradLabel;
+
+
+	@FXML
+	private TextField filterField;
+
+	@FXML
+    private TableColumn<Person, String> firstNameColumn;
+    
+	@FXML
+    private TableColumn<Person, String> lastNameColumn;
+
+    private static ObservableList<Person> personFilter = FXCollections.observableArrayList();
+
+	
 	// referenziert auf die Main Applikation
     private MainApp mainApp;
     
@@ -76,7 +101,8 @@ public class PersonController {
      * The constructor is called before the initialize() method.
      */
     public PersonController() {
-    }
+    	
+;    }
 
 
     /**
@@ -88,6 +114,39 @@ public class PersonController {
     	  	// Initialize the person table with the two columns.
             VornameColumn.setCellValueFactory(cellData -> cellData.getValue().VornameProperty());
             NameColumn.setCellValueFactory(cellData -> cellData.getValue().AdrNameProperty());
+            
+            // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+            FilteredList<Person> filteredData = new FilteredList<>(personFilter, p -> true);
+
+            // 2. Set the filter Predicate whenever the filter changes.
+            filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredData.setPredicate(person -> {
+                    // If filter text is empty, display all persons.
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+
+                    // Compare first name and last name of every person with filter text.
+                    String lowerCaseFilter = newValue.toLowerCase();
+
+                    if (person.getAdrVorname().toLowerCase().contains(lowerCaseFilter)) {
+                        return true; // Filter matches first name.
+                    } else if (person.getAdrName().toLowerCase().contains(lowerCaseFilter)) {
+                        return true; // Filter matches last name.
+                    }
+                    return false; // Does not match.
+                });
+            });
+
+            // 3. Wrap the FilteredList in a SortedList. 
+            SortedList<Person> sortedData = new SortedList<>(filteredData);
+
+            // 4. Bind the SortedList comparator to the TableView comparator.
+            sortedData.comparatorProperty().bind(personTable.comparatorProperty());
+
+            // 5. Add sorted (and filtered) data to the table.
+            personTable.setItems(sortedData);
+
             
             // Clear person details.
             showPersonDetails(null);
@@ -105,37 +164,78 @@ public class PersonController {
      */
     @FXML
     private void handleSearchPerson() {
+        // 0. Initialize the columns.
+        VornameColumn.setCellValueFactory(cellData -> cellData.getValue().VornameProperty());
+        NameColumn.setCellValueFactory(cellData -> cellData.getValue().AdrNameProperty());
+
+    	
+        // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+        FilteredList<Person> filteredData = new FilteredList<>(personFilter, p -> true);
+        //personFilter.addAll(mainApp.getPersonData());
+        
+
+        // 2. Set the filter Predicate whenever the filter changes.
+        
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (person.getAdrVorname().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (person.getAdrName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<Person> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(personTable.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        personTable.setItems(sortedData);
+    }
     	
     	//Person selectedPerson = personTable.getSelectionModel().getSelectedItems();
     	 //mainApp.showPersonSuchen(null);
-    	String name = new String();
-    	name = NameField.getText();
-    	ObservableList<Person> filter =  FXCollections.observableArrayList();
+    	//String name = new String();
+    	//name = NameField.getText();
+    	//PersonSuchenController.initialize();
+    	//ObservableList<Person> filter =  FXCollections.observableArrayList();
     	
-    	((PersonController) filter).setPersonenList(MainApp.personData);
+    	//((PersonController) filter).setPersonenList(MainApp.personData);
     	
     
     	
-    	try{
-    		FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/GUI/PersonSuchen.fxml"));
-            AnchorPane ps = (AnchorPane) loader.load();
+    	//try{
+    	//	FXMLLoader loader = new FXMLLoader();
+        //    loader.setLocation(MainApp.class.getResource("/GUI/PersonSuchen.fxml"));
+        //    AnchorPane ps = (AnchorPane) loader.load();
             
-	        Stage dialogStage = new Stage();
-	        dialogStage.setTitle("Person suchen");
-	        dialogStage.initModality(Modality.WINDOW_MODAL);
-	        //dialogStage.initOwner(primaryStage);
-	        Scene scene = new Scene(ps);
-	        dialogStage.setScene(scene);
+	   //     Stage dialogStage = new Stage();
+	   //     dialogStage.setTitle("Person suchen");
+	   //     dialogStage.initModality(Modality.WINDOW_MODAL);
+	   //     //dialogStage.initOwner(primaryStage);
+	   //     Scene scene = new Scene(ps);
+	   //     dialogStage.setScene(scene);
      
                 
                 
                 
                 
-          } catch (IOException e) {
-            e.printStackTrace();
-            }
-        }
+       //   } catch (IOException e) {
+       //     e.printStackTrace();
+       //     }
+        
 
         
     
@@ -168,6 +268,11 @@ public class PersonController {
                 plzLabel.setText(Integer.toString(person.getAdrPLZ()));
                 WohnortLabel.setText(person.getAdrWohnort());
                 //birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+                AHVLabel.setText(person.getAdrAHV());
+                EinteilungLabel.setText(person.getAdrEint());
+                GradLabel.setText(person.getAdrGrad());
+                loadResultate();
+                
                
             } else {
                 // Person is null, remove all the text.

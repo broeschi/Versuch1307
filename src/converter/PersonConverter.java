@@ -4,9 +4,20 @@ import com.healthmarketscience.jackcess.Row;
 
 import Person.Person;
 
- 
+ /**
+  * Klasse zur Konertierung der Daten zwischen DB und Javamodell
+  * 
+  * @author Ruedi Broger
+  */
 
 public class PersonConverter {
+	/**
+	 * Daten aus Access transformieren
+	 * 
+	 * @author Ruedi Broger
+	 * @param row auslesen der Tabellenzeilen
+	 * @return persönliche Daten aus der DB Adressid, Name, Vorname, Strasse, Strassennummer, PLZ, Wohnort, AHV-Nr., Militärische Einteilung, Militärischer Grad
+	 */
 
 	public Person dbToModel(Row row) {
 		
@@ -17,8 +28,11 @@ public class PersonConverter {
 		String adrNr = (String) row.get("adrNr");
 		Short adrPLZ = (Short) row.get("adrPLZ");
 		String ort = (String) row.get("adrWohnort");
+		String ahv = (String) row.get("adrAHV");
+		String eint = (String) row.get("adrMilEinteilung");
+		String grad = (String) row.get("adrGrad");
 		
-		Person p = new Person(adrId, name, vorname, strasse, adrNr, (int) adrPLZ, ort);
+		Person p = new Person(adrId, name, vorname, strasse, adrNr, (int) adrPLZ, ort, ahv, eint, grad);
 		return p;
 	}
 
