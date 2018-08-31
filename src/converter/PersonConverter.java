@@ -5,7 +5,7 @@ import com.healthmarketscience.jackcess.Row;
 import Person.Person;
 
  /**
-  * Klasse zur Konertierung der Daten zwischen DB und Javamodell
+  * Klasse zur Konvertierung der Personendaten zwischen DB und Javamodell
   * 
   * @author Ruedi Broger
   */
@@ -19,7 +19,7 @@ public class PersonConverter {
 	 * @return persönliche Daten aus der DB Adressid, Name, Vorname, Strasse, Strassennummer, PLZ, Wohnort, AHV-Nr., Militärische Einteilung, Militärischer Grad
 	 */
 
-	public Person dbToModel(Row row) {
+	public Person dbToModelP(Row row) {
 		
 		Integer adrId = (Integer) row.get("adrId");
 		String name = (String) row.get("adrName");

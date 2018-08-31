@@ -51,7 +51,7 @@
                   <Label layoutX="12.0" layoutY="136.0" text="Übersicht Resultate" AnchorPane.leftAnchor="10.0" />
                   <TableView layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Jahr" />
+                      <TableColumn fx:id="JahrColumn" prefWidth="75.0" text="Jahr" />
                       <TableColumn prefWidth="75.0" text="OP" />
                         <TableColumn prefWidth="75.0" text="Wiederholung 1" />
                         <TableColumn prefWidth="75.0" text="Wiederholung 2" />
@@ -63,7 +63,7 @@
                   <Label fx:id="AHVLabel" layoutX="391.0" layoutY="46.0" text="Label" />
                   <Label layoutX="305.0" layoutY="69.0" text="Mil Einteilung" />
                   <Label fx:id="EinteilungLabel" layoutX="391.0" layoutY="69.0" text="Label" />
-                  <Label layoutX="306.0" layoutY="91.0" text="Min Grad" />
+                  <Label layoutX="306.0" layoutY="91.0" text="Mil Grad" />
                   <Label fx:id="GradLabel" layoutX="391.0" layoutY="91.0" text="Label" />
                </children>
             </AnchorPane>

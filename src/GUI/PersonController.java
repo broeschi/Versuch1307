@@ -18,12 +18,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 import Person.Person;
+import Person.resultat;
 //import ch.makery.adress.util.DateUtil;
 import Start.MainApp;
 
@@ -79,6 +81,9 @@ public class PersonController {
 
 	@FXML
 	private Label GradLabel;
+	
+	@FXML
+	private TableColumn<resultat, Integer> JahrColumn;
 
 
 	@FXML
@@ -271,7 +276,13 @@ public class PersonController {
                 AHVLabel.setText(person.getAdrAHV());
                 EinteilungLabel.setText(person.getAdrEint());
                 GradLabel.setText(person.getAdrGrad());
-                loadResultate();
+                try {
+					datenbank.Datenbank.loadRes();
+					 //JahrColumn.setCellValueFactory(new PropertyValueFactory<Person, Integer>("resJahr"));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
                 
                
             } else {
