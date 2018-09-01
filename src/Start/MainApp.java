@@ -3,6 +3,7 @@ package Start;
 import java.io.IOException;
 
 import GUI.PersonController;
+import GUI.PersonSuchenController;
 import Person.Person;
 import datenbank.Datenbank;
 import javafx.application.Application;
@@ -10,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -70,6 +72,8 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    
+    
 
     /**
      * Returns the main stage.
@@ -78,22 +82,35 @@ public class MainApp extends Application {
     public Stage getPrimaryStage() {
         return primaryStage;
     }
+    /**
+     * Anwendung starten
+     * @param args
+     */
 
     public static void main(String[] args) {
         launch(args);
     }
+    /**
+     * Personendaten für GUI in JavaFX laden
+     * @return
+     */
 
 	public ObservableList<Person> getPersonData() {
-		// TODO Auto-generated method stub
+		
 		return personData;
 	}
 	
 	/**
      * The data as an observable list of Persons.
      */
-	private ObservableList<Person> personData = FXCollections.observableArrayList();
+	
+	
+	public ObservableList<Person> personData = FXCollections.observableArrayList();
+	
+
 	/**
      * Constructor
+     * initiale Daten aus der DB laden
 	 * @throws Exception 
      */
 	public MainApp () throws Exception {
@@ -140,6 +157,7 @@ public class MainApp extends Application {
 	        return false;
 	    }
 	}
+
 
 	
 }

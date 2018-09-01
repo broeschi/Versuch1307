@@ -24,9 +24,12 @@ public class Person {
     private final StringProperty adrWohnort;
     //private final StringProperty city;
     //private final ObjectProperty<LocalDate> birthday;
+    private final StringProperty adrAHV;
+    private final StringProperty adrMilEinteilung;
+    private final StringProperty adrGrad;
     
     
-    public Person(long adrId, String adrName, String adrVorname, String adrStrasse, String adrNr, int adrPLZ , String adrWohnort) {
+    public Person(long adrId, String adrName, String adrVorname, String adrStrasse, String adrNr, int adrPLZ , String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
         this.adrId = new SimpleLongProperty(adrId);
         this.adrName = new SimpleStringProperty(adrName);
         this.adrVorname = new SimpleStringProperty(adrVorname);
@@ -34,6 +37,9 @@ public class Person {
         this.adrNr = new SimpleStringProperty(adrNr);
         this.adrPLZ = new SimpleIntegerProperty(adrPLZ);
         this.adrWohnort = new SimpleStringProperty(adrWohnort);
+        this.adrAHV = new SimpleStringProperty(adrAHV);
+        this.adrMilEinteilung = new SimpleStringProperty(adrEint);
+        this.adrGrad = new SimpleStringProperty(adrGrad);
         
             
     }
@@ -129,6 +135,45 @@ public class Person {
 	public void setAdrWohnort(String adrWohnort) {
 		this.adrWohnort.set(adrWohnort);
 	}
+	public StringProperty AdrAHVProperty() {
+		return adrAHV;
+	}
+
+	public String getAdrAHV() {
+		return adrAHV.get();
+	}
+
+	public void setAdrAHV(String adrAHV) {
+		this.adrAHV.set(adrAHV);
+	}
+	
+	public StringProperty adrMilEinteilung() {
+		return adrMilEinteilung;
+	}
+
+	public String getAdrEint() {
+		return adrMilEinteilung.get();
+	}
+
+	public void setAdrEint(String adrEint) {
+		this.adrMilEinteilung.set(adrEint);
+	}
+	
+	public StringProperty AdrGradProperty() {
+		return adrGrad;
+	}
+
+	public String getAdrGrad() {
+		return adrGrad.get();
+	}
+
+	public void setAdrGrad(String adrGrad) {
+		this.adrGrad.set(adrGrad);
+	}
+
+
+
+		
 
 
 

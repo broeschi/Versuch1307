@@ -10,7 +10,9 @@ import java.util.List;
 
 import com.healthmarketscience.jackcess.*;
 import Person.Person;
+import Person.resultat;
 import converter.PersonConverter;
+import converter.ResultatConverter;
 
 
 
@@ -36,8 +38,8 @@ public class Datenbank {
 		 
 
 		 for(Row row : table) {
-			 PersonConverter converter = new PersonConverter();
-			Person p = converter.dbToModel(row);
+			PersonConverter converter = new PersonConverter();
+			Person p = converter.dbToModelP(row);
     		personen.add(p);
     		 
     	 }
@@ -45,9 +47,34 @@ public class Datenbank {
     	return personen;
     	     
     }
+    public static ArrayList <resultat> loadRes() throws Exception {
+
+    	ArrayList<resultat> resultate = new ArrayList<resultat>(); 
+    	
+   	 	Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+    	 Table table = db.getTable("tblResultateBU");
+		 
+
+		 for(Row row : table) {
+			ResultatConverter converter = new ResultatConverter();
+			resultat r = converter.dbToModelR(row);
+    		resultate.add(r);
+    		 
+    	 }
+    	 
+    	return resultate;
+    }
+
+    
+  
       
     
     public static void saveData() {
     	// Todo
+    }
+    
+    public static String getDataFile() {
+    	return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb";
     }
   }

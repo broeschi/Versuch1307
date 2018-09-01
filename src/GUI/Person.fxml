@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PersonController">
@@ -13,7 +16,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="personTable" layoutX="14.0" layoutY="14.0" prefHeight="898.0" prefWidth="354.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="personTable" layoutX="14.0" layoutY="14.0" prefHeight="898.0" prefWidth="354.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                     <columns>
                       <TableColumn fx:id="NameColumn" prefWidth="177.0" text="Name" />
                       <TableColumn fx:id="VornameColumn" prefWidth="176.0" text="Vorname" />
@@ -22,22 +25,46 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <HBox id="HBox" alignment="CENTER" prefHeight="25.0" prefWidth="334.0" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0">
+                     <children>
+                        <Label text="Tabelle Filtern" />
+                        <TextField fx:id="filterField" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" text="Details" AnchorPane.bottomAnchor="876.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="COLOR_DODGE" depthTest="ENABLE" fill="DODGERBLUE" height="389.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="694.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="41.0" />
-                  <Label layoutX="10.0" layoutY="47.0" text="Name" AnchorPane.leftAnchor="10.0" />
+                  <Label layoutX="10.0" layoutY="47.0" text="Name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="47.0" />
                   <Label fx:id="NameLabel" layoutX="134.0" layoutY="46.0" text="Label" />
                   <Label layoutX="10.0" layoutY="69.0" text="Vorname" AnchorPane.leftAnchor="10.0" />
                   <Label fx:id="VornameLabel" layoutX="134.0" layoutY="69.0" text="Label" />
                   <Label layoutX="10.0" layoutY="91.0" text="Adresse" AnchorPane.leftAnchor="10.0" />
-                  <Label fx:id="AdresseLabel" layoutX="134.0" layoutY="91.0" text="Label" />
-                  <Label fx:id="AdresseNrLabel" layoutX="173.0" layoutY="91.0" text="Label" />
-                  <Label layoutX="9.0" layoutY="110.0" text="PLZ/Wohnort" />
-                  <Label fx:id="plzLabel" layoutX="134.0" layoutY="110.0" text="Label" />
-                  <Label fx:id="WohnortLabel" layoutX="173.0" layoutY="110.0" text="Label" />
+                  <Label fx:id="AdresseLabel" layoutX="134.0" layoutY="91.0" prefHeight="17.0" prefWidth="71.0" text="Label" />
+                  <Label fx:id="AdresseNrLabel" layoutX="222.0" layoutY="91.0" text="Label" />
+                  <Label layoutX="10.0" layoutY="113.0" text="PLZ/Wohnort" AnchorPane.leftAnchor="10.0" />
+                  <Label fx:id="plzLabel" layoutX="134.0" layoutY="112.0" text="Label" />
+                  <Label fx:id="WohnortLabel" layoutX="173.0" layoutY="112.0" text="Label" />
+                  <Separator layoutX="10.0" layoutY="153.0" prefHeight="6.0" prefWidth="648.0" />
+                  <Label layoutX="12.0" layoutY="136.0" text="Übersicht Resultate" AnchorPane.leftAnchor="10.0" />
+                  <TableView layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
+                    <columns>
+                      <TableColumn fx:id="JahrColumn" prefWidth="75.0" text="Jahr" />
+                      <TableColumn prefWidth="75.0" text="OP" />
+                        <TableColumn prefWidth="75.0" text="Wiederholung 1" />
+                        <TableColumn prefWidth="75.0" text="Wiederholung 2" />
+                        <TableColumn prefWidth="75.0" text="FS" />
+                        <TableColumn prefWidth="75.0" text="Figurentreffer" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="306.0" layoutY="47.0" text="AHV Nr." />
+                  <Label fx:id="AHVLabel" layoutX="391.0" layoutY="46.0" text="Label" />
+                  <Label layoutX="305.0" layoutY="69.0" text="Mil Einteilung" />
+                  <Label fx:id="EinteilungLabel" layoutX="391.0" layoutY="69.0" text="Label" />
+                  <Label layoutX="306.0" layoutY="91.0" text="Mil Grad" />
+                  <Label fx:id="GradLabel" layoutX="391.0" layoutY="91.0" text="Label" />
                </children>
             </AnchorPane>
         </items>
