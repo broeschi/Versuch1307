@@ -26,7 +26,7 @@ public class Datenbank {
 	  
    
     /**
-     * Verbindung zu MS Access DB aufbauen und Inhalt laden
+     * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Adressen laden
      * 
      * @author Rudolf Broger
      * @throws Exception
@@ -36,7 +36,7 @@ public class Datenbank {
     	ArrayList<Person> personen = new ArrayList<Person>(); 
     	
     	 Database db = DatabaseBuilder.open(new File(getDataFile()));
-    	 //Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
+    	 
 
     	 Table table = db.getTable("tblAdressen");
 		 
@@ -51,6 +51,13 @@ public class Datenbank {
     	return personen;
     	     
     }
+    /**
+     * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle ResultatBU laden
+     * 
+     * @author Rudolf Broger
+     * @throws Exception
+     */
+
     public static ArrayList <resultat> loadRes() throws Exception {
 
     	ArrayList<resultat> resultate = new ArrayList<resultat>(); 
@@ -70,6 +77,14 @@ public class Datenbank {
     	return resultate;
     }
     
+    /**
+     * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Alterskategorien laden
+     * 
+     * @author Rudolf Broger
+     * @throws Exception
+     */
+
+    
     public static ArrayList <altersKategorie> loadKat() throws Exception {
 
     	ArrayList<altersKategorie> alterskat = new ArrayList<altersKategorie>(); 
@@ -88,6 +103,14 @@ public class Datenbank {
     	 
     	return alterskat;
     }
+    
+    /**
+     * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
+     * 
+     * @author Rudolf Broger
+     * @throws Exception
+     */
+
     
     public static ArrayList <limiten> loadLim() throws Exception {
 
