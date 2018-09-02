@@ -1,5 +1,7 @@
 package converter;
 
+import java.time.LocalDate;
+
 import com.healthmarketscience.jackcess.Row;
 
 import Person.Person;
@@ -25,6 +27,7 @@ public class PersonConverter {
 		String name = (String) row.get("adrName");
 		String vorname = (String)  row.get("adrVorname");
 		String strasse = (String)  row.get("adrStrasse");
+		//Object gebDat = (Object) row.getDate("adrGebDat").toString(); // Problem mit fehlenden Daten (NULL Werte)
 		String adrNr = (String) row.get("adrNr");
 		Short adrPLZ = (Short) row.get("adrPLZ");
 		String ort = (String) row.get("adrWohnort");

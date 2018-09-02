@@ -11,6 +11,10 @@ import java.util.List;
 import com.healthmarketscience.jackcess.*;
 import Person.Person;
 import Person.resultat;
+import Stammdaten.altersKategorie;
+import Stammdaten.limiten;
+import converter.KategorieConverter;
+import converter.LimitenConverter;
 import converter.PersonConverter;
 import converter.ResultatConverter;
 
@@ -31,7 +35,7 @@ public class Datenbank {
 
     	ArrayList<Person> personen = new ArrayList<Person>(); 
     	
-    	 Database db = DatabaseBuilder.open(new File("C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb"));
+    	 Database db = DatabaseBuilder.open(new File(getDataFile()));
     	 //Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
 
     	 Table table = db.getTable("tblAdressen");
@@ -65,6 +69,45 @@ public class Datenbank {
     	 
     	return resultate;
     }
+    
+    public static ArrayList <altersKategorie> loadKat() throws Exception {
+
+    	ArrayList<altersKategorie> alterskat = new ArrayList<altersKategorie>(); 
+    	
+   	 	Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+    	 Table table = db.getTable("tblAlerKat");
+		 
+
+		 for(Row row : table) {
+			KategorieConverter converter = new KategorieConverter();
+			altersKategorie k = converter.dbToModelK(row);
+			alterskat.add(k);
+    		 
+    	 }
+    	 
+    	return alterskat;
+    }
+    
+    public static ArrayList <limiten> loadLim() throws Exception {
+
+    	ArrayList<limiten> limite = new ArrayList<limiten>(); 
+    	
+   	 	Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+    	 Table table = db.getTable("tblLimitenBU");
+		 
+
+		 for(Row row : table) {
+			LimitenConverter converter = new LimitenConverter();
+			limiten l = converter.dbToModelL(row);
+			limite.add(l);
+    		 
+    	 }
+    	 
+    	return limite;
+    }
+
 
     
   
@@ -75,6 +118,7 @@ public class Datenbank {
     }
     
     public static String getDataFile() {
+    	
     	return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb";
     }
   }

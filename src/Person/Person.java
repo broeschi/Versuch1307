@@ -22,14 +22,13 @@ public class Person {
     private final StringProperty adrNr;
     private final IntegerProperty adrPLZ;
     private final StringProperty adrWohnort;
-    //private final StringProperty city;
-    //private final ObjectProperty<LocalDate> birthday;
+    private final ObjectProperty<LocalDate> adrGebDat;
     private final StringProperty adrAHV;
     private final StringProperty adrMilEinteilung;
     private final StringProperty adrGrad;
     
     
-    public Person(long adrId, String adrName, String adrVorname, String adrStrasse, String adrNr, int adrPLZ , String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
+    public Person(long adrId, String adrName, String adrVorname,  String adrStrasse, String adrNr, int adrPLZ , String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
         this.adrId = new SimpleLongProperty(adrId);
         this.adrName = new SimpleStringProperty(adrName);
         this.adrVorname = new SimpleStringProperty(adrVorname);
@@ -37,6 +36,7 @@ public class Person {
         this.adrNr = new SimpleStringProperty(adrNr);
         this.adrPLZ = new SimpleIntegerProperty(adrPLZ);
         this.adrWohnort = new SimpleStringProperty(adrWohnort);
+        this.adrGebDat = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
         this.adrAHV = new SimpleStringProperty(adrAHV);
         this.adrMilEinteilung = new SimpleStringProperty(adrEint);
         this.adrGrad = new SimpleStringProperty(adrGrad);
@@ -170,6 +170,19 @@ public class Person {
 	public void setAdrGrad(String adrGrad) {
 		this.adrGrad.set(adrGrad);
 	}
+	
+	public ObjectProperty<LocalDate> adrGebDatProperty() {
+		return adrGebDat;
+	}
+
+	public LocalDate getGebDat() {
+		return adrGebDat.get();
+	}
+
+	public void setGebDat(LocalDate adrGebDat) {
+		this.adrGebDat.set(adrGebDat);
+	}
+
 
 
 

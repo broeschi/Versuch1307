@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 //import ch.makery.address.model.Person;
-//import ch.makery.adress.util.DateUtil;
+import util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -72,6 +72,9 @@ public class PersonController {
 	
 	@FXML
 	private Label WohnortLabel;
+	
+	@FXML
+	private Label GeburtsdatumLabel;
 	
 	@FXML
 	private Label AHVLabel;
@@ -272,12 +275,12 @@ public class PersonController {
                 AdresseNrLabel.setText(person.getAdrNr());
                 plzLabel.setText(Integer.toString(person.getAdrPLZ()));
                 WohnortLabel.setText(person.getAdrWohnort());
-                //birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+                GeburtsdatumLabel.setText(DateUtil.format(person.getGebDat()));
                 AHVLabel.setText(person.getAdrAHV());
                 EinteilungLabel.setText(person.getAdrEint());
                 GradLabel.setText(person.getAdrGrad());
                 try {
-					datenbank.Datenbank.loadRes();
+					//datenbank.Datenbank.loadRes();
 					 //JahrColumn.setCellValueFactory(new PropertyValueFactory<Person, Integer>("resJahr"));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
