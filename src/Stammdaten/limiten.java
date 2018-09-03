@@ -15,8 +15,9 @@ public class limiten {
 	private final IntegerProperty limFsKarte;
 	private final IntegerProperty limFsKranz;
 	private final IntegerProperty limFsFigur;
-	
-	public limiten(int lim_id, int limKatRef, String limAltKat, int limOpErfuellt, int limOpMax0, int limOpKarte, int limFsKarte, int limFsKranz, int limFsFigur) {
+
+	public limiten(int lim_id, int limKatRef, String limAltKat, int limOpErfuellt, int limOpMax0, int limOpKarte,
+			int limFsKarte, int limFsKranz, int limFsFigur) {
 		this.lim_id = new SimpleIntegerProperty(lim_id);
 		this.limKatRef = new SimpleIntegerProperty(limKatRef);
 		this.limAltKat = new SimpleStringProperty(limAltKat);

@@ -8,6 +8,7 @@ import javafx.beans.property.StringProperty;
 /**
  * 
  * Klasse zum Bilden der Alterskategorien
+ * 
  * @author Rudolf Broger
  *
  */
@@ -19,10 +20,9 @@ public class altersKategorie {
 	private final IntegerProperty katAlterMin;
 	private final IntegerProperty katAlterMax;
 	private final IntegerProperty sort;
-	
-	
-	
-	public altersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax, int sort) {
+
+	public altersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax,
+			int sort) {
 		this.kat_id = new SimpleIntegerProperty(kat_id);
 		this.katAltersKat = new SimpleStringProperty(katAltersKat);
 		this.katKatName = new SimpleStringProperty(katKatName);
@@ -30,11 +30,11 @@ public class altersKategorie {
 		this.katAlterMax = new SimpleIntegerProperty(katAlterMax);
 		this.sort = new SimpleIntegerProperty(sort);
 	}
-	
+
 	public IntegerProperty getKat_id() {
 		return kat_id;
 	}
-	
+
 	public StringProperty getkatAltersKatProperty() {
 		return katAltersKat;
 	}
@@ -42,11 +42,11 @@ public class altersKategorie {
 	public StringProperty getKatAltersKat() {
 		return katAltersKat;
 	}
-	
+
 	public StringProperty getkatKatNameProperty() {
 		return katKatName;
 	}
-	
+
 	public StringProperty getKatKatName() {
 		return katKatName;
 	}
@@ -66,6 +66,5 @@ public class altersKategorie {
 	public IntegerProperty getSort() {
 		return sort;
 	}
-	
 
 }

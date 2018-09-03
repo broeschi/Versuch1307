@@ -7,6 +7,7 @@ import javafx.beans.property.SimpleLongProperty;
 
 /**
  * Klasse für Resultate
+ * 
  * @author Ruedi Broger
  *
  */
@@ -24,11 +25,10 @@ public class Resultat {
 	private final IntegerProperty resAnzNuller;
 	private final IntegerProperty resFs;
 	private final IntegerProperty resFigFs;
-	
-	
-	
-	
-	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs, Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2, Integer resAnzNuller, Integer resFs, Integer resFigFs) {
+
+	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs,
+			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2, Integer resAnzNuller,
+			Integer resFs, Integer resFigFs) {
 		this.res_id = new SimpleIntegerProperty(res_id);
 		this.resJahr = new SimpleIntegerProperty(resJahr);
 		this.resAdrref = new SimpleIntegerProperty(resAdrref);
@@ -42,20 +42,17 @@ public class Resultat {
 		this.resAnzNuller = new SimpleIntegerProperty(resAnzNuller, "nuller");
 		this.resFs = new SimpleIntegerProperty(resFs, "Fs");
 		this.resFigFs = new SimpleIntegerProperty(resFigFs, "Fig");
-		
+
 	}
-
-
 
 	public IntegerProperty getRes_id() {
 		return res_id;
 	}
 
-
-
 	public IntegerProperty resJahrProperty() {
 		return resJahr;
 	}
+
 	public Integer getResJahr() {
 		return resJahr.get();
 	}
@@ -64,76 +61,48 @@ public class Resultat {
 		this.resJahr.set(resJahr);
 	}
 
-
-
-
 	public IntegerProperty getResAdrref() {
 		return resAdrref;
 	}
-
-
 
 	public IntegerProperty getResWfRefOp() {
 		return resWfRefOp;
 	}
 
-
-
 	public IntegerProperty getResWfRefFs() {
 		return resWfRefFs;
 	}
-
-
 
 	public IntegerProperty getResAlter() {
 		return resAlter;
 	}
 
-
-
 	public IntegerProperty getResLimRef() {
 		return resLimRef;
 	}
-
-
 
 	public IntegerProperty getResOp() {
 		return resOp;
 	}
 
-
-
 	public IntegerProperty getResWhg1() {
 		return resWhg1;
 	}
-
-
 
 	public IntegerProperty getResWhg2() {
 		return resWhg2;
 	}
 
-
-
 	public IntegerProperty getResAnzNuller() {
 		return resAnzNuller;
 	}
-
-
 
 	public IntegerProperty getResFs() {
 		return resFs;
 	}
 
-
-
 	public IntegerProperty getResFigFs() {
 		return resFigFs;
 	}
-
-
-
-
-	
 
 }
