@@ -15,7 +15,7 @@ import javafx.beans.property.StringProperty;
 /** Klasse zum Bilden der Teilnehmer*/
 public class Person {
 	
-    private final LongProperty adrId;
+    private final IntegerProperty adrId;
     private final StringProperty adrVorname;
     private final StringProperty adrName;
     private final StringProperty adrStrasse;
@@ -28,15 +28,15 @@ public class Person {
     private final StringProperty adrGrad;
     
     
-    public Person(long adrId, String adrName, String adrVorname,  String adrStrasse, String adrNr, int adrPLZ , String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
-        this.adrId = new SimpleLongProperty(adrId);
+    public Person(Integer adrId, String adrName, String adrVorname,  String adrStrasse, LocalDate adrGebDat, String adrNr, Integer adrPLZ , String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
+        this.adrId = new SimpleIntegerProperty(adrId);
         this.adrName = new SimpleStringProperty(adrName);
         this.adrVorname = new SimpleStringProperty(adrVorname);
         this.adrStrasse = new SimpleStringProperty(adrStrasse);
         this.adrNr = new SimpleStringProperty(adrNr);
         this.adrPLZ = new SimpleIntegerProperty(adrPLZ);
         this.adrWohnort = new SimpleStringProperty(adrWohnort);
-        this.adrGebDat = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
+        this.adrGebDat = new SimpleObjectProperty<LocalDate>(adrGebDat);
         this.adrAHV = new SimpleStringProperty(adrAHV);
         this.adrMilEinteilung = new SimpleStringProperty(adrEint);
         this.adrGrad = new SimpleStringProperty(adrGrad);
@@ -103,11 +103,11 @@ public class Person {
 		return adrId.get();
 	}
 	
-	public LongProperty adrIdProperty() {
+	public IntegerProperty adrIdProperty() {
 		return adrId;
 	}
 	
-	public void setAdrId(long adrId) {
+	public void setAdrId(Integer adrId) {
 		this.adrId.set(adrId);;
 	}
 

@@ -1,10 +1,12 @@
 package converter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import com.healthmarketscience.jackcess.Row;
 
 import Person.Person;
+import util.DateUtil;
 
  /**
   * Klasse zur Konvertierung der Personendaten zwischen DB und Javamodell
@@ -27,7 +29,7 @@ public class PersonConverter {
 		String name = (String) row.get("adrName");
 		String vorname = (String)  row.get("adrVorname");
 		String strasse = (String)  row.get("adrStrasse");
-		//Object gebDat = (Object) row.getDate("adrGebDat").toString(); // Problem mit fehlenden Daten (NULL Werte)
+		Date gebDat =  row.getDate("adrGebDat"); // Problem mit fehlenden Daten (NULL Werte)
 		String adrNr = (String) row.get("adrNr");
 		Short adrPLZ = (Short) row.get("adrPLZ");
 		String ort = (String) row.get("adrWohnort");
@@ -35,7 +37,7 @@ public class PersonConverter {
 		String eint = (String) row.get("adrMilEinteilung");
 		String grad = (String) row.get("adrGrad");
 		
-		Person p = new Person(adrId, name, vorname, strasse, adrNr, (int) adrPLZ, ort, ahv, eint, grad);
+		Person p = new Person(adrId, name, vorname, strasse, DateUtil.convertToLocalDateViaInstant(gebDat)  , adrNr, (int) adrPLZ, ort, ahv, eint, grad);
 		return p;
 	}
 

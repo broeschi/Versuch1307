@@ -1,7 +1,7 @@
 package converter;
 import com.healthmarketscience.jackcess.Row;
 
-import Person.resultat;
+import Person.Resultat;
 
 /**
  * Klasse zur Konvertierung der Resultatdaten zwischen DB und Javamodell
@@ -18,7 +18,7 @@ public class ResultatConverter {
 	 * @return persönliche Daten aus der DB 
 	 */
 
-	public resultat dbToModelR(Row row) {
+	public Resultat dbToModelR(Row row) {
 		
 		Integer resId = (Integer) row.get("res_id");
 		Integer jahr = (Integer) row.get("resJahr");
@@ -37,7 +37,7 @@ public class ResultatConverter {
 		
 			
 		
-		resultat r = new resultat(resId, jahr, resAdrref, resWfRefOp, resWfRefFs, resAlter, resLimRef, resOp, resWhg1, resWhg2, resAnzNuller, resFs, resFigFs );
+		Resultat r = new Resultat(resId, jahr, resAdrref, resWfRefOp, resWfRefFs, resAlter, resLimRef, resOp, resWhg1, resWhg2, resAnzNuller, resFs, resFigFs );
 		return r;
 	}
 		
