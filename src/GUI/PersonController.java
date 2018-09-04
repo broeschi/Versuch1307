@@ -46,7 +46,7 @@ public class PersonController {
 
 	@FXML
 	private TableView<Resultat> resultTable;
-	
+
 	@FXML
 	private TableColumn<Person, String> VornameColumn;
 
@@ -88,10 +88,10 @@ public class PersonController {
 
 	@FXML
 	private TableColumn<Resultat, String> OpColumn;
-	
+
 	@FXML
 	private TableColumn<Resultat, String> FsColumn;
-	
+
 	@FXML
 	private TableColumn<Resultat, String> Whg1Column;
 
@@ -101,7 +101,6 @@ public class PersonController {
 	@FXML
 	private TableColumn<Resultat, String> FigColumn;
 
-	
 	@FXML
 	private TextField filterField;
 
@@ -112,7 +111,7 @@ public class PersonController {
 	private TableColumn<Person, String> lastNameColumn;
 
 	private static ObservableList<Person> personData = FXCollections.observableArrayList();
-	
+
 	private static ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
 
 	// referenziert auf die Main Applikation
@@ -212,7 +211,6 @@ public class PersonController {
 				resultatData.clear();
 				resultatData.addAll(datenbank.Datenbank.loadRes(person));
 				resultTable.setItems(resultatData);
-				
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -225,7 +223,6 @@ public class PersonController {
 			FsColumn.setCellValueFactory(cellData -> cellData.getValue().resFsProperty());
 			FigColumn.setCellValueFactory(cellData -> cellData.getValue().resFigFsProperty());
 
-
 		} else {
 			// Person is null, remove all the text.
 			VornameLabel.setText("");
@@ -234,7 +231,45 @@ public class PersonController {
 			AdresseNrLabel.setText("");
 			plzLabel.setText("");
 			WohnortLabel.setText("");
-			
+
+		}
+	}
+
+	/**
+	 * Called when the user clicks the new button. Opens a dialog to edit details
+	 * for a new person.
+	 */
+	@FXML
+	private void handleNewPerson() {
+		Person tempPerson = new Person();
+		boolean okClicked = mainApp.showPersonMutierenDialog(tempPerson);
+		if (okClicked) {
+			mainApp.getPersonData().add(tempPerson);
+		}
+	}
+
+	/**
+	 * Called when the user clicks the edit button. Opens a dialog to edit details
+	 * for the selected person.
+	 */
+	@FXML
+	private void handleEditPerson() {
+		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+		if (selectedPerson != null) {
+			boolean okClicked = mainApp.showPersonMutierenDialog(selectedPerson);
+			if (okClicked) {
+				showPersonDetails(selectedPerson);
+			}
+
+		} else {
+			// Nothing selected.
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("No Selection");
+			alert.setHeaderText("No Person Selected");
+			alert.setContentText("Please select a person in the table.");
+
+			alert.showAndWait();
 		}
 	}
 

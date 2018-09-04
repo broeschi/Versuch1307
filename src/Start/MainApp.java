@@ -3,6 +3,7 @@ package Start;
 import java.io.IOException;
 
 import GUI.PersonController;
+import GUI.PersonMutierenController;
 import GUI.PersonSuchenController;
 import Person.Person;
 import datenbank.Datenbank;
@@ -128,25 +129,25 @@ public class MainApp extends Application {
 	 *            the person object to be edited
 	 * @return true if the user clicked OK, false otherwise.
 	 */
-	public boolean showPersonEditDialog(Person person) {
+	public boolean showPersonMutierenDialog(Person person) {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/PersonEditDialog.fxml"));
+			loader.setLocation(MainApp.class.getResource("/GUI/PersonMutieren.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
 			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Edit Person");
+			dialogStage.setTitle("Schützendaten ändern");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 
 			// Set the person into the controller.
-			PersonController controller = loader.getController();
-			// controller.setDialogStage(dialogStage);
-			// controller.setPerson(person);
+			PersonMutierenController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setPerson(person);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();

@@ -1,9 +1,7 @@
 package Person;
 
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -48,7 +46,7 @@ public class Resultat {
 	}
 
 	private SimpleStringProperty createStringProperty(Integer value) {
-		if(value == null) {
+		if (value == null) {
 			return new SimpleStringProperty("");
 		} else {
 			return new SimpleStringProperty(String.valueOf(value));

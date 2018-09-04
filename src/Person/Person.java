@@ -42,6 +42,10 @@ public class Person {
 
 	}
 
+	public Person() {
+		this(null, null, null, null, null, null, null, null, null, null, null);
+	}
+
 	public StringProperty AdrNameProperty() {
 		return adrName;
 	}

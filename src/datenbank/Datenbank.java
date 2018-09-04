@@ -126,40 +126,36 @@ public class Datenbank {
 	}
 
 	public void saveData() throws Exception {
-		
+
 		ArrayList<Person> personen = new ArrayList<Person>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
 		Table table = db.getTable("tblAdressen");
-	    try {
-	        
+		try {
 
-	        // Wrapping our person data.
-	        PersonListWrapper wrapper = new PersonListWrapper();
-	        wrapper.setPersons(personData);
+			// Wrapping our person data.
+			PersonListWrapper wrapper = new PersonListWrapper();
+			wrapper.setPersons(personData);
 
-	        // Marshalling and saving XML to the file.
-	        m.marshal(wrapper, file);
+			// Marshalling and saving XML to the file.
+			m.marshal(wrapper, file);
 
-	        // Save the file path to the registry.
-	        setPersonFilePath(file);
-	    } catch (Exception e) { // catches ANY exception
-	        Alert alert = new Alert(AlertType.ERROR);
-	        alert.setTitle("Error");
-	        alert.setHeaderText("Could not save data");
-	        alert.setContentText("Could not save data to file:\n" + file.getPath());
+			// Save the file path to the registry.
+			setPersonFilePath(file);
+		} catch (Exception e) { // catches ANY exception
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error");
+			alert.setHeaderText("Could not save data");
+			alert.setContentText("Could not save data to file:\n" + file.getPath());
 
-	        alert.showAndWait();
-	    }
-
-
-		
+			alert.showAndWait();
+		}
 
 	}
 
 	public static String getDataFile() {
 
-		return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be.accdb";
+		return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be2.accdb";
 	}
 }

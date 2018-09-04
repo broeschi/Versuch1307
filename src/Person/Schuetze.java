@@ -2,20 +2,20 @@ package Person;
 
 import java.util.Date;
 
-/** Detailinformationen zur Person*/
+/** Detailinformationen zur Person */
 
 public class Schuetze {
-	
-	//extends Person {
-		
 
-	//public Schuetze(String adrName, String adrVorname, Date adrGebDat, String adrStrasse, Double adrNr, Double adrPLZ,
-	//		String adrWohnort, String adrGrad, String adrEinteilung, String adrAHV) {
-		//super(0, adrName, adrVorname, adrAHV, adrAHV, null, adrAHV);
-	//	this.adrGrad = adrGrad;
-	//	this.adrEinteilung = adrEinteilung;
-	//	this.adrAHV = adrAHV;
-	//}
+	// extends Person {
+
+	// public Schuetze(String adrName, String adrVorname, Date adrGebDat, String
+	// adrStrasse, Double adrNr, Double adrPLZ,
+	// String adrWohnort, String adrGrad, String adrEinteilung, String adrAHV) {
+	// super(0, adrName, adrVorname, adrAHV, adrAHV, null, adrAHV);
+	// this.adrGrad = adrGrad;
+	// this.adrEinteilung = adrEinteilung;
+	// this.adrAHV = adrAHV;
+	// }
 
 	public String getAdrGrad() {
 		return adrGrad;
@@ -41,16 +41,13 @@ public class Schuetze {
 		this.adrAHV = adrAHV;
 	}
 
-	/** militätischer Grad des Teilnemers*/
+	/** militätischer Grad des Teilnemers */
 	public String adrGrad;
 
-	/** militärische Einteilung des Teilnemers*/
+	/** militärische Einteilung des Teilnemers */
 	public String adrEinteilung;
-	
-	/** AHV bzw. Matrikelnummer des Teilnemers*/
+
+	/** AHV bzw. Matrikelnummer des Teilnemers */
 	public String adrAHV;
-	
-	
-	
 
 }
