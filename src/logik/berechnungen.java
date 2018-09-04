@@ -1,4 +1,4 @@
-package berechnungen;
+package logik;
 
 public class berechnungen {
 

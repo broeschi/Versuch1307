@@ -5,7 +5,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-//import ch.makery.address.model.Person;
 import util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,12 +21,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-
 import Person.Person;
 import Person.Resultat;
-//import ch.makery.adress.util.DateUtil;
 import Start.MainApp;
 
 /**
@@ -48,6 +44,9 @@ public class PersonController {
 	@FXML
 	private TableView<Person> personTable;
 
+	@FXML
+	private TableView<Resultat> resultTable;
+	
 	@FXML
 	private TableColumn<Person, String> VornameColumn;
 
@@ -85,8 +84,24 @@ public class PersonController {
 	private Label GradLabel;
 
 	@FXML
-	private TableColumn<Resultat, Integer> JahrColumn;
+	private TableColumn<Resultat, Number> JahrColumn;
 
+	@FXML
+	private TableColumn<Resultat, String> OpColumn;
+	
+	@FXML
+	private TableColumn<Resultat, String> FsColumn;
+	
+	@FXML
+	private TableColumn<Resultat, String> Whg1Column;
+
+	@FXML
+	private TableColumn<Resultat, String> Whg2Column;
+
+	@FXML
+	private TableColumn<Resultat, String> FigColumn;
+
+	
 	@FXML
 	private TextField filterField;
 
@@ -97,6 +112,8 @@ public class PersonController {
 	private TableColumn<Person, String> lastNameColumn;
 
 	private static ObservableList<Person> personData = FXCollections.observableArrayList();
+	
+	private static ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
 
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
@@ -192,14 +209,22 @@ public class PersonController {
 			EinteilungLabel.setText(person.getAdrEint());
 			GradLabel.setText(person.getAdrGrad());
 			try {
-				datenbank.Datenbank.loadRes(person);
-				JahrColumn.setCellValueFactory(CellDataFeatures -> CellDataFeatures.getValue().resJahrProperty());
-				// JahrColumn.setCellValueFactory(new PropertyValueFactory<Person,
-				// Integer>("resJahr"));
+				resultatData.clear();
+				resultatData.addAll(datenbank.Datenbank.loadRes(person));
+				resultTable.setItems(resultatData);
+				
+
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			JahrColumn.setCellValueFactory(cellData -> cellData.getValue().resJahrProperty());
+			OpColumn.setCellValueFactory(cellData -> cellData.getValue().resOpProperty());
+			Whg1Column.setCellValueFactory(cellData -> cellData.getValue().resWhg1Property());
+			Whg2Column.setCellValueFactory(cellData -> cellData.getValue().resWhg2Property());
+			FsColumn.setCellValueFactory(cellData -> cellData.getValue().resFsProperty());
+			FigColumn.setCellValueFactory(cellData -> cellData.getValue().resFigFsProperty());
+
 
 		} else {
 			// Person is null, remove all the text.
@@ -209,7 +234,7 @@ public class PersonController {
 			AdresseNrLabel.setText("");
 			plzLabel.setText("");
 			WohnortLabel.setText("");
-			// birthdayLabel.setText("");
+			
 		}
 	}
 

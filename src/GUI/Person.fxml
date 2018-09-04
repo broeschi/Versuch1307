@@ -51,14 +51,14 @@
                   <Label fx:id="WohnortLabel" layoutX="173.0" layoutY="112.0" text="Label" />
                   <Separator layoutX="10.0" layoutY="153.0" prefHeight="6.0" prefWidth="648.0" />
                   <Label layoutX="12.0" layoutY="136.0" text="Übersicht Resultate" AnchorPane.leftAnchor="10.0" />
-                  <TableView layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
+                  <TableView fx:id="resultTable" layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
                     <columns>
                       <TableColumn fx:id="JahrColumn" prefWidth="75.0" text="Jahr" />
-                      <TableColumn prefWidth="75.0" text="OP" />
-                        <TableColumn prefWidth="75.0" text="Wiederholung 1" />
-                        <TableColumn prefWidth="75.0" text="Wiederholung 2" />
-                        <TableColumn prefWidth="75.0" text="FS" />
-                        <TableColumn prefWidth="75.0" text="Figurentreffer" />
+                      <TableColumn fx:id="OpColumn" prefWidth="75.0" text="OP" />
+                        <TableColumn fx:id="Whg1Column" prefWidth="75.0" text="Wiederholung 1" />
+                        <TableColumn fx:id="Whg2Column" prefWidth="75.0" text="Wiederholung 2" />
+                        <TableColumn fx:id="FsColumn" prefWidth="75.0" text="FS" />
+                        <TableColumn fx:id="FigColumn" prefWidth="75.0" text="Figurentreffer" />
                     </columns>
                   </TableView>
                   <Label layoutX="306.0" layoutY="69.0" text="AHV Nr." />

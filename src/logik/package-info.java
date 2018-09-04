@@ -6,5 +6,5 @@
  * @author Ruedi Broger
  *
  */
-package berechnungen;
+package logik;
 
