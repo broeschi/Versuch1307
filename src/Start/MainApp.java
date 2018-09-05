@@ -2,9 +2,13 @@ package Start;
 
 import java.io.IOException;
 
+import GUI.LimitenController;
 import GUI.PersonController;
-import GUI.PersonSuchenController;
+import GUI.PersonMutierenController;
+import GUI.RootLayoutController;
 import Person.Person;
+import Stammdaten.altersKategorie;
+import Stammdaten.limiten;
 import datenbank.Datenbank;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -19,146 +23,205 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
-    private Stage primaryStage;
-    private BorderPane rootLayout;
+	private Stage primaryStage;
+	private BorderPane rootLayout;
 
-    @Override
-    public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Vereinsverwaltung");
+	@Override
+	public void start(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("Vereinsverwaltung");
 
-        initRootLayout();
+		initRootLayout();
 
-        showPersonOverview();
-    }
+		showPersonOverview();
+	}
 
-    /**
-     * Initializes the root layout.
-     */
-    public void initRootLayout() {
-        try {
-            // Load root layout from fxml file.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/GUI/RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
+	/**
+	 * Initializes the root layout.
+	 */
+	public void initRootLayout() {
+		try {
+			// Load root layout from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/RootLayout.fxml"));
+			rootLayout = (BorderPane) loader.load();
 
-            // Show the scene containing the root layout.
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+			// Show the scene containing the root layout.
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
 
-    /**
-     * Shows the person overview inside the root layout.
-     */
-    public void showPersonOverview() {
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/GUI/Person.fxml"));
-            AnchorPane personOverview = (AnchorPane) loader.load();
+			// Give the controller access to the main app.
+			RootLayoutController controller = loader.getController();
+			controller.setMainApp(this);
 
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(personOverview);
-            
-            // Give the controller access to the main app.
-            PersonController controller = loader.getController();
-            controller.setMainApp(this);
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-    /**
-     * Returns the main stage.
-     * @return
-     */
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
-    /**
-     * Anwendung starten
-     * @param args
-     */
+	/**
+	 * Shows the person overview inside the root layout.
+	 */
+	public void showPersonOverview() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/Person.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-    /**
-     * Personendaten für GUI in JavaFX laden
-     * @return
-     */
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(personOverview);
+
+			// Give the controller access to the main app.
+			PersonController controller = loader.getController();
+			controller.setMainApp(this);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Zeigt die gültigen Limiten der Bundesübungen an
+	 */
+	public void showLimitenDialog() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/Limiten.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(personOverview);
+
+			// Give the controller access to the main app.
+			LimitenController controller = loader.getController();
+			controller.setMainApp(this); // hier gibt es einen NPE
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Zeigt Mapping des Alters der Teilnehmer auf die Alterskategorieb
+	 */
+	public void showAlterKatDialog() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/Alterskategorie.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(personOverview);
+
+			// Give the controller access to the main app.
+			LimitenController controller = loader.getController();
+			controller.setMainApp(this); // hier gibt es einen NPE
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Returns the main stage.
+	 * 
+	 * @return
+	 */
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	/**
+	 * Anwendung starten
+	 * 
+	 * @param args
+	 */
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	/**
+	 * Personendaten für GUI in JavaFX laden
+	 * 
+	 * @return
+	 */
 
 	public ObservableList<Person> getPersonData() {
-		
+
 		return personData;
 	}
-	
-	/**
-     * The data as an observable list of Persons.
-     */
-	
-	
-	public ObservableList<Person> personData = FXCollections.observableArrayList();
-	
 
 	/**
-     * Constructor
-     * initiale Daten aus der DB laden
-	 * @throws Exception 
-     */
-	public MainApp () throws Exception {
-		personData.addAll(datenbank.Datenbank.loadData()) ;
-		 
-		
-		
-	}
-	
+	 * The data as an observable list of Persons.
+	 */
+
+	public ObservableList<Person> personData = FXCollections.observableArrayList();
+
 	/**
-	 * Opens a dialog to edit details for the specified person. If the user
-	 * clicks OK, the changes are saved into the provided person object and true
-	 * is returned.
+	 * Constructor initiale Daten aus der DB laden
 	 * 
-	 * @param person the person object to be edited
+	 * @throws Exception
+	 */
+	public MainApp() throws Exception {
+		personData.addAll(datenbank.Datenbank.loadData());
+
+	}
+
+	/**
+	 * Opens a dialog to edit details for the specified person. If the user clicks
+	 * OK, the changes are saved into the provided person object and true is
+	 * returned.
+	 * 
+	 * @param person
+	 *            the person object to be edited
 	 * @return true if the user clicked OK, false otherwise.
 	 */
-	public boolean showPersonEditDialog(Person person) {
-	    try {
-	        // Load the fxml file and create a new stage for the popup dialog.
-	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(MainApp.class.getResource("view/PersonEditDialog.fxml"));
-	        AnchorPane page = (AnchorPane) loader.load();
+	public boolean showPersonMutierenDialog(Person person) {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/PersonMutieren.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
 
-	        // Create the dialog Stage.
-	        Stage dialogStage = new Stage();
-	        dialogStage.setTitle("Edit Person");
-	        dialogStage.initModality(Modality.WINDOW_MODAL);
-	        dialogStage.initOwner(primaryStage);
-	        Scene scene = new Scene(page);
-	        dialogStage.setScene(scene);
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Schützendaten ändern");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
 
-	        // Set the person into the controller.
-	        PersonController controller = loader.getController();
-	        //controller.setDialogStage(dialogStage);
-	        //controller.setPerson(person);
+			// Set the person into the controller.
+			PersonMutierenController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setPerson(person);
 
-	        // Show the dialog and wait until the user closes it
-	        dialogStage.showAndWait();
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
 
-	        return controller.isOkClicked();
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	        return false;
-	    }
+			return controller.isOkClicked();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
+	public ObservableList<limiten> limitData = FXCollections.observableArrayList();
 
-	
+	public ObservableList<limiten> getLimitData() {
+
+		return limitData;
+	}
+
+	public ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+
+	public ObservableList<altersKategorie> getKatData() {
+		return katData;
+	}
+
 }
-	

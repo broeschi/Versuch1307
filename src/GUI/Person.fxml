@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
@@ -49,22 +51,32 @@
                   <Label fx:id="WohnortLabel" layoutX="173.0" layoutY="112.0" text="Label" />
                   <Separator layoutX="10.0" layoutY="153.0" prefHeight="6.0" prefWidth="648.0" />
                   <Label layoutX="12.0" layoutY="136.0" text="Übersicht Resultate" AnchorPane.leftAnchor="10.0" />
-                  <TableView layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
+                  <TableView fx:id="resultTable" layoutX="13.0" layoutY="159.0" prefHeight="265.0" prefWidth="657.0">
                     <columns>
                       <TableColumn fx:id="JahrColumn" prefWidth="75.0" text="Jahr" />
-                      <TableColumn prefWidth="75.0" text="OP" />
-                        <TableColumn prefWidth="75.0" text="Wiederholung 1" />
-                        <TableColumn prefWidth="75.0" text="Wiederholung 2" />
-                        <TableColumn prefWidth="75.0" text="FS" />
-                        <TableColumn prefWidth="75.0" text="Figurentreffer" />
+                      <TableColumn fx:id="OpColumn" prefWidth="75.0" text="OP" />
+                        <TableColumn fx:id="Whg1Column" prefWidth="75.0" text="Wiederholung 1" />
+                        <TableColumn fx:id="Whg2Column" prefWidth="75.0" text="Wiederholung 2" />
+                        <TableColumn fx:id="FsColumn" prefWidth="75.0" text="FS" />
+                        <TableColumn fx:id="FigColumn" prefWidth="75.0" text="Figurentreffer" />
                     </columns>
                   </TableView>
-                  <Label layoutX="306.0" layoutY="47.0" text="AHV Nr." />
-                  <Label fx:id="AHVLabel" layoutX="391.0" layoutY="46.0" text="Label" />
-                  <Label layoutX="305.0" layoutY="69.0" text="Mil Einteilung" />
-                  <Label fx:id="EinteilungLabel" layoutX="391.0" layoutY="69.0" text="Label" />
-                  <Label layoutX="306.0" layoutY="91.0" text="Mil Grad" />
-                  <Label fx:id="GradLabel" layoutX="391.0" layoutY="91.0" text="Label" />
+                  <Label layoutX="306.0" layoutY="69.0" text="AHV Nr." />
+                  <Label fx:id="AHVLabel" layoutX="391.0" layoutY="69.0" text="Label" />
+                  <Label layoutX="305.0" layoutY="91.0" text="Mil Einteilung" />
+                  <Label fx:id="EinteilungLabel" layoutX="391.0" layoutY="92.0" text="Label" />
+                  <Label layoutX="306.0" layoutY="114.0" text="Mil Grad" />
+                  <Label fx:id="GradLabel" layoutX="391.0" layoutY="114.0" text="Label" />
+                  <Label layoutX="306.0" layoutY="47.0" text="Geburtsdatum" />
+                  <Label fx:id="GeburtsdatumLabel" layoutX="391.0" layoutY="47.0" text="Label" />
+                  <ButtonBar layoutX="17.0" layoutY="443.0" prefHeight="40.0" prefWidth="677.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#handleNewPerson" text="neu" />
+                        <Button mnemonicParsing="false" onAction="#handleEditPerson" text="ändern" />
+                        <Button mnemonicParsing="false" text="Standblatt" />
+                        <Button mnemonicParsing="false" text="Resultat" />
+                    </buttons>
+                  </ButtonBar>
                </children>
             </AnchorPane>
         </items>

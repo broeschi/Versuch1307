@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="529.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView prefHeight="200.0" prefWidth="459.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Kategorie" />
+                <TableColumn prefWidth="75.0" text="min OP" />
+                  <TableColumn prefWidth="75.0" text="max Nuller" />
+                  <TableColumn prefWidth="75.0" text="Karte OP" />
+                  <TableColumn prefWidth="75.0" text="Karte FS" />
+                  <TableColumn prefWidth="75.0" text="Kranz FS" />
+                  <TableColumn prefWidth="75.0" text="Treffer FS" />
+              </columns>
+            </TableView>
+         </center>
+         <bottom>
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Bearbeiten" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
