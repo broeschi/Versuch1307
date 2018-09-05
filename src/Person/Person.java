@@ -42,8 +42,23 @@ public class Person {
 
 	}
 
+	public Person(String adrName, String adrVorname) {
+		this.adrId = new SimpleIntegerProperty();
+		this.adrName = new SimpleStringProperty(adrName);
+		this.adrVorname = new SimpleStringProperty(adrVorname);
+		this.adrStrasse = new SimpleStringProperty();
+		this.adrNr = new SimpleStringProperty();
+		this.adrPLZ = new SimpleIntegerProperty();
+		this.adrWohnort = new SimpleStringProperty();
+		this.adrGebDat = new SimpleObjectProperty<LocalDate>();
+		this.adrAHV = new SimpleStringProperty();
+		this.adrMilEinteilung = new SimpleStringProperty();
+		this.adrGrad = new SimpleStringProperty();
+
+	}
+
 	public Person() {
-		this(null, null, null, null, null, null, null, null, null, null, null);
+		this(null, null);
 	}
 
 	public StringProperty AdrNameProperty() {
