@@ -45,7 +45,7 @@ public class RootLayoutController {
 		File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
 
 		if (file != null) {
-			//mainApp.loadPersonDataFromFile(file);
+			// mainApp.loadPersonDataFromFile(file);
 		}
 	}
 
@@ -55,12 +55,12 @@ public class RootLayoutController {
 	 */
 	@FXML
 	private void handleSave() {
-		//File personFile = mainApp.getPersonFilePath();
-		//if (personFile != null) {
-			//mainApp.savePersonDataToFile(personFile);
-		//} else {
-		//	handleSaveAs();
-		//}
+		// File personFile = mainApp.getPersonFilePath();
+		// if (personFile != null) {
+		// mainApp.savePersonDataToFile(personFile);
+		// } else {
+		// handleSaveAs();
+		// }
 	}
 
 	/**
@@ -71,19 +71,20 @@ public class RootLayoutController {
 		FileChooser fileChooser = new FileChooser();
 
 		// Set extension filter
-		//FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml");
-		//fileChooser.getExtensionFilters().add(extFilter);
+		// FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML
+		// files (*.xml)", "*.xml");
+		// fileChooser.getExtensionFilters().add(extFilter);
 
 		// Show save file dialog
-		//File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
+		// File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
 
-		//if (file != null) {
-			// Make sure it has the correct extension
-		//	if (!file.getPath().endsWith(".xml")) {
-		//		file = new File(file.getPath() + ".xml");
-		//	}
-		//	mainApp.savePersonDataToFile(file);
-		//}
+		// if (file != null) {
+		// Make sure it has the correct extension
+		// if (!file.getPath().endsWith(".xml")) {
+		// file = new File(file.getPath() + ".xml");
+		// }
+		// mainApp.savePersonDataToFile(file);
+		// }
 	}
 
 	/**
@@ -92,8 +93,8 @@ public class RootLayoutController {
 	@FXML
 	private void handleAbout() {
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Vereinsverwaltung");
-		alert.setHeaderText("Über");
+		alert.setTitle("Über");
+		alert.setHeaderText("Vereinsverwaltung");
 		alert.setContentText("Author: Rudolf Broger");
 
 		alert.showAndWait();
@@ -109,12 +110,19 @@ public class RootLayoutController {
 
 	@FXML
 	private void handleStandblatt() {
-		PersonSuchenController.initialize();
+		mainApp.showPersonOverview();
+
 	}
 
 	@FXML
-	private void handleStammdaten() {
-		// Todo
+	private void handleLimite() {
+		mainApp.showLimitenDialog();
+
+	}
+
+	@FXML
+	private void handleAlterKat() {
+		mainApp.showAlterKatDialog();
 	}
 
 }

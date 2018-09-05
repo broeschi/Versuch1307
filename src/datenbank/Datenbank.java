@@ -135,7 +135,6 @@ public class Datenbank {
 		PersonConverter converter = new PersonConverter();
 		Person p = converter.modelToDbP();
 		table.addRow(p);
-		
 
 	}
 

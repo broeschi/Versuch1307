@@ -2,10 +2,13 @@ package Start;
 
 import java.io.IOException;
 
+import GUI.LimitenController;
 import GUI.PersonController;
 import GUI.PersonMutierenController;
-import GUI.PersonSuchenController;
+import GUI.RootLayoutController;
 import Person.Person;
+import Stammdaten.altersKategorie;
+import Stammdaten.limiten;
 import datenbank.Datenbank;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -46,6 +49,11 @@ public class MainApp extends Application {
 			// Show the scene containing the root layout.
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
+
+			// Give the controller access to the main app.
+			RootLayoutController controller = loader.getController();
+			controller.setMainApp(this);
+
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -68,6 +76,50 @@ public class MainApp extends Application {
 			// Give the controller access to the main app.
 			PersonController controller = loader.getController();
 			controller.setMainApp(this);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Zeigt die gültigen Limiten der Bundesübungen an
+	 */
+	public void showLimitenDialog() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/Limiten.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(personOverview);
+
+			// Give the controller access to the main app.
+			LimitenController controller = loader.getController();
+			controller.setMainApp(this); // hier gibt es einen NPE
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Zeigt Mapping des Alters der Teilnehmer auf die Alterskategorieb
+	 */
+	public void showAlterKatDialog() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/Alterskategorie.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(personOverview);
+
+			// Give the controller access to the main app.
+			LimitenController controller = loader.getController();
+			controller.setMainApp(this); // hier gibt es einen NPE
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -157,6 +209,19 @@ public class MainApp extends Application {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	public ObservableList<limiten> limitData = FXCollections.observableArrayList();
+
+	public ObservableList<limiten> getLimitData() {
+
+		return limitData;
+	}
+
+	public ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+
+	public ObservableList<altersKategorie> getKatData() {
+		return katData;
 	}
 
 }

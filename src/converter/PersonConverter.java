@@ -32,7 +32,7 @@ public class PersonConverter {
 		String name = (String) row.get("adrName");
 		String vorname = (String) row.get("adrVorname");
 		String strasse = (String) row.get("adrStrasse");
-		Date gebDat = row.getDate("adrGebDat"); 
+		Date gebDat = row.getDate("adrGebDat");
 		String adrNr = (String) row.get("adrNr");
 		Short adrPLZ = (Short) row.get("adrPLZ");
 		String ort = (String) row.get("adrWohnort");
@@ -46,10 +46,10 @@ public class PersonConverter {
 	}
 
 	public Person modelToDbP() {
-		String name = new String ("adrName");
+		String name = new String("adrName");
 		String vorname = new String("adrVorname");
 		String strasse = new String("adrStrasse");
-//		LocalDate gebDat = new LocalDate("adrGebDat");
+		// LocalDate gebDat = new LocalDate("adrGebDat");
 		String adrNr = new String("adrNr");
 		Integer adrPLZ = new Integer("adrPLZ");
 		String ort = new String("adrWohnort");
@@ -57,11 +57,9 @@ public class PersonConverter {
 		String eint = new String("adrMilEinteilung");
 		String grad = new String("adrGrad");
 
-		Person p = new Person(null, name, vorname, strasse,
-				null, adrNr,	(int) adrPLZ, ort, ahv, eint, grad);
+		Person p = new Person(null, name, vorname, strasse, null, adrNr, (int) adrPLZ, ort, ahv, eint, grad);
 		return p;
 
-		
 	}
 
 }

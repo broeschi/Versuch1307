@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
 import Start.MainApp;
 import util.DateUtil;
@@ -19,43 +20,40 @@ import util.DateUtil;
  * 
  * @author Rudolf Brpger
  */
-public class LimitenController {
+
+public class KategorieController {
 	@FXML
-	private TableView<limiten> limitTable;
+	private TableView<limiten> katTable;
 
 	@FXML
-	private Label KategorieLabel;
+	private Label AlterskategorieLabel;
 
 	@FXML
-	private Label MinOpLabel;
+	private Label KatNameLabel;
 	@FXML
-	private Label MaxNullerLabel;
+	private Label MindestalterLabel;
 	@FXML
-	private Label KarteOpLabel;
+	private Label HoechstalterLabel;
 	@FXML
-	private Label KarteFsLabel;
-	@FXML
-	private Label KranzFsLabel;
-	@FXML
-	private Label FigurFsLabel;
+	private Label SortierungLabel;
 
-	private ObservableList<limiten> limitData = FXCollections.observableArrayList();
+	private ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
 
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
 
-	public LimitenController() {
+	public KategorieController() {
 
 	}
 
-	public ObservableList<limiten> getLimitData() {
-		return limitData;
+	public ObservableList<altersKategorie> getKatData() {
+		return katData;
 	}
 
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 		// Add observable list data to the table
-		limitData.addAll(mainApp.getLimitData());
+		katData.addAll(mainApp.getKatData());
 
 	}
 

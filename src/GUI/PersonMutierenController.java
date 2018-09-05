@@ -105,7 +105,7 @@ public class PersonMutierenController {
 	@FXML
 	private void handleOk() {
 		if (isInputValid()) {
-			person.setAdrVorname (VornameField.getText());
+			person.setAdrVorname(VornameField.getText());
 			person.setAdrName(NameField.getText());
 			person.setAdrStrasse(AdresseField.getText());
 			person.setAdrNr(AdresseField.getText());

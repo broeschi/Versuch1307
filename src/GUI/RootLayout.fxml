@@ -15,22 +15,22 @@
               <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
+            <Menu mnemonicParsing="false" text="Bundesübung">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleStandblatt" text="Standblatt/Resultat" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Stammdaten">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleLimite" text="Limiten" />
+                <MenuItem mnemonicParsing="false" onAction="#handleAlterKat" text="Alterskategorien" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Bundesübung">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#handleStandblatt" text="Standblatt/Resultat" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleStammdaten" text="Stammdaten" />
-              </items>
-            </Menu>
         </menus>
       </MenuBar>
    </top>
