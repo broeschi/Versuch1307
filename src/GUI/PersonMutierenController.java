@@ -105,16 +105,16 @@ public class PersonMutierenController {
 	@FXML
 	private void handleOk() {
 		if (isInputValid()) {
-			person.setAdrVorname(String.valueOf(VornameField));
-			person.setAdrName(String.valueOf(NameField));
-			person.setAdrStrasse(String.valueOf(AdresseField));
-			person.setAdrNr(String.valueOf(AdresseField));
+			person.setAdrVorname (VornameField.getText());
+			person.setAdrName(NameField.getText());
+			person.setAdrStrasse(AdresseField.getText());
+			person.setAdrNr(AdresseField.getText());
 			person.setAdrPlz(Integer.parseInt(plzField.getText()));
-			person.setAdrWohnort(String.valueOf(WohnortField));
+			person.setAdrWohnort(WohnortField.getText());
 			person.setGebDat(DateUtil.parse(GeburtsdatumField.getText()));
-			person.setAdrAHV(String.valueOf(AHVField));
-			person.setAdrGrad(String.valueOf(GradField));
-			person.setAdrEint(String.valueOf(EinteilungField));
+			person.setAdrAHV(AHVField.getText());
+			person.setAdrGrad(GradField.getText());
+			person.setAdrEint(EinteilungField.getText());
 
 			okClicked = true;
 			dialogStage.close();
@@ -172,9 +172,6 @@ public class PersonMutierenController {
 			if (!DateUtil.validDate(GeburtsdatumField.getText())) {
 				errorMessage += "No valid birthday. Use the format dd.mm.yyyy!\n";
 			}
-		}
-		if (AHVField.getText() == null || AHVField.getText().length() == 0) {
-			errorMessage += "Bitte gültige AHV-Nummer eingeben.";
 		}
 
 		if (errorMessage.length() == 0) {

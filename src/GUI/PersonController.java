@@ -245,6 +245,12 @@ public class PersonController {
 		boolean okClicked = mainApp.showPersonMutierenDialog(tempPerson);
 		if (okClicked) {
 			mainApp.getPersonData().add(tempPerson);
+			try {
+				datenbank.Datenbank.saveDataP();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 

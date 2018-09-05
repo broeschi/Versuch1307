@@ -125,32 +125,17 @@ public class Datenbank {
 		return limite;
 	}
 
-	public void saveData() throws Exception {
+	public static void saveDataP() throws Exception {
 
 		ArrayList<Person> personen = new ArrayList<Person>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
 		Table table = db.getTable("tblAdressen");
-		try {
-
-			// Wrapping our person data.
-			PersonListWrapper wrapper = new PersonListWrapper();
-			wrapper.setPersons(personData);
-
-			// Marshalling and saving XML to the file.
-			m.marshal(wrapper, file);
-
-			// Save the file path to the registry.
-			setPersonFilePath(file);
-		} catch (Exception e) { // catches ANY exception
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Error");
-			alert.setHeaderText("Could not save data");
-			alert.setContentText("Could not save data to file:\n" + file.getPath());
-
-			alert.showAndWait();
-		}
+		PersonConverter converter = new PersonConverter();
+		Person p = converter.modelToDbP();
+		table.addRow(p);
+		
 
 	}
 

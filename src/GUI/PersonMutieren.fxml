@@ -34,8 +34,8 @@
             <TextField fx:id="AdresseField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="AdresseNrField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="plzField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="GeburtsdatumField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <TextField fx:id="WohnortField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="GeburtsdatumField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <TextField fx:id="AHVField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <TextField fx:id="EinteilungField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <TextField fx:id="GradField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
