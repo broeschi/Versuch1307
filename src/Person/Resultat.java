@@ -33,6 +33,25 @@ public class Resultat {
 	private final StringProperty resFs;
 	private final StringProperty resFigFs;
 
+	public Resultat(Integer resAdrref) {
+		this.res_id = new SimpleIntegerProperty();
+		this.resJahr = new SimpleIntegerProperty();
+		this.resAdrref = new SimpleIntegerProperty(resAdrref);
+		this.resWfRefOp = new SimpleStringProperty();
+		this.resWfRefFs = new SimpleStringProperty();
+		this.resAlter = new SimpleStringProperty();
+		this.resLimRef = new SimpleStringProperty();
+		this.resOp = new SimpleStringProperty();
+		this.resWhg1 = new SimpleStringProperty();
+		this.resWhg2 = new SimpleStringProperty();
+		this.resAnzNullerOp = new SimpleStringProperty();
+		this.resAnzNullerW1Op = new SimpleStringProperty();
+		this.resAnzNullerW2Op = new SimpleStringProperty();
+		this.resFs = new SimpleStringProperty();
+		this.resFigFs = new SimpleStringProperty();
+		}
+
+	
 	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs,
 			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2, Integer resAnzNullerOp,
 			Integer resAnzNullerW1Op, Integer resAnzNullerW2Op, Integer resFs, Integer resFigFs) {
@@ -53,6 +72,7 @@ public class Resultat {
 		this.resFigFs = createStringProperty(resFigFs);
 
 	}
+
 
 	private SimpleStringProperty createStringProperty(Integer value) {
 		if (value == null) {

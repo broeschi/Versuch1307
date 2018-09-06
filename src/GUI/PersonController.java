@@ -288,6 +288,7 @@ public class PersonController {
 	@FXML
 	private void handleStandblattPerson() {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+		//showWaffenAuswahl();
 		if (selectedPerson != null) {
 			try {
 				datenbank.Datenbank.saveDataR(selectedPerson);

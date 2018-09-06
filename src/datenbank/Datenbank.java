@@ -16,10 +16,12 @@ import Person.Person;
 import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
+import Stammdaten.waffen;
 import converter.KategorieConverter;
 import converter.LimitenConverter;
 import converter.PersonConverter;
 import converter.ResultatConverter;
+import converter.WaffenConverter;
 
 public class Datenbank {
 
@@ -127,6 +129,32 @@ public class Datenbank {
 		return limite;
 	}
 
+	/**
+	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
+	 * 
+	 * @author Rudolf Broger
+	 * @throws Exception
+	 */
+
+	public static ArrayList<waffen> loadWaf() throws Exception {
+
+		ArrayList<waffen> waffen = new ArrayList<waffen>();
+
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+		Table table = db.getTable("tblWaffe");
+
+		for (Row row : table) {
+			WaffenConverter converter = new WaffenConverter();
+			waffen w = converter.dbToModelW(row);
+			waffen.add(w);
+
+		}
+
+		return waffen;
+	}
+
+	
 	public static void saveDataP(Person tempPerson) throws Exception {
 
 		Map<String, Object> map = PersonConverter.convertToMap(tempPerson);
@@ -161,7 +189,9 @@ public class Datenbank {
 	}
 
 	public static void saveDataR(Person selectedPerson) throws IOException {
-		Resultat r = new Resultat(0, 0, selectedPerson.getAdrId(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		Resultat r = new Resultat( selectedPerson.getAdrId());
+		
+		
 		Map<String, Object> map = ResultatConverter.convertToMap(r);
 		
 
