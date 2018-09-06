@@ -47,7 +47,6 @@ public class PersonConverter {
 		return p;
 	}
 
-
 	public static Map<String, Object> convertToMap(Person person) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("adrVorname", person.getAdrVorname());
@@ -55,7 +54,7 @@ public class PersonConverter {
 		map.put("adrNr", person.getAdrNr());
 		map.put("adrPLZ", person.getAdrPLZ());
 		map.put("adrWohnort", person.getAdrWohnort());
-		map.put("adrGebDat",  DateUtil.convertToMsEpoch(person.getGebDat()));
+		map.put("adrGebDat", DateUtil.convertToMsEpoch(person.getGebDat()));
 		map.put("adrAHV", person.getAdrAHV());
 		map.put("adrMil Einteilung", person.getAdrEint());
 		map.put("adrGrad", person.getAdrGrad());

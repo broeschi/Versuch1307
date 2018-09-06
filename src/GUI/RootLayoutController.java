@@ -124,7 +124,7 @@ public class RootLayoutController {
 	private void handleAlterKat() {
 		mainApp.showAlterKatDialog();
 	}
-	
+
 	@FXML
 	private void handleDrucker() {
 		mainApp.showDruckerEinstellungen();

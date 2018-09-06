@@ -154,7 +154,6 @@ public class Datenbank {
 		return waffen;
 	}
 
-	
 	public static void saveDataP(Person tempPerson) throws Exception {
 
 		Map<String, Object> map = PersonConverter.convertToMap(tempPerson);
@@ -189,20 +188,18 @@ public class Datenbank {
 	}
 
 	public static void saveDataR(Person selectedPerson) throws IOException {
-		Resultat r = new Resultat( selectedPerson.getAdrId());
-		
-		
+		Resultat r = new Resultat(selectedPerson.getAdrId());
+
 		Map<String, Object> map = ResultatConverter.convertToMap(r);
-		
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
 		Table table = db.getTable("tblResultateBU");
-				
+
 		table.addRowFromMap(map);
-		
+
 		db.close();
-		
+
 	}
 
 }

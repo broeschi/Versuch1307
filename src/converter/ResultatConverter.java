@@ -54,20 +54,17 @@ public class ResultatConverter {
 		map.put("resAdrref", resultat.getResAdrref().get());
 		map.put("ResWafRef_OP", new Integer(resultat.getResWfRefOp().get()));
 		map.put("resWafRef_FS", new Integer(resultat.getResWfRefFs().get()));
-		map.put("resAlter", 12);//resultat.getResAlter());
+		map.put("resAlter", 12);// resultat.getResAlter());
 		map.put("resLimref", 13);// resultat.getResLimRef());
-		map.put("resResultat_OP",  14);//resultat.getResOp());
-		map.put("resResultat_OP_Whg_1",  15);//resultat.getResWhg1());
-		map.put("resResultat_OP_Whg_2",  16);//resultat.getResWhg2());
-		map.put("resAnzahlNuller",  17);//resultat.getResAnzNullerOp());
-		map.put("resResultat_FS",  18);//resultat.getResFs());
-		map.put("resFigurentreffer_FS",  19);//resultat.getResFigFs());
+		map.put("resResultat_OP", 14);// resultat.getResOp());
+		map.put("resResultat_OP_Whg_1", 15);// resultat.getResWhg1());
+		map.put("resResultat_OP_Whg_2", 16);// resultat.getResWhg2());
+		map.put("resAnzahlNuller", 17);// resultat.getResAnzNullerOp());
+		map.put("resResultat_FS", 18);// resultat.getResFs());
+		map.put("resFigurentreffer_FS", 19);// resultat.getResFigFs());
 
-		
 		return map;
 	}
-
-	
 
 	public static Map<String, Object> convertToMap(Integer adrId) {
 		// TODO Auto-generated method stub

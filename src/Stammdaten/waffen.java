@@ -33,6 +33,5 @@ public class waffen {
 	public StringProperty getWafKat() {
 		return wafKat;
 	}
-	
 
 }

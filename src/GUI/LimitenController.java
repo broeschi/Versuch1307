@@ -47,7 +47,7 @@ public class LimitenController {
 	public LimitenController() {
 
 	}
-	
+
 	public void initialize() {
 		limitTable.setItems(limitData);
 	}

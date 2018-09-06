@@ -288,7 +288,7 @@ public class PersonController {
 	@FXML
 	private void handleStandblattPerson() {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
-		//showWaffenAuswahl();
+		mainApp.showWaffenDialog();
 		if (selectedPerson != null) {
 			try {
 				datenbank.Datenbank.saveDataR(selectedPerson);
@@ -296,9 +296,7 @@ public class PersonController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 
-			
 		} else {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainApp.getPrimaryStage());
@@ -308,14 +306,13 @@ public class PersonController {
 			alert.showAndWait();
 		}
 
-		}
+	}
+
 	@FXML
 	private void handleResultatPerson() {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
-			
 
-			
 		} else {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainApp.getPrimaryStage());
@@ -325,9 +322,7 @@ public class PersonController {
 			alert.showAndWait();
 		}
 
-		}
-
-	
+	}
 
 	public boolean isOkClicked() {
 		// TODO Auto-generated method stub

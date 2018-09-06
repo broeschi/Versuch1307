@@ -9,6 +9,7 @@ import GUI.RootLayoutController;
 import Person.Person;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
+import Stammdaten.waffen;
 import datenbank.Datenbank;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -211,22 +212,55 @@ public class MainApp extends Application {
 		}
 	}
 
+	// Liste für die Tabelle mit den Limiten
 	public ObservableList<limiten> limitData = FXCollections.observableArrayList();
 
+	// Liste mit Daten der Limitentabelle mit Daten befüllen
 	public ObservableList<limiten> getLimitData() {
 
 		return limitData;
 	}
 
+	// Liste für die Tabelle mit den Alterskategorien
 	public ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
 
+	// Liste mit Daten der Alterskategorien mit Daten befüllen
 	public ObservableList<altersKategorie> getKatData() {
 		return katData;
 	}
 
 	public void showDruckerEinstellungen() {
-		
-		
+
+	}
+
+	// Liste für die Auswahl in der Combobox mit den Waffenkategorien
+	public ObservableList<waffen> waffenData = FXCollections.observableArrayList();
+
+	// Waffenliste mit Daten befüllen
+	public ObservableList<waffen> getWaffenData() {
+		return waffenData;
+	}
+
+	/**
+	 * Zeigt den Auswahldialog mit den verfügbaren Waffen an
+	 */
+	public void showWaffenDialog() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/WaffenAuswahl.fxml"));
+			AnchorPane waffen = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(waffen);
+
+			// Give the controller access to the main app.
+			LimitenController controller = loader.getController();
+			controller.setMainApp(this);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

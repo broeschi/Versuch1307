@@ -3,8 +3,7 @@ package logik;
 import datenbank.Datenbank;
 
 public class Berechnungen {
-	
-		
+
 	public void alterSetzen() {
 		try {
 			Datenbank.loadKat();
@@ -12,11 +11,9 @@ public class Berechnungen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+
 	}
-	
+
 	public void alterKategorieSetzen() {
 		try {
 			Datenbank.loadLim();
@@ -24,15 +21,14 @@ public class Berechnungen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-				
+
 	}
-	
+
 	public void schiesspflichtSetzen() {
 		alterSetzen();
-		
-		
+
 	}
-	
+
 	public void schiesspflichtErfuellt() {
 		alterSetzen();
 		try {
@@ -41,10 +37,9 @@ public class Berechnungen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-		
+
 	}
-	
+
 	public void karteOpErreicht() {
 		alterSetzen();
 		try {
@@ -55,7 +50,7 @@ public class Berechnungen {
 		}
 
 	}
-	
+
 	public void karteFsErreicht() {
 		alterSetzen();
 		try {
@@ -64,8 +59,7 @@ public class Berechnungen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	}
 
+	}
 
 }

@@ -49,12 +49,12 @@ public class Resultat {
 		this.resAnzNullerW2Op = new SimpleStringProperty();
 		this.resFs = new SimpleStringProperty();
 		this.resFigFs = new SimpleStringProperty();
-		}
+	}
 
-	
 	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs,
-			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2, Integer resAnzNullerOp,
-			Integer resAnzNullerW1Op, Integer resAnzNullerW2Op, Integer resFs, Integer resFigFs) {
+			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2,
+			Integer resAnzNullerOp, Integer resAnzNullerW1Op, Integer resAnzNullerW2Op, Integer resFs,
+			Integer resFigFs) {
 		this.res_id = new SimpleIntegerProperty(res_id);
 		this.resJahr = new SimpleIntegerProperty(resJahr);
 		this.resAdrref = new SimpleIntegerProperty(resAdrref);
@@ -72,7 +72,6 @@ public class Resultat {
 		this.resFigFs = createStringProperty(resFigFs);
 
 	}
-
 
 	private SimpleStringProperty createStringProperty(Integer value) {
 		if (value == null) {
@@ -141,6 +140,7 @@ public class Resultat {
 	public StringProperty resFigFsProperty() {
 		return resFigFs;
 	}
+
 	public StringProperty getResWfRefOp() {
 		return resWfRefOp;
 	}

@@ -11,7 +11,7 @@ import Stammdaten.waffen;
  * @author Ruedi Broger
  */
 public class WaffenConverter {
-	
+
 	/**
 	 * Daten aus Access transformieren
 	 * 
