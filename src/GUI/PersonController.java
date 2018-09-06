@@ -244,9 +244,9 @@ public class PersonController {
 		Person tempPerson = new Person();
 		boolean okClicked = mainApp.showPersonMutierenDialog(tempPerson);
 		if (okClicked) {
-			mainApp.getPersonData().add(tempPerson);
+			personData.add(tempPerson);
 			try {
-				datenbank.Datenbank.saveDataP();
+				datenbank.Datenbank.saveDataP(tempPerson);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -264,6 +264,12 @@ public class PersonController {
 		if (selectedPerson != null) {
 			boolean okClicked = mainApp.showPersonMutierenDialog(selectedPerson);
 			if (okClicked) {
+				try {
+					datenbank.Datenbank.updateDataP(selectedPerson);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				showPersonDetails(selectedPerson);
 			}
 
@@ -277,6 +283,45 @@ public class PersonController {
 
 			alert.showAndWait();
 		}
+	}
+
+	@FXML
+	private void handleStandblattPerson() {
+		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+		mainApp.showWaffenDialog();
+		if (selectedPerson != null) {
+			try {
+				datenbank.Datenbank.saveDataR(selectedPerson);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		} else {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("Keine Auswahl");
+			alert.setHeaderText("keine Person wurde ausgewählt");
+			alert.setContentText("Bitte gewünschte Person auswählren.");
+			alert.showAndWait();
+		}
+
+	}
+
+	@FXML
+	private void handleResultatPerson() {
+		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+		if (selectedPerson != null) {
+
+		} else {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("Keine Auswahl");
+			alert.setHeaderText("keine Person wurde ausgewählt");
+			alert.setContentText("Bitte gewünschte Person auswählren.");
+			alert.showAndWait();
+		}
+
 	}
 
 	public boolean isOkClicked() {

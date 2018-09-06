@@ -7,17 +7,21 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import com.healthmarketscience.jackcess.*;
 import Person.Person;
 import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
+import Stammdaten.waffen;
 import converter.KategorieConverter;
 import converter.LimitenConverter;
 import converter.PersonConverter;
 import converter.ResultatConverter;
+import converter.WaffenConverter;
 
 public class Datenbank {
 
@@ -125,16 +129,40 @@ public class Datenbank {
 		return limite;
 	}
 
-	public static void saveDataP() throws Exception {
+	/**
+	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
+	 * 
+	 * @author Rudolf Broger
+	 * @throws Exception
+	 */
 
-		ArrayList<Person> personen = new ArrayList<Person>();
+	public static ArrayList<waffen> loadWaf() throws Exception {
+
+		ArrayList<waffen> waffen = new ArrayList<waffen>();
+
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+		Table table = db.getTable("tblWaffe");
+
+		for (Row row : table) {
+			WaffenConverter converter = new WaffenConverter();
+			waffen w = converter.dbToModelW(row);
+			waffen.add(w);
+
+		}
+
+		return waffen;
+	}
+
+	public static void saveDataP(Person tempPerson) throws Exception {
+
+		Map<String, Object> map = PersonConverter.convertToMap(tempPerson);
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
 		Table table = db.getTable("tblAdressen");
-		PersonConverter converter = new PersonConverter();
-		Person p = converter.modelToDbP();
-		table.addRow(p);
+		table.addRowFromMap(map);
+		db.close();
 
 	}
 
@@ -142,4 +170,36 @@ public class Datenbank {
 
 		return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be2.accdb";
 	}
+
+	public static void updateDataP(Person selectedPerson) throws IOException {
+		Map<String, Object> map = PersonConverter.convertToMap(selectedPerson);
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+		Table table = db.getTable("tblAdressen");
+		Row row = CursorBuilder.findRowByPrimaryKey(table, selectedPerson.getAdrId());
+		if (row != null) {
+			row.putAll(map);
+			table.updateRow(row);
+		} else {
+			System.out.println("Es wurde kein Datensatz gefunden.");
+		}
+
+		db.close();
+	}
+
+	public static void saveDataR(Person selectedPerson) throws IOException {
+		Resultat r = new Resultat(selectedPerson.getAdrId());
+
+		Map<String, Object> map = ResultatConverter.convertToMap(r);
+
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+		Table table = db.getTable("tblResultateBU");
+
+		table.addRowFromMap(map);
+
+		db.close();
+
+	}
+
 }

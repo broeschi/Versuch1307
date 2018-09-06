@@ -48,6 +48,10 @@ public class LimitenController {
 
 	}
 
+	public void initialize() {
+		limitTable.setItems(limitData);
+	}
+
 	public ObservableList<limiten> getLimitData() {
 		return limitData;
 	}

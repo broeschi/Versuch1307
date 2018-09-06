@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="200.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="200.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.KategorieController">
    <children>
       <BorderPane layoutX="-120.0" layoutY="-106.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <TableView prefHeight="159.0" prefWidth="375.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="75.0" text="Kategorie" />
-                <TableColumn prefWidth="75.0" text="Abkürzung" />
-                  <TableColumn prefWidth="75.0" text="min. Alter" />
-                  <TableColumn prefWidth="75.0" text="max. Alter" />
-                  <TableColumn prefWidth="75.0" text="Sotierung" />
+                <TableColumn fx:id="KatNameLabel" editable="false" prefWidth="75.0" text="Kategorie" />
+                <TableColumn fx:id="AlterskategorieLabel" editable="false" prefWidth="75.0" text="Abkürzung" />
+                  <TableColumn fx:id="MindestalterLabel" editable="false" prefWidth="75.0" text="min. Alter" />
+                  <TableColumn fx:id="HoechstalterLabel" editable="false" prefWidth="75.0" text="max. Alter" />
+                  <TableColumn fx:id="SortierungLabel" editable="false" prefWidth="75.0" text="Sotierung" visible="false" />
               </columns>
             </TableView>
          </center>

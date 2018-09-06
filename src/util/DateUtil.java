@@ -70,4 +70,9 @@ public class DateUtil {
 		return dateToConvert.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 	}
 
+	public static Long convertToMsEpoch(LocalDate l) {
+		ZoneId zoneId = ZoneId.systemDefault();
+		return l.atStartOfDay(zoneId).toEpochSecond();
+	}
+
 }
