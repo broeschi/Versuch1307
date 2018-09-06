@@ -51,7 +51,7 @@
             <Label text="Einteilung" GridPane.rowIndex="9" />
          </children>
       </GridPane>
-      <ButtonBar layoutX="100.0" layoutY="160.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0">
+      <ButtonBar layoutX="100.0" layoutY="160.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
         <buttons>
           <Button mnemonicParsing="false" onAction="#handleOk" text="OK" />
             <Button mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen" />

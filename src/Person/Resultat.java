@@ -12,7 +12,12 @@ import javafx.beans.property.StringProperty;
  *
  */
 public class Resultat {
-	private final IntegerProperty res_id;
+	private IntegerProperty res_id;
+
+	public void setRes_id(IntegerProperty res_id) {
+		this.res_id = res_id;
+	}
+
 	private final IntegerProperty resJahr;
 	private final IntegerProperty resAdrref;
 	private final StringProperty resWfRefOp;
@@ -22,13 +27,15 @@ public class Resultat {
 	private final StringProperty resOp;
 	private final StringProperty resWhg1;
 	private final StringProperty resWhg2;
-	private final StringProperty resAnzNuller;
+	private final StringProperty resAnzNullerOp;
+	private final StringProperty resAnzNullerW1Op;
+	private final StringProperty resAnzNullerW2Op;
 	private final StringProperty resFs;
 	private final StringProperty resFigFs;
 
 	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs,
-			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2, Integer resAnzNuller,
-			Integer resFs, Integer resFigFs) {
+			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2, Integer resAnzNullerOp,
+			Integer resAnzNullerW1Op, Integer resAnzNullerW2Op, Integer resFs, Integer resFigFs) {
 		this.res_id = new SimpleIntegerProperty(res_id);
 		this.resJahr = new SimpleIntegerProperty(resJahr);
 		this.resAdrref = new SimpleIntegerProperty(resAdrref);
@@ -39,7 +46,9 @@ public class Resultat {
 		this.resOp = createStringProperty(resOp);
 		this.resWhg1 = createStringProperty(resWhg1);
 		this.resWhg2 = createStringProperty(resWhg2);
-		this.resAnzNuller = createStringProperty(resAnzNuller);
+		this.resAnzNullerOp = createStringProperty(resAnzNullerOp);
+		this.resAnzNullerW1Op = createStringProperty(resAnzNullerW1Op);
+		this.resAnzNullerW2Op = createStringProperty(resAnzNullerW2Op);
 		this.resFs = createStringProperty(resFs);
 		this.resFigFs = createStringProperty(resFigFs);
 
@@ -102,7 +111,7 @@ public class Resultat {
 	}
 
 	public StringProperty resAnzNullerProperty() {
-		return resAnzNuller;
+		return resAnzNullerOp;
 	}
 
 	public StringProperty resFsProperty() {
@@ -110,6 +119,53 @@ public class Resultat {
 	}
 
 	public StringProperty resFigFsProperty() {
+		return resFigFs;
+	}
+	public StringProperty getResWfRefOp() {
+		return resWfRefOp;
+	}
+
+	public StringProperty getResWfRefFs() {
+		return resWfRefFs;
+	}
+
+	public StringProperty getResAlter() {
+		return resAlter;
+	}
+
+	public StringProperty getResLimRef() {
+		return resLimRef;
+	}
+
+	public StringProperty getResOp() {
+		return resOp;
+	}
+
+	public StringProperty getResWhg1() {
+		return resWhg1;
+	}
+
+	public StringProperty getResWhg2() {
+		return resWhg2;
+	}
+
+	public StringProperty getResAnzNullerOp() {
+		return resAnzNullerOp;
+	}
+
+	public StringProperty getResAnzNullerW1Op() {
+		return resAnzNullerW1Op;
+	}
+
+	public StringProperty getResAnzNullerW2Op() {
+		return resAnzNullerW2Op;
+	}
+
+	public StringProperty getResFs() {
+		return resFs;
+	}
+
+	public StringProperty getResFigFs() {
 		return resFigFs;
 	}
 

@@ -21,7 +21,7 @@ public class Person {
 	private final StringProperty adrNr;
 	private final IntegerProperty adrPLZ;
 	private final StringProperty adrWohnort;
-	private final ObjectProperty<LocalDate> adrGebDat;
+	public final ObjectProperty<LocalDate> adrGebDat;
 	private final StringProperty adrAHV;
 	private final StringProperty adrMilEinteilung;
 	private final StringProperty adrGrad;
@@ -109,7 +109,7 @@ public class Person {
 		this.adrNr.set(adrNr);
 	}
 
-	public long getAdrId() {
+	public Integer getAdrId() {
 		return adrId.get();
 	}
 

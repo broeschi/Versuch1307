@@ -90,10 +90,10 @@ public class MainApp extends Application {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("/GUI/Limiten.fxml"));
-			AnchorPane personOverview = (AnchorPane) loader.load();
+			AnchorPane limiten = (AnchorPane) loader.load();
 
 			// Set person overview into the center of root layout.
-			rootLayout.setCenter(personOverview);
+			rootLayout.setCenter(limiten);
 
 			// Give the controller access to the main app.
 			LimitenController controller = loader.getController();
@@ -222,6 +222,11 @@ public class MainApp extends Application {
 
 	public ObservableList<altersKategorie> getKatData() {
 		return katData;
+	}
+
+	public void showDruckerEinstellungen() {
+		
+		
 	}
 
 }

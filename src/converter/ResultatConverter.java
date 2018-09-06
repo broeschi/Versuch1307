@@ -1,7 +1,11 @@
 package converter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.healthmarketscience.jackcess.Row;
 
+import Person.Person;
 import Person.Resultat;
 
 /**
@@ -32,13 +36,42 @@ public class ResultatConverter {
 		Integer resOp = (Integer) row.get("resResultat_OP");
 		Integer resWhg1 = (Integer) row.get("resResultat_OP_Whg_1");
 		Integer resWhg2 = (Integer) row.get("resResultat_OP_Whg_2");
-		Integer resAnzNuller = (Integer) row.get("resAnzahlNuller");
+		Integer resAnzNullerOp = (Integer) row.get("resAnzahlNuller");
+		Integer resAnzNullerWhg1 = (Integer) row.get("resAnzahlNuller");
+		Integer resAnzNullerWhg2 = (Integer) row.get("resAnzahlNuller");
 		Integer resFs = (Integer) row.get("resResultat_FS");
 		Integer resFigFs = (Integer) row.get("resFigurentreffer_FS");
 
 		Resultat r = new Resultat(resId, jahr, resAdrref, resWfRefOp, resWfRefFs, resAlter, resLimRef, resOp, resWhg1,
-				resWhg2, resAnzNuller, resFs, resFigFs);
+				resWhg2, resAnzNullerOp, resAnzNullerWhg1, resAnzNullerWhg2, resFs, resFigFs);
 		return r;
+	}
+
+	public static Map<String, Object> convertToMap(Resultat resultat) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("res_id", resultat.getRes_id().get());
+		map.put("resJahr", resultat.getResJahr());
+		map.put("resAdrref", resultat.getResAdrref().get());
+		map.put("ResWafRef_OP", new Integer(resultat.getResWfRefOp().get()));
+		map.put("resWafRef_FS", new Integer(resultat.getResWfRefFs().get()));
+		map.put("resAlter", 12);//resultat.getResAlter());
+		map.put("resLimref", 13);// resultat.getResLimRef());
+		map.put("resResultat_OP",  14);//resultat.getResOp());
+		map.put("resResultat_OP_Whg_1",  15);//resultat.getResWhg1());
+		map.put("resResultat_OP_Whg_2",  16);//resultat.getResWhg2());
+		map.put("resAnzahlNuller",  17);//resultat.getResAnzNullerOp());
+		map.put("resResultat_FS",  18);//resultat.getResFs());
+		map.put("resFigurentreffer_FS",  19);//resultat.getResFigFs());
+
+		
+		return map;
+	}
+
+	
+
+	public static Map<String, Object> convertToMap(Integer adrId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

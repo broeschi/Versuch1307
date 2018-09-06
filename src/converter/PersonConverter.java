@@ -2,6 +2,8 @@ package converter;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.healthmarketscience.jackcess.Row;
 
@@ -45,21 +47,20 @@ public class PersonConverter {
 		return p;
 	}
 
-	public Person modelToDbP() {
-		String name = new String("adrName");
-		String vorname = new String("adrVorname");
-		String strasse = new String("adrStrasse");
-		// LocalDate gebDat = new LocalDate("adrGebDat");
-		String adrNr = new String("adrNr");
-		Integer adrPLZ = new Integer("adrPLZ");
-		String ort = new String("adrWohnort");
-		String ahv = new String("adrAHV");
-		String eint = new String("adrMilEinteilung");
-		String grad = new String("adrGrad");
 
-		Person p = new Person(null, name, vorname, strasse, null, adrNr, (int) adrPLZ, ort, ahv, eint, grad);
-		return p;
-
+	public static Map<String, Object> convertToMap(Person person) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("adrVorname", person.getAdrVorname());
+		map.put("adrStrasse", person.getAdrStrasse());
+		map.put("adrNr", person.getAdrNr());
+		map.put("adrPLZ", person.getAdrPLZ());
+		map.put("adrWohnort", person.getAdrWohnort());
+		map.put("adrGebDat",  DateUtil.convertToMsEpoch(person.getGebDat()));
+		map.put("adrAHV", person.getAdrAHV());
+		map.put("adrMil Einteilung", person.getAdrEint());
+		map.put("adrGrad", person.getAdrGrad());
+		map.put("adrId", person.getAdrId());
+		return map;
 	}
 
 }
