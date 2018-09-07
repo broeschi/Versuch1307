@@ -2,15 +2,14 @@ package GUI;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import util.DateUtil;
-import Person.Person;
-import Stammdaten.waffen;
+import Stammdaten.Waffen;
 import Start.MainApp;
 
 /**
@@ -21,17 +20,19 @@ import Start.MainApp;
  */
 public class WaffenAuswahlController {
 	@FXML
-	private TableView<waffen> waffenTable;
+	private TableView<Waffen> waffenTable;
 
 	@FXML
-	private ComboBox<String> waffenComboOp;
+	private ChoiceBox<String> waffenChoiceOp;
 
 	@FXML
-	private ComboBox<String> waffenComboFs;
+	private ChoiceBox<String> waffenChoiceFs;
 
-	private ObservableList<waffen> waffenData = FXCollections.observableArrayList();
+	private ObservableList<Waffen> waffenData = FXCollections.observableArrayList();
+	private ChoiceBox<String> waffenName = new ChoiceBox<String>();
 
 	private Stage dialogStage;
+	private ObservableList<Waffen> waffe;
 	private boolean okClicked = false;
 
 	// referentziert auf die MainApp
@@ -42,15 +43,23 @@ public class WaffenAuswahlController {
 	}
 
 	public void initialize() {
-		waffenTable.setItems(waffenData);
 
 	}
+	/**
+	 * Sets the stage of this dialog.
+	 * 
+	 * @param dialogStage
+	 */
+	public void setDialogStage(Stage dialogStage) {
+		this.dialogStage = dialogStage;
+	}
 
-	public ObservableList<waffen> getWaffenData() {
+
+	public ObservableList<Waffen> getWaffenData() {
 		return waffenData;
 	}
 
-	public void setMainApp(MainApp manApp) {
+	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 		// Observable Liste hinzufügen
 		waffenData.addAll(mainApp.getWaffenData());
@@ -70,5 +79,23 @@ public class WaffenAuswahlController {
 	private void handleCancel() {
 		dialogStage.close();
 	}
+	
+	@FXML
+	private void gugus(ActionEvent event) {
+		ChoiceBox<String> waffenName = new ChoiceBox<String>();
+		ObservableList<String> waffenData = FXCollections.observableArrayList();
+		waffenName.setItems(waffenData);
+	}
+
+	public void setWaffen(ObservableList<Waffen> waffe) {
+		this.waffe = waffe;
+		
+	}
+
+	public boolean isOkClicked() {
+		return okClicked;
+	}
+
+
 
 }

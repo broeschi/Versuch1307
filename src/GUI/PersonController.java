@@ -32,7 +32,6 @@ import Start.MainApp;
  * @author Rudolf Broger
  *
  */
-
 public class PersonController {
 
 	@FXML
@@ -122,7 +121,6 @@ public class PersonController {
 	 */
 	public PersonController() {
 
-		;
 	}
 
 	/**
@@ -312,6 +310,14 @@ public class PersonController {
 	private void handleResultatPerson() {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
+			mainApp.showReslutatView(selectedPerson);
+			Resultat selectedResultat = resultTable.getSelectionModel().getSelectedItem();
+			try {
+				datenbank.Datenbank.updateDataR(selectedResultat);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		} else {
 			Alert alert = new Alert(AlertType.WARNING);
@@ -325,7 +331,6 @@ public class PersonController {
 	}
 
 	public boolean isOkClicked() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

@@ -16,7 +16,7 @@ import Person.Person;
 import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
-import Stammdaten.waffen;
+import Stammdaten.Waffen;
 import converter.KategorieConverter;
 import converter.LimitenConverter;
 import converter.PersonConverter;
@@ -136,9 +136,9 @@ public class Datenbank {
 	 * @throws Exception
 	 */
 
-	public static ArrayList<waffen> loadWaf() throws Exception {
+	public static ArrayList<Waffen> loadWaf() throws Exception {
 
-		ArrayList<waffen> waffen = new ArrayList<waffen>();
+		ArrayList<Waffen> waffen = new ArrayList<Waffen>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
@@ -146,7 +146,7 @@ public class Datenbank {
 
 		for (Row row : table) {
 			WaffenConverter converter = new WaffenConverter();
-			waffen w = converter.dbToModelW(row);
+			Waffen w = converter.dbToModelW(row);
 			waffen.add(w);
 
 		}
@@ -200,6 +200,24 @@ public class Datenbank {
 
 		db.close();
 
+	}
+
+	public static void updateDataR(Resultat selectedResultat) throws IOException {
+		
+		Map<String, Object> map = ResultatConverter.convertToMap(selectedResultat);
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+		Table table = db.getTable("tblResultateBU");
+		
+		Row row = CursorBuilder.findRowByPrimaryKey(table, selectedResultat.getRes_id());
+		if (row != null) {
+			row.putAll(map);
+			table.updateRow(row);
+		} else {
+			System.out.println("Es wurde kein Datensatz gefunden.");
+		}
+
+		db.close();
+		
 	}
 
 }

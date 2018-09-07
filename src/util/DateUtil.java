@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Helper functions for handling dates.
@@ -33,6 +35,7 @@ public class DateUtil {
 		}
 		return DATE_FORMATTER.format(date);
 	}
+	
 
 	/**
 	 * Converts a String in the format of the defined {@link DateUtil#DATE_PATTERN}
@@ -73,6 +76,13 @@ public class DateUtil {
 	public static Long convertToMsEpoch(LocalDate l) {
 		ZoneId zoneId = ZoneId.systemDefault();
 		return l.atStartOfDay(zoneId).toEpochSecond();
+	}
+	
+	public static int getYear() {
+		Calendar date = new GregorianCalendar();
+		int year = date.get(Calendar.YEAR);
+		return year;
+		
 	}
 
 }

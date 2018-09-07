@@ -5,11 +5,14 @@ import java.io.IOException;
 import GUI.LimitenController;
 import GUI.PersonController;
 import GUI.PersonMutierenController;
+import GUI.ResultatController;
 import GUI.RootLayoutController;
+import GUI.WaffenAuswahlController;
 import Person.Person;
+import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
-import Stammdaten.waffen;
+import Stammdaten.Waffen;
 import datenbank.Datenbank;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -234,33 +237,97 @@ public class MainApp extends Application {
 	}
 
 	// Liste für die Auswahl in der Combobox mit den Waffenkategorien
-	public ObservableList<waffen> waffenData = FXCollections.observableArrayList();
+	public ObservableList<Waffen> waffenData = FXCollections.observableArrayList();
 
 	// Waffenliste mit Daten befüllen
-	public ObservableList<waffen> getWaffenData() {
+	public ObservableList<Waffen> getWaffenData() {
+		try {
+			datenbank.Datenbank.loadWaf();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 		return waffenData;
 	}
 
 	/**
 	 * Zeigt den Auswahldialog mit den verfügbaren Waffen an
 	 */
-	public void showWaffenDialog() {
+	public boolean showWaffenDialog() {
 		try {
-			// Load person overview.
+			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("/GUI/WaffenAuswahl.fxml"));
-			AnchorPane waffen = (AnchorPane) loader.load();
+			AnchorPane page = (AnchorPane) loader.load();
 
-			// Set person overview into the center of root layout.
-			rootLayout.setCenter(waffen);
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Waffe wählen");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
 
-			// Give the controller access to the main app.
-			LimitenController controller = loader.getController();
-			controller.setMainApp(this);
+			// Set the person into the controller.
+			WaffenAuswahlController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setWaffen(waffenData);
 
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isOkClicked();
 		} catch (IOException e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
+
+	public Resultat getResultData() {
+		
+		return null;
+	}
+	// Liste für die Tabelle mit den allen Resultaten
+	public ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
+
+	// Liste mit Resultatdaten befüllen
+	public ObservableList<Resultat> getResData() {
+		return resultatData;
+	}
+
+	public boolean showReslutatView(Person selectedPerson) {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/ResultatForm.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Resultat eingeben und speichern");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the person into the controller.
+			ResultatController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setResultat(resultatData);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isOkClicked();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		
+		
+	}
+	
+
 
 }
