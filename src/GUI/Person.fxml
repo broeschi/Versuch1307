@@ -55,8 +55,11 @@
                     <columns>
                       <TableColumn fx:id="JahrColumn" editable="false" prefWidth="75.0" sortType="DESCENDING" text="Jahr" />
                       <TableColumn fx:id="OpColumn" editable="false" prefWidth="75.0" text="OP" />
+                        <TableColumn fx:id="OpNullerColumn" prefWidth="75.0" text="Anz Nuller" />
                         <TableColumn fx:id="Whg1Column" editable="false" prefWidth="75.0" text="Wiederholung 1" />
+                        <TableColumn fx:id="OpWhg1NullerColumn" prefWidth="75.0" text="Whg1 Nuller" />
                         <TableColumn fx:id="Whg2Column" editable="false" prefWidth="75.0" text="Wiederholung 2" />
+                        <TableColumn fx:id="OpWhg2NullerColumn" prefWidth="75.0" text="Whg2 Nuller" />
                         <TableColumn fx:id="FsColumn" editable="false" prefWidth="75.0" text="FS" />
                         <TableColumn fx:id="FigColumn" editable="false" prefWidth="75.0" text="Figurentreffer" />
                     </columns>
