@@ -3,7 +3,7 @@ package converter;
 import com.healthmarketscience.jackcess.Row;
 
 import Person.Resultat;
-import Stammdaten.waffen;
+import Stammdaten.Waffen;
 
 /**
  * Klasse zur Konvertierung der Waffenkategorieren zwischen DB und Javamodell
@@ -20,14 +20,14 @@ public class WaffenConverter {
 	 *            auslesen der Tabellenzeilen
 	 * @return Liste von Waffen aus der DB
 	 */
-	public waffen dbToModelW(Row row) {
+	public Waffen dbToModelW(Row row) {
 
 		Integer waf_id = (Integer) row.get("waf_id");
 		String wafName = (String) row.get("wafWaffe");
 		String wafAbk = (String) row.get("wafWaffe_Abk");
 		String wafKat = (String) row.get("wafWaffen_Kat");
 
-		waffen w = new waffen(waf_id, wafName, wafAbk, wafKat);
+		Waffen w = new Waffen(waf_id, wafName, wafAbk, wafKat);
 		return w;
 
 	}

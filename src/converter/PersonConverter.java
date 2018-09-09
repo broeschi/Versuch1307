@@ -15,7 +15,6 @@ import util.DateUtil;
  * 
  * @author Ruedi Broger
  */
-
 public class PersonConverter {
 	/**
 	 * Daten aus Access transformieren
@@ -27,7 +26,6 @@ public class PersonConverter {
 	 *         Strassennummer, PLZ, Wohnort, AHV-Nr., Militärische Einteilung,
 	 *         Militärischer Grad
 	 */
-
 	public Person dbToModelP(Row row) {
 
 		Integer adrId = (Integer) row.get("adrId");
@@ -47,6 +45,13 @@ public class PersonConverter {
 		return p;
 	}
 
+	/**
+	 * Persönliche Daten aus GUI in das Datenbankformat konvertieren
+	 * 
+	 * @author Rudolf Broger
+	 * @param person
+	 * @return
+	 */
 	public static Map<String, Object> convertToMap(Person person) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("adrVorname", person.getAdrVorname());

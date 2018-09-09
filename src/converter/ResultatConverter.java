@@ -13,7 +13,6 @@ import Person.Resultat;
  * 
  * @author Ruedi Broger
  */
-
 public class ResultatConverter {
 	/**
 	 * Daten aus Access transformieren
@@ -23,7 +22,6 @@ public class ResultatConverter {
 	 *            auslesen der Tabellenzeilen
 	 * @return persönliche Daten aus der DB
 	 */
-
 	public Resultat dbToModelR(Row row) {
 
 		Integer resId = (Integer) row.get("res_id");
@@ -47,21 +45,53 @@ public class ResultatConverter {
 		return r;
 	}
 
+	/**
+	 * Resultate Daten aus GUI in das Datenbankformat konvertieren
+	 * 
+	 * @author Rudolf Broger
+	 * @param Resultat
+	 * @return
+	 */
+	public static Map<String, Object> convertToMap(Resultat resultat, Integer a) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("res_id", resultat.getRes_id().get());
+		map.put("resJahr", util.DateUtil.getYear());
+		// map.put("resJahr", resultat.getResJahr());
+		map.put("resAdrref", resultat.getResAdrref().get());
+		map.put("ResWafRef_OP", resultat.getResWfRefOp().get());
+		map.put("resWafRef_FS", resultat.getResWfRefFs().get());
+		map.put("resAlter", a);
+		map.put("resLimref", resultat.getResLimRef().get());
+		map.put("resResultat_OP", resultat.getResOp().get());
+		map.put("resResultat_OP_Whg_1", resultat.getResWhg1().get());
+		map.put("resResultat_OP_Whg_2", resultat.getResWhg2().get());
+		map.put("resAnzahlNuller", resultat.getResAnzNullerOp().get());
+		map.put("resAnzahlNuller_Whg_1", resultat.getResAnzNullerOp().get());
+		map.put("resAnzahlNuller_Whg_2", resultat.getResAnzNullerOp().get());
+		map.put("resResultat_FS", resultat.getResFs().get());
+		map.put("resFigurentreffer_FS", resultat.getResFigFs().get());
+
+		return map;
+	}
+
 	public static Map<String, Object> convertToMap(Resultat resultat) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("res_id", resultat.getRes_id().get());
-		map.put("resJahr", resultat.getResJahr());
+		map.put("resJahr", util.DateUtil.getYear());
+		// map.put("resJahr", resultat.getResJahr());
 		map.put("resAdrref", resultat.getResAdrref().get());
-		map.put("ResWafRef_OP", new Integer(resultat.getResWfRefOp().get()));
-		map.put("resWafRef_FS", new Integer(resultat.getResWfRefFs().get()));
-		map.put("resAlter", 12);// resultat.getResAlter());
-		map.put("resLimref", 13);// resultat.getResLimRef());
-		map.put("resResultat_OP", 14);// resultat.getResOp());
-		map.put("resResultat_OP_Whg_1", 15);// resultat.getResWhg1());
-		map.put("resResultat_OP_Whg_2", 16);// resultat.getResWhg2());
-		map.put("resAnzahlNuller", 17);// resultat.getResAnzNullerOp());
-		map.put("resResultat_FS", 18);// resultat.getResFs());
-		map.put("resFigurentreffer_FS", 19);// resultat.getResFigFs());
+		map.put("ResWafRef_OP", resultat.getResWfRefOp().get());
+		map.put("resWafRef_FS", resultat.getResWfRefFs().get());
+		map.put("resAlter", resultat.getResAlter().get());
+		map.put("resLimref", resultat.getResLimRef().get());
+		map.put("resResultat_OP", resultat.getResOp().get());
+		map.put("resResultat_OP_Whg_1", resultat.getResWhg1().get());
+		map.put("resResultat_OP_Whg_2", resultat.getResWhg2().get());
+		map.put("resAnzahlNuller", resultat.getResAnzNullerOp().get());
+		map.put("resAnzahlNuller_Whg_1", resultat.getResAnzNullerOp().get());
+		map.put("resAnzahlNuller_Whg_2", resultat.getResAnzNullerOp().get());
+		map.put("resResultat_FS", resultat.getResFs().get());
+		map.put("resFigurentreffer_FS", resultat.getResFigFs().get());
 
 		return map;
 	}

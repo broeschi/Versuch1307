@@ -22,13 +22,12 @@ public class KategorieConverter {
 	 *            auslesen der Tabellenzeilen
 	 * @return Alterskategorien aus der DB
 	 */
-
 	public altersKategorie dbToModelK(Row row) {
 
 		Integer katId = (Integer) row.get("kat_id");
-		String katAlterKat = (String) row.get("katAltersKat");
+		String katAlterKat = (String) row.get("katAlterskat");
 		String katAlterName = (String) row.get("katKat_Name");
-		Integer katAlterMin = (Integer) row.get("katALterMin");
+		Integer katAlterMin = (Integer) row.get("katAlterMin");
 		Integer katAlterMax = (Integer) row.get("katAlterMax");
 		Integer sort = (Integer) row.get("katSortierung");
 

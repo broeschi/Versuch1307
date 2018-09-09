@@ -1,10 +1,13 @@
 package util;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Helper functions for handling dates.
@@ -63,6 +66,12 @@ public class DateUtil {
 		return DateUtil.parse(dateString) != null;
 	}
 
+	/**
+	 * Konvertiert das LocalDate in einen Instanzwert
+	 * 
+	 * @param dateToConvert
+	 * @return
+	 */
 	public static LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
 		if (dateToConvert == null) {
 			return null;
@@ -70,9 +79,38 @@ public class DateUtil {
 		return dateToConvert.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 	}
 
+	/**
+	 * kovertiert das Datum in einen Sekundenwert
+	 * 
+	 * @param l
+	 * @return
+	 */
 	public static Long convertToMsEpoch(LocalDate l) {
 		ZoneId zoneId = ZoneId.systemDefault();
 		return l.atStartOfDay(zoneId).toEpochSecond();
+	}
+
+	/**
+	 * Ermittelt das das aktuelle Jahr, basierend auf dem Systemdatumg
+	 * 
+	 * @return
+	 */
+	public static int getYear() {
+		Calendar date = new GregorianCalendar();
+		int year = date.get(Calendar.YEAR);
+		return year;
+
+	}
+
+	/**
+	 * ermittelt das Geburtsjahr der Person auf Grund des Erfassten Geburtsdatums
+	 * 
+	 * @param gebJahr
+	 * @return
+	 */
+	public static int getBirthYear(LocalDate gebJahr) {
+		int year = gebJahr.getYear();
+		return year;
 	}
 
 }

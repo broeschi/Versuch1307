@@ -1,15 +1,19 @@
 package Start;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import GUI.LimitenController;
 import GUI.PersonController;
 import GUI.PersonMutierenController;
+import GUI.ResultatController;
 import GUI.RootLayoutController;
+import GUI.WaffenAuswahlController;
 import Person.Person;
+import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
-import Stammdaten.waffen;
+import Stammdaten.Waffen;
 import datenbank.Datenbank;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -106,7 +110,7 @@ public class MainApp extends Application {
 	}
 
 	/**
-	 * Zeigt Mapping des Alters der Teilnehmer auf die Alterskategorieb
+	 * Zeigt das Mapping des Alters der Teilnehmer auf die Alterskategorien
 	 */
 	public void showAlterKatDialog() {
 		try {
@@ -141,7 +145,6 @@ public class MainApp extends Application {
 	 * 
 	 * @param args
 	 */
-
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -151,7 +154,6 @@ public class MainApp extends Application {
 	 * 
 	 * @return
 	 */
-
 	public ObservableList<Person> getPersonData() {
 
 		return personData;
@@ -160,7 +162,6 @@ public class MainApp extends Application {
 	/**
 	 * The data as an observable list of Persons.
 	 */
-
 	public ObservableList<Person> personData = FXCollections.observableArrayList();
 
 	/**
@@ -170,6 +171,9 @@ public class MainApp extends Application {
 	 */
 	public MainApp() throws Exception {
 		personData.addAll(datenbank.Datenbank.loadData());
+		katData.addAll(datenbank.Datenbank.loadKat());
+		limitData.addAll(datenbank.Datenbank.loadLim());
+		waffenData.addAll(datenbank.Datenbank.loadWaf());
 
 	}
 
@@ -222,10 +226,15 @@ public class MainApp extends Application {
 	}
 
 	// Liste für die Tabelle mit den Alterskategorien
-	public ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+	public static ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
 
 	// Liste mit Daten der Alterskategorien mit Daten befüllen
-	public ObservableList<altersKategorie> getKatData() {
+	public static ObservableList<altersKategorie> getKatData() {
+		try {
+			datenbank.Datenbank.loadKat();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return katData;
 	}
 
@@ -234,33 +243,100 @@ public class MainApp extends Application {
 	}
 
 	// Liste für die Auswahl in der Combobox mit den Waffenkategorien
-	public ObservableList<waffen> waffenData = FXCollections.observableArrayList();
+	public ObservableList<Waffen> waffenData = FXCollections.observableArrayList();
 
 	// Waffenliste mit Daten befüllen
-	public ObservableList<waffen> getWaffenData() {
+	public ObservableList<Waffen> getWaffenData() {
+		try {
+			datenbank.Datenbank.loadWaf();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return waffenData;
 	}
 
 	/**
 	 * Zeigt den Auswahldialog mit den verfügbaren Waffen an
 	 */
-	public void showWaffenDialog() {
+	public boolean showWaffenDialog(Waffen waffe) {
 		try {
-			// Load person overview.
+			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("/GUI/WaffenAuswahl.fxml"));
-			AnchorPane waffen = (AnchorPane) loader.load();
+			AnchorPane page = (AnchorPane) loader.load();
 
-			// Set person overview into the center of root layout.
-			rootLayout.setCenter(waffen);
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Waffe wählen");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
 
-			// Give the controller access to the main app.
-			LimitenController controller = loader.getController();
-			controller.setMainApp(this);
+			// Waffe im controller einsetzen
+			WaffenAuswahlController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setWaffe(waffenData);
 
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isOkClicked();
 		} catch (IOException e) {
 			e.printStackTrace();
+			return false;
 		}
+	}
+
+	public ObservableList<Resultat> getResultData() {
+
+		return resultatData;
+	}
+
+	// Liste für die Tabelle mit den allen Resultaten
+	public ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
+
+	// Liste mit Resultatdaten befüllen
+	public ObservableList<Resultat> getResData() {
+		return resultatData;
+	}
+
+	/**
+	 * öffent den Dialog für die Erfassung oder Mutation der geschossenen Resultate
+	 * 
+	 * @param selectedResultat
+	 * @return
+	 */
+	public boolean showReslutatView(Resultat selectedResultat) {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("/GUI/ResultatForm.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Resultat eingeben und speichern");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the person into the controller.
+			ResultatController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setResultat(resultatData);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isOkClicked();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+
 	}
 
 }

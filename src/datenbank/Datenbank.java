@@ -16,7 +16,7 @@ import Person.Person;
 import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
-import Stammdaten.waffen;
+import Stammdaten.Waffen;
 import converter.KategorieConverter;
 import converter.LimitenConverter;
 import converter.PersonConverter;
@@ -57,7 +57,6 @@ public class Datenbank {
 	 * @param person
 	 * @throws Exception
 	 */
-
 	public static ArrayList<Resultat> loadRes(Person person) throws Exception {
 
 		ArrayList<Resultat> resultate = new ArrayList<Resultat>();
@@ -85,14 +84,13 @@ public class Datenbank {
 	 * @author Rudolf Broger
 	 * @throws Exception
 	 */
-
 	public static ArrayList<altersKategorie> loadKat() throws Exception {
 
 		ArrayList<altersKategorie> alterskat = new ArrayList<altersKategorie>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
-		Table table = db.getTable("tblAlerKat");
+		Table table = db.getTable("tblAlterKat");
 
 		for (Row row : table) {
 			KategorieConverter converter = new KategorieConverter();
@@ -110,7 +108,6 @@ public class Datenbank {
 	 * @author Rudolf Broger
 	 * @throws Exception
 	 */
-
 	public static ArrayList<limiten> loadLim() throws Exception {
 
 		ArrayList<limiten> limite = new ArrayList<limiten>();
@@ -135,10 +132,9 @@ public class Datenbank {
 	 * @author Rudolf Broger
 	 * @throws Exception
 	 */
+	public static ArrayList<Waffen> loadWaf() throws Exception {
 
-	public static ArrayList<waffen> loadWaf() throws Exception {
-
-		ArrayList<waffen> waffen = new ArrayList<waffen>();
+		ArrayList<Waffen> waffen = new ArrayList<Waffen>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
@@ -146,7 +142,7 @@ public class Datenbank {
 
 		for (Row row : table) {
 			WaffenConverter converter = new WaffenConverter();
-			waffen w = converter.dbToModelW(row);
+			Waffen w = converter.dbToModelW(row);
 			waffen.add(w);
 
 		}
@@ -154,6 +150,12 @@ public class Datenbank {
 		return waffen;
 	}
 
+	/**
+	 * neu erfasste Person in DB Format konvertieren und speichern
+	 * 
+	 * @param tempPerson
+	 * @throws Exception
+	 */
 	public static void saveDataP(Person tempPerson) throws Exception {
 
 		Map<String, Object> map = PersonConverter.convertToMap(tempPerson);
@@ -166,11 +168,23 @@ public class Datenbank {
 
 	}
 
+	/**
+	 * Dateipfad und Dateiname der MS Access DB
+	 * 
+	 * @return
+	 */
 	public static String getDataFile() {
 
 		return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be2.accdb";
 	}
 
+	/**
+	 * bestehender Eintrag einer Person mit änderungen in DB Format konvertieren und
+	 * diese in der DB speichern
+	 * 
+	 * @param selectedPerson
+	 * @throws IOException
+	 */
 	public static void updateDataP(Person selectedPerson) throws IOException {
 		Map<String, Object> map = PersonConverter.convertToMap(selectedPerson);
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
@@ -187,16 +201,51 @@ public class Datenbank {
 		db.close();
 	}
 
-	public static void saveDataR(Person selectedPerson) throws IOException {
+	/**
+	 * neue Reihe in der Resultattabelle erfassen den Fremdschlüssel zum
+	 * referenzieren der Adresstabelle mitgeben und das berechnete Alter mitgeben
+	 * Daten in DB Format konvertieren und auf DB speichern
+	 * 
+	 * @param selectedPerson
+	 * @param alter
+	 * @throws IOException
+	 */
+	public static void saveDataR(Person selectedPerson, int alter) throws IOException {
 		Resultat r = new Resultat(selectedPerson.getAdrId());
+		Integer a = new Integer(alter);
 
-		Map<String, Object> map = ResultatConverter.convertToMap(r);
+		Map<String, Object> map = ResultatConverter.convertToMap(r, a);
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
 		Table table = db.getTable("tblResultateBU");
 
 		table.addRowFromMap(map);
+
+		db.close();
+
+	}
+
+	/**
+	 * bestehender Eintrag in der Resultattabelle ändern und dieses zur Speicherung
+	 * in das DB Format konverieren
+	 * 
+	 * @param selectedResultat
+	 * @throws IOException
+	 */
+	public static void updateDataR(Resultat selectedResultat) throws IOException {
+
+		Map<String, Object> map = ResultatConverter.convertToMap(selectedResultat);
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+		Table table = db.getTable("tblResultateBU");
+
+		Row row = CursorBuilder.findRowByPrimaryKey(table, selectedResultat.getRes_id());
+		if (row != null) {
+			row.putAll(map);
+			table.updateRow(row);
+		} else {
+			System.out.println("Es wurde kein Datensatz gefunden.");
+		}
 
 		db.close();
 

@@ -5,6 +5,14 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * 
+ * Klasse zum Bilden der Limiten zur Differenzierung der erforderlichen Limiten
+ * auf Grund der Alterskategorie
+ * 
+ * @author Rudolf Broger
+ *
+ */
 public class limiten {
 	private final IntegerProperty lim_id;
 	private final IntegerProperty limKatRef;
@@ -16,6 +24,19 @@ public class limiten {
 	private final IntegerProperty limFsKranz;
 	private final IntegerProperty limFsFigur;
 
+	/**
+	 * vollständiger Konstruktor des Datenmodells für die Limiten
+	 * 
+	 * @param lim_id
+	 * @param limKatRef
+	 * @param limAltKat
+	 * @param limOpErfuellt
+	 * @param limOpMax0
+	 * @param limOpKarte
+	 * @param limFsKarte
+	 * @param limFsKranz
+	 * @param limFsFigur
+	 */
 	public limiten(int lim_id, int limKatRef, String limAltKat, int limOpErfuellt, int limOpMax0, int limOpKarte,
 			int limFsKarte, int limFsKranz, int limFsFigur) {
 		this.lim_id = new SimpleIntegerProperty(lim_id);

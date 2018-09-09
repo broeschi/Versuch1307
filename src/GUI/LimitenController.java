@@ -44,10 +44,12 @@ public class LimitenController {
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
 
+	// Konstruktor
 	public LimitenController() {
 
 	}
 
+	// Controller initialisieren und daten in die ObservableList laden
 	public void initialize() {
 		limitTable.setItems(limitData);
 	}

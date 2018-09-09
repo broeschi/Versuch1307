@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.ObservableList;
 
 /**
  * 
@@ -12,7 +13,6 @@ import javafx.beans.property.StringProperty;
  * @author Rudolf Broger
  *
  */
-
 public class altersKategorie {
 	private final IntegerProperty kat_id;
 	private final StringProperty katAltersKat;
@@ -21,6 +21,16 @@ public class altersKategorie {
 	private final IntegerProperty katAlterMax;
 	private final IntegerProperty sort;
 
+	/**
+	 * volständiger Konstruktor des Datenmodells der Alterskategorien
+	 * 
+	 * @param kat_id
+	 * @param katAltersKat
+	 * @param katKatName
+	 * @param katAlterMin
+	 * @param katAlterMax
+	 * @param sort
+	 */
 	public altersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax,
 			int sort) {
 		this.kat_id = new SimpleIntegerProperty(kat_id);
