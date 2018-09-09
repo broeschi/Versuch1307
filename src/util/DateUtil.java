@@ -36,7 +36,6 @@ public class DateUtil {
 		}
 		return DATE_FORMATTER.format(date);
 	}
-	
 
 	/**
 	 * Converts a String in the format of the defined {@link DateUtil#DATE_PATTERN}
@@ -68,7 +67,8 @@ public class DateUtil {
 	}
 
 	/**
-	 * Konvertiert das LocalDate in einen Instanzwert	
+	 * Konvertiert das LocalDate in einen Instanzwert
+	 * 
 	 * @param dateToConvert
 	 * @return
 	 */
@@ -81,6 +81,7 @@ public class DateUtil {
 
 	/**
 	 * kovertiert das Datum in einen Sekundenwert
+	 * 
 	 * @param l
 	 * @return
 	 */
@@ -88,21 +89,22 @@ public class DateUtil {
 		ZoneId zoneId = ZoneId.systemDefault();
 		return l.atStartOfDay(zoneId).toEpochSecond();
 	}
-	
+
 	/**
 	 * Ermittelt das das aktuelle Jahr, basierend auf dem Systemdatumg
+	 * 
 	 * @return
 	 */
 	public static int getYear() {
 		Calendar date = new GregorianCalendar();
 		int year = date.get(Calendar.YEAR);
 		return year;
-		
-	}
 
+	}
 
 	/**
 	 * ermittelt das Geburtsjahr der Person auf Grund des Erfassten Geburtsdatums
+	 * 
 	 * @param gebJahr
 	 * @return
 	 */

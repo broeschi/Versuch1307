@@ -174,7 +174,7 @@ public class MainApp extends Application {
 		katData.addAll(datenbank.Datenbank.loadKat());
 		limitData.addAll(datenbank.Datenbank.loadLim());
 		waffenData.addAll(datenbank.Datenbank.loadWaf());
-		
+
 	}
 
 	/**
@@ -252,7 +252,7 @@ public class MainApp extends Application {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 		return waffenData;
 	}
 
@@ -278,7 +278,6 @@ public class MainApp extends Application {
 			WaffenAuswahlController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
 			controller.setWaffe(waffenData);
-			
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -291,9 +290,10 @@ public class MainApp extends Application {
 	}
 
 	public ObservableList<Resultat> getResultData() {
-		
+
 		return resultatData;
 	}
+
 	// Liste für die Tabelle mit den allen Resultaten
 	public ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
 
@@ -336,11 +336,7 @@ public class MainApp extends Application {
 			e.printStackTrace();
 			return false;
 		}
-		
-		
-		
-	}
-	
 
+	}
 
 }

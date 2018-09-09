@@ -35,7 +35,8 @@ public class Resultat {
 	private final StringProperty resFigFs;
 
 	/**
-	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte Person
+	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte
+	 * Person
 	 * 
 	 * @param resAdrref
 	 */
@@ -58,7 +59,8 @@ public class Resultat {
 	}
 
 	/**
-	 * vollständiger Konstruktor des Datenmodells für die Erfassung der Resultatwerte
+	 * vollständiger Konstruktor des Datenmodells für die Erfassung der
+	 * Resultatwerte
 	 * 
 	 * @param res_id
 	 * @param resJahr
@@ -99,7 +101,7 @@ public class Resultat {
 	}
 
 	/**
-	 * Methode zum Auslagern der Typenzuweisung der Parameter des Konstruktors 
+	 * Methode zum Auslagern der Typenzuweisung der Parameter des Konstruktors
 	 * 
 	 * @param value
 	 * @return
@@ -151,7 +153,7 @@ public class Resultat {
 	public StringProperty resOpProperty() {
 		return resOp;
 	}
-	
+
 	public void setResOp(String resOp) {
 		this.resOp.set(resOp);
 	}

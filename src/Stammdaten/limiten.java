@@ -7,11 +7,13 @@ import javafx.beans.property.StringProperty;
 
 /**
  * 
- * Klasse zum Bilden der Limiten zur Differenzierung der erforderlichen Limiten auf Grund der Alterskategorie
+ * Klasse zum Bilden der Limiten zur Differenzierung der erforderlichen Limiten
+ * auf Grund der Alterskategorie
  * 
  * @author Rudolf Broger
  *
- */public class limiten {
+ */
+public class limiten {
 	private final IntegerProperty lim_id;
 	private final IntegerProperty limKatRef;
 	private final StringProperty limAltKat;

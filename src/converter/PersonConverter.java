@@ -44,6 +44,7 @@ public class PersonConverter {
 				(int) adrPLZ, ort, ahv, eint, grad);
 		return p;
 	}
+
 	/**
 	 * Persönliche Daten aus GUI in das Datenbankformat konvertieren
 	 * 

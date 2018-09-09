@@ -284,9 +284,10 @@ public class PersonController {
 	}
 
 	/**
-	 * Ermittelt das Alter der Person, ordnet sie einer Alterskategorie zu 
-	 * und steigt das Menu zur Auswahl des Sportgeräts.
-	 * Es wird eine neue Zeile in der Resultattabelle in der DB angelegt.
+	 * Ermittelt das Alter der Person, ordnet sie einer Alterskategorie zu und
+	 * steigt das Menu zur Auswahl des Sportgeräts. Es wird eine neue Zeile in der
+	 * Resultattabelle in der DB angelegt.
+	 * 
 	 * @throws Exception
 	 */
 	@FXML
@@ -314,7 +315,8 @@ public class PersonController {
 	}
 
 	/**
-	 * öffnet das Eingabefenster zu, Erfassen der Resultate und speichert dies in die DB
+	 * öffnet das Eingabefenster zu, Erfassen der Resultate und speichert dies in
+	 * die DB
 	 */
 	@FXML
 	private void handleResultatPerson() {

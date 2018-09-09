@@ -21,7 +21,6 @@ public class altersKategorie {
 	private final IntegerProperty katAlterMax;
 	private final IntegerProperty sort;
 
-
 	/**
 	 * volständiger Konstruktor des Datenmodells der Alterskategorien
 	 * 
@@ -41,8 +40,6 @@ public class altersKategorie {
 		this.katAlterMax = new SimpleIntegerProperty(katAlterMax);
 		this.sort = new SimpleIntegerProperty(sort);
 	}
-
-
 
 	public IntegerProperty getKat_id() {
 		return kat_id;
@@ -75,10 +72,9 @@ public class altersKategorie {
 	public IntegerProperty getKatAlterMax() {
 		return katAlterMax;
 	}
-	
+
 	public IntegerProperty getSort() {
 		return sort;
 	}
-	
 
 }

@@ -44,6 +44,7 @@ public class ResultatConverter {
 				resWhg2, resAnzNullerOp, resAnzNullerWhg1, resAnzNullerWhg2, resFs, resFigFs);
 		return r;
 	}
+
 	/**
 	 * Resultate Daten aus GUI in das Datenbankformat konvertieren
 	 * 
@@ -55,14 +56,14 @@ public class ResultatConverter {
 		Map<String, Object> map = new HashMap<>();
 		map.put("res_id", resultat.getRes_id().get());
 		map.put("resJahr", util.DateUtil.getYear());
-		//map.put("resJahr", resultat.getResJahr());
+		// map.put("resJahr", resultat.getResJahr());
 		map.put("resAdrref", resultat.getResAdrref().get());
 		map.put("ResWafRef_OP", resultat.getResWfRefOp().get());
 		map.put("resWafRef_FS", resultat.getResWfRefFs().get());
 		map.put("resAlter", a);
 		map.put("resLimref", resultat.getResLimRef().get());
-		map.put("resResultat_OP",resultat.getResOp().get());
-		map.put("resResultat_OP_Whg_1",resultat.getResWhg1().get());
+		map.put("resResultat_OP", resultat.getResOp().get());
+		map.put("resResultat_OP_Whg_1", resultat.getResWhg1().get());
 		map.put("resResultat_OP_Whg_2", resultat.getResWhg2().get());
 		map.put("resAnzahlNuller", resultat.getResAnzNullerOp().get());
 		map.put("resAnzahlNuller_Whg_1", resultat.getResAnzNullerOp().get());
@@ -72,18 +73,19 @@ public class ResultatConverter {
 
 		return map;
 	}
+
 	public static Map<String, Object> convertToMap(Resultat resultat) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("res_id", resultat.getRes_id().get());
 		map.put("resJahr", util.DateUtil.getYear());
-		//map.put("resJahr", resultat.getResJahr());
+		// map.put("resJahr", resultat.getResJahr());
 		map.put("resAdrref", resultat.getResAdrref().get());
 		map.put("ResWafRef_OP", resultat.getResWfRefOp().get());
 		map.put("resWafRef_FS", resultat.getResWfRefFs().get());
 		map.put("resAlter", resultat.getResAlter().get());
 		map.put("resLimref", resultat.getResLimRef().get());
-		map.put("resResultat_OP",resultat.getResOp().get());
-		map.put("resResultat_OP_Whg_1",resultat.getResWhg1().get());
+		map.put("resResultat_OP", resultat.getResOp().get());
+		map.put("resResultat_OP_Whg_1", resultat.getResWhg1().get());
 		map.put("resResultat_OP_Whg_2", resultat.getResWhg2().get());
 		map.put("resAnzahlNuller", resultat.getResAnzNullerOp().get());
 		map.put("resAnzahlNuller_Whg_1", resultat.getResAnzNullerOp().get());
@@ -94,12 +96,9 @@ public class ResultatConverter {
 		return map;
 	}
 
-
 	public static Map<String, Object> convertToMap(Integer adrId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 }

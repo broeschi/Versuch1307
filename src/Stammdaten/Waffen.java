@@ -11,7 +11,8 @@ import javafx.beans.property.StringProperty;
  * 
  * @author Rudolf Broger
  *
- */public class Waffen {
+ */
+public class Waffen {
 	private final IntegerProperty waf_id;
 	private final SimpleStringProperty wafName;
 	private final StringProperty wafAbk;

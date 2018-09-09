@@ -44,7 +44,7 @@ public class LimitenController {
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
 
-	//Konstruktor
+	// Konstruktor
 	public LimitenController() {
 
 	}

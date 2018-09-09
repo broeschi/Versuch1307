@@ -76,8 +76,6 @@ public class ResultatController {
 	private ObservableList<Person> person;
 	private ObservableList<Resultat> resultat;
 
-
-
 	private static ObservableList<Person> personData = FXCollections.observableArrayList();
 
 	private static ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
@@ -89,9 +87,8 @@ public class ResultatController {
 	 * The constructor. The constructor is called before the initialize() method.
 	 */
 	public ResultatController() {
-		//personData.addAll(mainApp.getPersonData());
-		//resultatData.addAll(mainApp.getResultData());
-
+		// personData.addAll(mainApp.getPersonData());
+		// resultatData.addAll(mainApp.getResultData());
 
 	}
 
@@ -99,7 +96,7 @@ public class ResultatController {
 	private void initialize() {
 
 	}
-	
+
 	/**
 	 * Sets the stage of this dialog.
 	 * 
@@ -108,7 +105,6 @@ public class ResultatController {
 	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
 	}
-	
 
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
@@ -117,9 +113,11 @@ public class ResultatController {
 		personData.addAll(mainApp.getPersonData());
 		resultatData.addAll(mainApp.getResultData());
 	}
+
 	public boolean isOkClicked() {
 		return okClicked;
 	}
+
 	/**
 	 * Called when the user clicks cancel.
 	 */
@@ -129,12 +127,14 @@ public class ResultatController {
 	}
 
 	/**
-	 * Vorhandene Werte aus ObservableList Resultat in die enstsprechenden GUI-Felder schreiben
+	 * Vorhandene Werte aus ObservableList Resultat in die enstsprechenden
+	 * GUI-Felder schreiben
+	 * 
 	 * @param resultat
 	 */
 	public void setResultat(ObservableList<Resultat> resultat) {
 		this.resultat = resultat;
-		
+
 		ResultatOpLabel.setText(((Resultat) resultat).getResOp().toString());
 		AnzNullerOpLabel.setText(((Resultat) resultat).getResAnzNullerOp().toString());
 		ResWhg1OpLabel.setText(((Resultat) resultat).getResWhg1().toString());
@@ -144,30 +144,24 @@ public class ResultatController {
 		ResultatFsLabel.setText(((Resultat) resultat).getResFs().toString());
 		FigurentrefferFsLabel.setText(((Resultat) resultat).getResFigFs().toString());
 
-		
 	}
-	
+
 	/**
 	 * Neu erfasste oder geänderte Eintrage in die ObservableList speichern
 	 */
 	@FXML
 	private void handleSpeichern() {
-			((Resultat) resultat).setResOp(ResultatOpLabel.getText());
-			((Resultat) resultat).setResOpNull(AnzNullerOpLabel.getText());
-			((Resultat) resultat).setResWhg1(ResWhg1OpLabel.getText());
-			((Resultat) resultat).setResOpW1Null(AnzNullerWhg1Label.getText());
-			((Resultat) resultat).setResWhg2(ResWhg2OpLabel.getText());
-			((Resultat) resultat).setResOpW2Null(AnzNullerWhg2Label.getText());
-			((Resultat) resultat).setResFs(ResultatFsLabel.getText());
-			((Resultat) resultat).setResFigFs(FigurentrefferFsLabel.getText());
-			
-			
-			
-			dialogStage.close();
-		
+		((Resultat) resultat).setResOp(ResultatOpLabel.getText());
+		((Resultat) resultat).setResOpNull(AnzNullerOpLabel.getText());
+		((Resultat) resultat).setResWhg1(ResWhg1OpLabel.getText());
+		((Resultat) resultat).setResOpW1Null(AnzNullerWhg1Label.getText());
+		((Resultat) resultat).setResWhg2(ResWhg2OpLabel.getText());
+		((Resultat) resultat).setResOpW2Null(AnzNullerWhg2Label.getText());
+		((Resultat) resultat).setResFs(ResultatFsLabel.getText());
+		((Resultat) resultat).setResFigFs(FigurentrefferFsLabel.getText());
+
+		dialogStage.close();
+
 	}
-
-
-
 
 }

@@ -34,7 +34,5 @@ public class KategorieConverter {
 		altersKategorie k = new altersKategorie(katId, katAlterKat, katAlterName, katAlterMin, katAlterMax, sort);
 		return k;
 	}
-	
-
 
 }

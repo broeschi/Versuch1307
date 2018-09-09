@@ -14,14 +14,16 @@ import javafx.collections.ObservableList;
 
 public class Berechnungen {
 
-	/** aktuelles Alter berechnen
-	 * die Genauigkeit bezieht sich auf den Jahrgang der Person
+	/**
+	 * aktuelles Alter berechnen die Genauigkeit bezieht sich auf den Jahrgang der
+	 * Person
+	 * 
 	 * @param objectProperty
 	 * @return
 	 */
-		public static int alterSetzen(ObjectProperty<LocalDate> objectProperty) {
+	public static int alterSetzen(ObjectProperty<LocalDate> objectProperty) {
 		LocalDate GebJahr = objectProperty.getValue();
-		
+
 		int gebJahr = util.DateUtil.getBirthYear(GebJahr);
 		int aktJahr = util.DateUtil.getYear();
 		int alter = aktJahr - gebJahr;
@@ -29,28 +31,32 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Auf Grund des Alters wird der Person in der Resultattabelle die aktuelle Alterskategorie zugeordnet
+	 * Auf Grund des Alters wird der Person in der Resultattabelle die aktuelle
+	 * Alterskategorie zugeordnet
+	 * 
 	 * @param alter
 	 * @return
 	 * @throws Exception
 	 */
-		public static int alterKategorieSetzen(int alter) throws Exception {
+	public static int alterKategorieSetzen(int alter) throws Exception {
 		Integer katId = 0;
-		Integer a = new Integer (alter);
+		Integer a = new Integer(alter);
 		ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
 		katData = MainApp.getKatData();
-//		if (a >= ((altersKategorie) katData).getKatAlterMin().intValue() & a < ((altersKategorie) katData).getKatAlterMax().intValue()) {
-//			((altersKategorie) katData).getKat_id().getValue();
-			//katId = Stammdaten.altersKategorie.getKat_id().intValue();
-//		}
+		// if (a >= ((altersKategorie) katData).getKatAlterMin().intValue() & a <
+		// ((altersKategorie) katData).getKatAlterMax().intValue()) {
+		// ((altersKategorie) katData).getKat_id().getValue();
+		// katId = Stammdaten.altersKategorie.getKat_id().intValue();
+		// }
 		return katId;
 
 	}
 
 	/**
-	 * Es wird berechnet, ob die Person mit der erreichten Resultat die Schiesspflicht für das aktuelle Jahr erfüllt hat
+	 * Es wird berechnet, ob die Person mit der erreichten Resultat die
+	 * Schiesspflicht für das aktuelle Jahr erfüllt hat
 	 */
-		public void schiesspflichtErfuellt() {
+	public void schiesspflichtErfuellt() {
 		// alterSetzen();
 		try {
 			Datenbank.loadLim();
@@ -62,10 +68,11 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und ihres Alters(Kategorie)
-	 * die Anerkennungskarte für das Obligatorische Programm erhält
+	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und
+	 * ihres Alters(Kategorie) die Anerkennungskarte für das Obligatorische Programm
+	 * erhält
 	 */
-		public void karteOpErreicht() {
+	public void karteOpErreicht() {
 		// alterSetzen();
 		try {
 			Datenbank.loadLim();
@@ -76,10 +83,10 @@ public class Berechnungen {
 
 	}
 
-		/**
-		 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und ihres Alters(Kategorie)
-		 * die Anerkennungskarte für das Feldschiessen erhält
-		 */
+	/**
+	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und
+	 * ihres Alters(Kategorie) die Anerkennungskarte für das Feldschiessen erhält
+	 */
 	public void karteFsErreicht() {
 		// alterSetzen();
 		try {
@@ -90,20 +97,21 @@ public class Berechnungen {
 		}
 
 	}
+
 	/**
-	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und ihres Alters(Kategorie)
-	 * den Kranz als Auszeichung für das Feldschiessen erhält
+	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und
+	 * ihres Alters(Kategorie) den Kranz als Auszeichung für das Feldschiessen
+	 * erhält
 	 */
-public void kranzFsErreicht() {
-	// alterSetzen();
-	try {
-		Datenbank.loadLim();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	public void kranzFsErreicht() {
+		// alterSetzen();
+		try {
+			Datenbank.loadLim();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
-
-}
-
 
 }

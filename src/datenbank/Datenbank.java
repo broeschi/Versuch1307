@@ -101,7 +101,6 @@ public class Datenbank {
 
 		return alterskat;
 	}
-	
 
 	/**
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
@@ -171,6 +170,7 @@ public class Datenbank {
 
 	/**
 	 * Dateipfad und Dateiname der MS Access DB
+	 * 
 	 * @return
 	 */
 	public static String getDataFile() {
@@ -179,7 +179,9 @@ public class Datenbank {
 	}
 
 	/**
-	 * bestehender Eintrag einer Person mit änderungen in DB Format konvertieren und diese in der DB speichern
+	 * bestehender Eintrag einer Person mit änderungen in DB Format konvertieren und
+	 * diese in der DB speichern
+	 * 
 	 * @param selectedPerson
 	 * @throws IOException
 	 */
@@ -200,10 +202,10 @@ public class Datenbank {
 	}
 
 	/**
-	 * neue Reihe in der Resultattabelle erfassen
-	 * den Fremdschlüssel zum referenzieren der Adresstabelle mitgeben
-	 * und das berechnete Alter mitgeben
-	 * Daten in DB Format konvertieren und auf DB speichern 
+	 * neue Reihe in der Resultattabelle erfassen den Fremdschlüssel zum
+	 * referenzieren der Adresstabelle mitgeben und das berechnete Alter mitgeben
+	 * Daten in DB Format konvertieren und auf DB speichern
+	 * 
 	 * @param selectedPerson
 	 * @param alter
 	 * @throws IOException
@@ -211,7 +213,7 @@ public class Datenbank {
 	public static void saveDataR(Person selectedPerson, int alter) throws IOException {
 		Resultat r = new Resultat(selectedPerson.getAdrId());
 		Integer a = new Integer(alter);
-		
+
 		Map<String, Object> map = ResultatConverter.convertToMap(r, a);
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
@@ -225,16 +227,18 @@ public class Datenbank {
 	}
 
 	/**
-	 * bestehender Eintrag in der Resultattabelle ändern und dieses zur Speicherung in das DB Format konverieren
+	 * bestehender Eintrag in der Resultattabelle ändern und dieses zur Speicherung
+	 * in das DB Format konverieren
+	 * 
 	 * @param selectedResultat
 	 * @throws IOException
 	 */
 	public static void updateDataR(Resultat selectedResultat) throws IOException {
-		
+
 		Map<String, Object> map = ResultatConverter.convertToMap(selectedResultat);
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 		Table table = db.getTable("tblResultateBU");
-		
+
 		Row row = CursorBuilder.findRowByPrimaryKey(table, selectedResultat.getRes_id());
 		if (row != null) {
 			row.putAll(map);
@@ -244,8 +248,7 @@ public class Datenbank {
 		}
 
 		db.close();
-		
-	}
 
+	}
 
 }

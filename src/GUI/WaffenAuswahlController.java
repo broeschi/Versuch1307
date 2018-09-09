@@ -28,7 +28,6 @@ public class WaffenAuswahlController {
 	@FXML
 	private TableView<Waffen> waffenTable;
 
-
 	@FXML
 	private ChoiceBox<Waffen> choiceBoxOp;
 	private ObservableList<Waffen> waffenData = FXCollections.observableArrayList();
@@ -43,22 +42,21 @@ public class WaffenAuswahlController {
 	public WaffenAuswahlController() {
 
 	}
-	
 
-	/** 
+	/**
 	 * Controller initialisieren und vorhandene Daten in die Auswahlbox schreiben
 	 */
 	public void initialize() {
 		choiceBoxOp.setItems(waffenData);
-//		waffenTable.setItems(waffenData); 
+		// waffenTable.setItems(waffenData);
 	}
+
 	@FXML
 	private void handleChoiceBoxAction() {
-	  Waffen selectedWaffe = choiceBoxOp.getSelectionModel().getSelectedItem();
-	  
+		Waffen selectedWaffe = choiceBoxOp.getSelectionModel().getSelectedItem();
+
 	}
-	
-	
+
 	/**
 	 * Sets the stage of this dialog.
 	 * 
@@ -68,9 +66,9 @@ public class WaffenAuswahlController {
 		this.dialogStage = dialogStage;
 	}
 
-
 	/**
 	 * Waffenkategorien in die ObservableList eintragen
+	 * 
 	 * @return
 	 */
 	public ObservableList<Waffen> getWaffenData() {
@@ -79,7 +77,7 @@ public class WaffenAuswahlController {
 
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
-		
+
 		// Add observable list data to the table
 		waffenData.addAll(mainApp.getWaffenData());
 	}
@@ -98,8 +96,6 @@ public class WaffenAuswahlController {
 	private void handleCancel() {
 		dialogStage.close();
 	}
-	
-
 
 	public boolean isOkClicked() {
 		return okClicked;
@@ -107,9 +103,7 @@ public class WaffenAuswahlController {
 
 	public void setWaffe(ObservableList<Waffen> waffenData) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 }
