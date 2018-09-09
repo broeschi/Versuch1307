@@ -22,7 +22,6 @@ public class KategorieConverter {
 	 *            auslesen der Tabellenzeilen
 	 * @return Alterskategorien aus der DB
 	 */
-
 	public altersKategorie dbToModelK(Row row) {
 
 		Integer katId = (Integer) row.get("kat_id");

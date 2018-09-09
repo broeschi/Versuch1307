@@ -34,6 +34,11 @@ public class Resultat {
 	private final StringProperty resFs;
 	private final StringProperty resFigFs;
 
+	/**
+	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte Person
+	 * 
+	 * @param resAdrref
+	 */
 	public Resultat(Integer resAdrref) {
 		this.res_id = new SimpleIntegerProperty();
 		this.resJahr = new SimpleIntegerProperty();
@@ -52,6 +57,25 @@ public class Resultat {
 		this.resFigFs = new SimpleStringProperty();
 	}
 
+	/**
+	 * vollständiger Konstruktor des Datenmodells für die Erfassung der Resultatwerte
+	 * 
+	 * @param res_id
+	 * @param resJahr
+	 * @param resAdrref
+	 * @param resWfRefOp
+	 * @param resWfRefFs
+	 * @param resAlter
+	 * @param resLimRef
+	 * @param resOp
+	 * @param resWhg1
+	 * @param resWhg2
+	 * @param resAnzNullerOp
+	 * @param resAnzNullerW1Op
+	 * @param resAnzNullerW2Op
+	 * @param resFs
+	 * @param resFigFs
+	 */
 	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs,
 			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2,
 			Integer resAnzNullerOp, Integer resAnzNullerW1Op, Integer resAnzNullerW2Op, Integer resFs,
@@ -74,6 +98,12 @@ public class Resultat {
 
 	}
 
+	/**
+	 * Methode zum Auslagern der Typenzuweisung der Parameter des Konstruktors 
+	 * 
+	 * @param value
+	 * @return
+	 */
 	private SimpleStringProperty createStringProperty(Integer value) {
 		if (value == null) {
 			return new SimpleStringProperty("");

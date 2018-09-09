@@ -26,6 +26,21 @@ public class Person {
 	private final StringProperty adrMilEinteilung;
 	private final StringProperty adrGrad;
 
+	/**
+	 * Konstruktor für eine Person (Modell)
+	 * 
+	 * @param adrId
+	 * @param adrName
+	 * @param adrVorname
+	 * @param adrStrasse
+	 * @param adrGebDat
+	 * @param adrNr
+	 * @param adrPLZ
+	 * @param adrWohnort
+	 * @param adrAHV
+	 * @param adrEint
+	 * @param adrGrad
+	 */
 	public Person(Integer adrId, String adrName, String adrVorname, String adrStrasse, LocalDate adrGebDat,
 			String adrNr, Integer adrPLZ, String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
 		this.adrId = new SimpleIntegerProperty(adrId);
@@ -42,6 +57,12 @@ public class Person {
 
 	}
 
+	/**
+	 * Konstruktor für die Erfassung von Vorname und Name
+	 * 
+	 * @param adrName
+	 * @param adrVorname
+	 */
 	public Person(String adrName, String adrVorname) {
 		this.adrId = new SimpleIntegerProperty();
 		this.adrName = new SimpleStringProperty(adrName);
@@ -57,6 +78,9 @@ public class Person {
 
 	}
 
+	/**
+	 * leerer Konstruktor
+	 */
 	public Person() {
 		this(null, null);
 	}

@@ -110,7 +110,7 @@ public class MainApp extends Application {
 	}
 
 	/**
-	 * Zeigt Mapping des Alters der Teilnehmer auf die Alterskategorieb
+	 * Zeigt das Mapping des Alters der Teilnehmer auf die Alterskategorien
 	 */
 	public void showAlterKatDialog() {
 		try {
@@ -174,7 +174,6 @@ public class MainApp extends Application {
 		katData.addAll(datenbank.Datenbank.loadKat());
 		limitData.addAll(datenbank.Datenbank.loadLim());
 		waffenData.addAll(datenbank.Datenbank.loadWaf());
-		
 		
 	}
 
@@ -303,6 +302,12 @@ public class MainApp extends Application {
 		return resultatData;
 	}
 
+	/**
+	 * öffent den Dialog für die Erfassung oder Mutation der geschossenen Resultate
+	 * 
+	 * @param selectedResultat
+	 * @return
+	 */
 	public boolean showReslutatView(Resultat selectedResultat) {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.

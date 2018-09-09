@@ -10,7 +10,6 @@ import Stammdaten.limiten;
  * @author Rudolf Broger
  *
  */
-
 public class LimitenConverter {
 
 	/**

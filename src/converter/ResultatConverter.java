@@ -13,7 +13,6 @@ import Person.Resultat;
  * 
  * @author Ruedi Broger
  */
-
 public class ResultatConverter {
 	/**
 	 * Daten aus Access transformieren
@@ -23,7 +22,6 @@ public class ResultatConverter {
 	 *            auslesen der Tabellenzeilen
 	 * @return persönliche Daten aus der DB
 	 */
-
 	public Resultat dbToModelR(Row row) {
 
 		Integer resId = (Integer) row.get("res_id");
@@ -46,7 +44,13 @@ public class ResultatConverter {
 				resWhg2, resAnzNullerOp, resAnzNullerWhg1, resAnzNullerWhg2, resFs, resFigFs);
 		return r;
 	}
-
+	/**
+	 * Resultate Daten aus GUI in das Datenbankformat konvertieren
+	 * 
+	 * @author Rudolf Broger
+	 * @param Resultat
+	 * @return
+	 */
 	public static Map<String, Object> convertToMap(Resultat resultat, Integer a) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("res_id", resultat.getRes_id().get());

@@ -128,6 +128,10 @@ public class ResultatController {
 		dialogStage.close();
 	}
 
+	/**
+	 * Vorhandene Werte aus ObservableList Resultat in die enstsprechenden GUI-Felder schreiben
+	 * @param resultat
+	 */
 	public void setResultat(ObservableList<Resultat> resultat) {
 		this.resultat = resultat;
 		
@@ -143,6 +147,9 @@ public class ResultatController {
 		
 	}
 	
+	/**
+	 * Neu erfasste oder geänderte Eintrage in die ObservableList speichern
+	 */
 	@FXML
 	private void handleSpeichern() {
 			((Resultat) resultat).setResOp(ResultatOpLabel.getText());

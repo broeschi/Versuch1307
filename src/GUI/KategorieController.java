@@ -20,7 +20,6 @@ import util.DateUtil;
  * 
  * @author Rudolf Brpger
  */
-
 public class KategorieController {
 	@FXML
 	private TableView<limiten> katTable;
@@ -42,14 +41,17 @@ public class KategorieController {
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
 
+	// Konstruktor
 	public KategorieController() {
 
 	}
 
+	// ObservableList mit Daten befüllen
 	public ObservableList<altersKategorie> getKatData() {
 		return katData;
 	}
 
+	// Referenz auf MainApp setzen
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 		// Add observable list data to the table

@@ -37,7 +37,7 @@ public class WaffenAuswahlController {
 	private Waffen waffe;
 	private boolean okClicked = false;
 
-	// referentziert auf die MainApp
+	// referenziert auf die MainApp
 	private MainApp mainApp;
 
 	public WaffenAuswahlController() {
@@ -45,6 +45,9 @@ public class WaffenAuswahlController {
 	}
 	
 
+	/** 
+	 * Controller initialisieren und vorhandene Daten in die Auswahlbox schreiben
+	 */
 	public void initialize() {
 		choiceBoxOp.setItems(waffenData);
 //		waffenTable.setItems(waffenData); 
@@ -66,6 +69,10 @@ public class WaffenAuswahlController {
 	}
 
 
+	/**
+	 * Waffenkategorien in die ObservableList eintragen
+	 * @return
+	 */
 	public ObservableList<Waffen> getWaffenData() {
 		return waffenData;
 	}

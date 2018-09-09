@@ -283,13 +283,19 @@ public class PersonController {
 		}
 	}
 
+	/**
+	 * Ermittelt das Alter der Person, ordnet sie einer Alterskategorie zu 
+	 * und steigt das Menu zur Auswahl des Sportgeräts.
+	 * Es wird eine neue Zeile in der Resultattabelle in der DB angelegt.
+	 * @throws Exception
+	 */
 	@FXML
 	private void handleStandblattPerson() throws Exception {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
 			int alter = logik.Berechnungen.alterSetzen(selectedPerson.adrGebDat);
-			//int alterKat = logik.Berechnungen.alterKategorieSetzen(alter);
-//			mainApp.showWaffenDialog(null);
+			int alterKat = logik.Berechnungen.alterKategorieSetzen(alter);
+			mainApp.showWaffenDialog(null);
 			try {
 				datenbank.Datenbank.saveDataR(selectedPerson, alter);
 			} catch (Exception e) {
@@ -307,6 +313,9 @@ public class PersonController {
 
 	}
 
+	/**
+	 * öffnet das Eingabefenster zu, Erfassen der Resultate und speichert dies in die DB
+	 */
 	@FXML
 	private void handleResultatPerson() {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
