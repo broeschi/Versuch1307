@@ -284,14 +284,15 @@ public class PersonController {
 	}
 
 	@FXML
-	private void handleStandblattPerson() {
+	private void handleStandblattPerson() throws Exception {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
-		mainApp.showWaffenDialog();
 		if (selectedPerson != null) {
+			int alter = logik.Berechnungen.alterSetzen(selectedPerson.adrGebDat);
+			//int alterKat = logik.Berechnungen.alterKategorieSetzen(alter);
+//			mainApp.showWaffenDialog(null);
 			try {
-				datenbank.Datenbank.saveDataR(selectedPerson);
+				datenbank.Datenbank.saveDataR(selectedPerson, alter);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -300,7 +301,7 @@ public class PersonController {
 			alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("Keine Auswahl");
 			alert.setHeaderText("keine Person wurde ausgewählt");
-			alert.setContentText("Bitte gewünschte Person auswählren.");
+			alert.setContentText("Bitte gewünschte Person auswählen.");
 			alert.showAndWait();
 		}
 
@@ -310,8 +311,8 @@ public class PersonController {
 	private void handleResultatPerson() {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
-			mainApp.showReslutatView(selectedPerson);
 			Resultat selectedResultat = resultTable.getSelectionModel().getSelectedItem();
+			mainApp.showReslutatView(selectedResultat);
 			try {
 				datenbank.Datenbank.updateDataR(selectedResultat);
 			} catch (Exception e) {
@@ -324,7 +325,7 @@ public class PersonController {
 			alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("Keine Auswahl");
 			alert.setHeaderText("keine Person wurde ausgewählt");
-			alert.setContentText("Bitte gewünschte Person auswählren.");
+			alert.setContentText("Bitte gewünschte Person auswählen.");
 			alert.showAndWait();
 		}
 

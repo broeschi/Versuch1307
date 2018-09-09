@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.TextField;
 
 /**
  * Klasse für Resultate
@@ -120,25 +121,57 @@ public class Resultat {
 	public StringProperty resOpProperty() {
 		return resOp;
 	}
+	
+	public void setResOp(String resOp) {
+		this.resOp.set(resOp);
+	}
 
 	public StringProperty resWhg1Property() {
 		return resWhg1;
+	}
+
+	public void setResWhg1(String resWhg1) {
+		this.resWhg1.set(resWhg1);
 	}
 
 	public StringProperty resWhg2Property() {
 		return resWhg2;
 	}
 
+	public void setResWhg2(String resWhg2) {
+		this.resWhg2.set(resWhg2);
+	}
+
 	public StringProperty resAnzNullerProperty() {
 		return resAnzNullerOp;
+	}
+
+	public void setResOpNull(String resOpNull) {
+		this.resAnzNullerOp.set(resOpNull);
+	}
+
+	public void setResOpW1Null(String resOpW1Null) {
+		this.resAnzNullerW1Op.set(resOpW1Null);
+	}
+
+	public void setResOpW2Null(String resOpW2Null) {
+		this.resAnzNullerW2Op.set(resOpW2Null);
 	}
 
 	public StringProperty resFsProperty() {
 		return resFs;
 	}
 
+	public void setResFs(String resFs) {
+		this.resFs.set(resFs);
+	}
+
 	public StringProperty resFigFsProperty() {
 		return resFigFs;
+	}
+
+	public void setResFigFs(String resFigFs) {
+		this.resFigFs.set(resFigFs);
 	}
 
 	public StringProperty getResWfRefOp() {

@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.ObservableList;
 
 /**
  * 
@@ -21,6 +22,7 @@ public class altersKategorie {
 	private final IntegerProperty katAlterMax;
 	private final IntegerProperty sort;
 
+
 	public altersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax,
 			int sort) {
 		this.kat_id = new SimpleIntegerProperty(kat_id);
@@ -30,6 +32,8 @@ public class altersKategorie {
 		this.katAlterMax = new SimpleIntegerProperty(katAlterMax);
 		this.sort = new SimpleIntegerProperty(sort);
 	}
+
+
 
 	public IntegerProperty getKat_id() {
 		return kat_id;
@@ -62,9 +66,10 @@ public class altersKategorie {
 	public IntegerProperty getKatAlterMax() {
 		return katAlterMax;
 	}
-
+	
 	public IntegerProperty getSort() {
 		return sort;
 	}
+	
 
 }

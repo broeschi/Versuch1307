@@ -7,7 +7,7 @@ import javafx.beans.property.StringProperty;
 
 public class Waffen {
 	private final IntegerProperty waf_id;
-	private final StringProperty wafName;
+	private final SimpleStringProperty wafName;
 	private final StringProperty wafAbk;
 	private final StringProperty wafKat;
 
@@ -22,7 +22,7 @@ public class Waffen {
 		return waf_id;
 	}
 
-	public StringProperty getWafName() {
+	public SimpleStringProperty getWafName() {
 		return wafName;
 	}
 

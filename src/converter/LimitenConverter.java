@@ -25,13 +25,13 @@ public class LimitenConverter {
 
 		Integer limId = (Integer) row.get("lim_id");
 		Integer limKatRef = (Integer) row.get("limKatRef");
-		String limAltKat = (String) row.get("limAltKat");
-		Integer limOpErfuellt = (Integer) row.get("limOpErfuellt");
-		Integer limOpMax0 = (Integer) row.get("limOpMax0");
-		Integer limOpKarte = (Integer) row.get("limOpKarte");
-		Integer limFsKarte = (Integer) row.get("limFsKarte");
-		Integer limFsKranz = (Integer) row.get("limFsKranz");
-		Integer limFsFigur = (Integer) row.get("limFsFigur");
+		String limAltKat = (String) row.get("limAlterskat");
+		Integer limOpErfuellt = (Integer) row.get("limOP-Limite_erfüllt");
+		Integer limOpMax0 = (Integer) row.get("limOP-Max_0");
+		Integer limOpKarte = (Integer) row.get("limOP_Limite_Karte");
+		Integer limFsKarte = (Integer) row.get("limFS_Limite_Karte");
+		Integer limFsKranz = (Integer) row.get("limFS_Limite_Kranz");
+		Integer limFsFigur = (Integer) row.get("limFS_Figurentreffer");
 
 		limiten l = new limiten(limId, limKatRef, limAltKat, limOpErfuellt, limOpMax0, limOpKarte, limFsKarte,
 				limFsKranz, limFsFigur);

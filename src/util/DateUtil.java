@@ -1,5 +1,6 @@
 package util;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -83,6 +84,12 @@ public class DateUtil {
 		int year = date.get(Calendar.YEAR);
 		return year;
 		
+	}
+
+
+	public static int getBirthYear(LocalDate gebJahr) {
+		int year = gebJahr.getYear();
+		return year;
 	}
 
 }

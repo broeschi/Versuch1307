@@ -73,6 +73,7 @@ public class ResultatController {
 	private Label FigurentrefferFsLabel;
 	private boolean okClicked = false;
 	private Stage dialogStage;
+	private ObservableList<Person> person;
 	private ObservableList<Resultat> resultat;
 
 
@@ -88,6 +89,9 @@ public class ResultatController {
 	 * The constructor. The constructor is called before the initialize() method.
 	 */
 	public ResultatController() {
+		//personData.addAll(mainApp.getPersonData());
+		//resultatData.addAll(mainApp.getResultData());
+
 
 	}
 
@@ -138,6 +142,24 @@ public class ResultatController {
 
 		
 	}
+	
+	@FXML
+	private void handleSpeichern() {
+			((Resultat) resultat).setResOp(ResultatOpLabel.getText());
+			((Resultat) resultat).setResOpNull(AnzNullerOpLabel.getText());
+			((Resultat) resultat).setResWhg1(ResWhg1OpLabel.getText());
+			((Resultat) resultat).setResOpW1Null(AnzNullerWhg1Label.getText());
+			((Resultat) resultat).setResWhg2(ResWhg2OpLabel.getText());
+			((Resultat) resultat).setResOpW2Null(AnzNullerWhg2Label.getText());
+			((Resultat) resultat).setResFs(ResultatFsLabel.getText());
+			((Resultat) resultat).setResFigFs(FigurentrefferFsLabel.getText());
+			
+			
+			
+			dialogStage.close();
+		
+	}
+
 
 
 

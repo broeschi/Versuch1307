@@ -1,6 +1,7 @@
 package Start;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import GUI.LimitenController;
 import GUI.PersonController;
@@ -144,7 +145,6 @@ public class MainApp extends Application {
 	 * 
 	 * @param args
 	 */
-
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -154,7 +154,6 @@ public class MainApp extends Application {
 	 * 
 	 * @return
 	 */
-
 	public ObservableList<Person> getPersonData() {
 
 		return personData;
@@ -163,7 +162,6 @@ public class MainApp extends Application {
 	/**
 	 * The data as an observable list of Persons.
 	 */
-
 	public ObservableList<Person> personData = FXCollections.observableArrayList();
 
 	/**
@@ -173,7 +171,11 @@ public class MainApp extends Application {
 	 */
 	public MainApp() throws Exception {
 		personData.addAll(datenbank.Datenbank.loadData());
-
+		katData.addAll(datenbank.Datenbank.loadKat());
+		limitData.addAll(datenbank.Datenbank.loadLim());
+		waffenData.addAll(datenbank.Datenbank.loadWaf());
+		
+		
 	}
 
 	/**
@@ -225,10 +227,15 @@ public class MainApp extends Application {
 	}
 
 	// Liste für die Tabelle mit den Alterskategorien
-	public ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+	public static ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
 
 	// Liste mit Daten der Alterskategorien mit Daten befüllen
-	public ObservableList<altersKategorie> getKatData() {
+	public static ObservableList<altersKategorie> getKatData() {
+		try {
+			datenbank.Datenbank.loadKat();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return katData;
 	}
 
@@ -253,7 +260,7 @@ public class MainApp extends Application {
 	/**
 	 * Zeigt den Auswahldialog mit den verfügbaren Waffen an
 	 */
-	public boolean showWaffenDialog() {
+	public boolean showWaffenDialog(Waffen waffe) {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
@@ -268,10 +275,11 @@ public class MainApp extends Application {
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 
-			// Set the person into the controller.
+			// Waffe im controller einsetzen
 			WaffenAuswahlController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
-			controller.setWaffen(waffenData);
+			controller.setWaffe(waffenData);
+			
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -283,9 +291,9 @@ public class MainApp extends Application {
 		}
 	}
 
-	public Resultat getResultData() {
+	public ObservableList<Resultat> getResultData() {
 		
-		return null;
+		return resultatData;
 	}
 	// Liste für die Tabelle mit den allen Resultaten
 	public ObservableList<Resultat> resultatData = FXCollections.observableArrayList();
@@ -295,7 +303,7 @@ public class MainApp extends Application {
 		return resultatData;
 	}
 
-	public boolean showReslutatView(Person selectedPerson) {
+	public boolean showReslutatView(Resultat selectedResultat) {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();

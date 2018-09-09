@@ -6,9 +6,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import Stammdaten.Waffen;
 import Start.MainApp;
 
@@ -22,17 +28,13 @@ public class WaffenAuswahlController {
 	@FXML
 	private TableView<Waffen> waffenTable;
 
-	@FXML
-	private ChoiceBox<String> waffenChoiceOp;
 
 	@FXML
-	private ChoiceBox<String> waffenChoiceFs;
-
+	private ChoiceBox<Waffen> choiceBoxOp;
 	private ObservableList<Waffen> waffenData = FXCollections.observableArrayList();
-	private ChoiceBox<String> waffenName = new ChoiceBox<String>();
 
 	private Stage dialogStage;
-	private ObservableList<Waffen> waffe;
+	private Waffen waffe;
 	private boolean okClicked = false;
 
 	// referentziert auf die MainApp
@@ -41,10 +43,19 @@ public class WaffenAuswahlController {
 	public WaffenAuswahlController() {
 
 	}
+	
 
 	public void initialize() {
-
+		choiceBoxOp.setItems(waffenData);
+//		waffenTable.setItems(waffenData); 
 	}
+	@FXML
+	private void handleChoiceBoxAction() {
+	  Waffen selectedWaffe = choiceBoxOp.getSelectionModel().getSelectedItem();
+	  
+	}
+	
+	
 	/**
 	 * Sets the stage of this dialog.
 	 * 
@@ -61,7 +72,8 @@ public class WaffenAuswahlController {
 
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
-		// Observable Liste hinzufügen
+		
+		// Add observable list data to the table
 		waffenData.addAll(mainApp.getWaffenData());
 	}
 
@@ -80,20 +92,15 @@ public class WaffenAuswahlController {
 		dialogStage.close();
 	}
 	
-	@FXML
-	private void gugus(ActionEvent event) {
-		ChoiceBox<String> waffenName = new ChoiceBox<String>();
-		ObservableList<String> waffenData = FXCollections.observableArrayList();
-		waffenName.setItems(waffenData);
-	}
 
-	public void setWaffen(ObservableList<Waffen> waffe) {
-		this.waffe = waffe;
-		
-	}
 
 	public boolean isOkClicked() {
 		return okClicked;
+	}
+
+	public void setWaffe(ObservableList<Waffen> waffenData) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

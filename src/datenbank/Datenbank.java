@@ -92,7 +92,7 @@ public class Datenbank {
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
-		Table table = db.getTable("tblAlerKat");
+		Table table = db.getTable("tblAlterKat");
 
 		for (Row row : table) {
 			KategorieConverter converter = new KategorieConverter();
@@ -103,6 +103,7 @@ public class Datenbank {
 
 		return alterskat;
 	}
+	
 
 	/**
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
@@ -187,10 +188,11 @@ public class Datenbank {
 		db.close();
 	}
 
-	public static void saveDataR(Person selectedPerson) throws IOException {
+	public static void saveDataR(Person selectedPerson, int alter) throws IOException {
 		Resultat r = new Resultat(selectedPerson.getAdrId());
-
-		Map<String, Object> map = ResultatConverter.convertToMap(r);
+		Integer a = new Integer(alter);
+		
+		Map<String, Object> map = ResultatConverter.convertToMap(r, a);
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
@@ -219,5 +221,6 @@ public class Datenbank {
 		db.close();
 		
 	}
+
 
 }
