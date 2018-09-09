@@ -92,11 +92,20 @@ public class PersonController {
 	private TableColumn<Resultat, String> FsColumn;
 
 	@FXML
+	private TableColumn<Resultat, String> OpNullerColumn;
+	
+	@FXML
 	private TableColumn<Resultat, String> Whg1Column;
 
 	@FXML
+	private TableColumn<Resultat, String> OpWhg1NullerColumn;
+	
+	@FXML
 	private TableColumn<Resultat, String> Whg2Column;
 
+	@FXML
+	private TableColumn<Resultat, String> OpWhg2NullerColumn;
+	
 	@FXML
 	private TableColumn<Resultat, String> FigColumn;
 
@@ -220,6 +229,9 @@ public class PersonController {
 			Whg2Column.setCellValueFactory(cellData -> cellData.getValue().resWhg2Property());
 			FsColumn.setCellValueFactory(cellData -> cellData.getValue().resFsProperty());
 			FigColumn.setCellValueFactory(cellData -> cellData.getValue().resFigFsProperty());
+			OpNullerColumn.setCellValueFactory(cellData -> cellData.getValue().getResAnzNullerOp());
+			OpWhg1NullerColumn.setCellValueFactory(cellData -> cellData.getValue().getResAnzNullerW1Op());
+			OpWhg2NullerColumn.setCellValueFactory(cellData -> cellData.getValue().getResAnzNullerW2Op());
 
 		} else {
 			// Person is null, remove all the text.
@@ -229,6 +241,10 @@ public class PersonController {
 			AdresseNrLabel.setText("");
 			plzLabel.setText("");
 			WohnortLabel.setText("");
+			GeburtsdatumLabel.setText("");
+			AHVLabel.setText("");
+			EinteilungLabel.setText("");
+			GradLabel.setText("");
 
 		}
 	}
