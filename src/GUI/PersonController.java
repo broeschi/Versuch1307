@@ -310,9 +310,17 @@ public class PersonController {
 	private void handleStandblattPerson() throws Exception {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
+			if (GeburtsdatumLabel.getText() == null || GeburtsdatumLabel.getText().isEmpty()) {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.initOwner(mainApp.getPrimaryStage());
+				alert.setTitle("Geburtsdatum fehlt");
+				alert.setHeaderText("Kein Geburtsdatum");
+				alert.setContentText("Geburtsdatum erfassen.");
+				alert.showAndWait();
+				return;
+			}
+
 			int alter = logik.Berechnungen.alterSetzen(selectedPerson.adrGebDat);
-			int alterKat = logik.Berechnungen.alterKategorieSetzen(alter);
-			mainApp.showWaffenDialog(null);
 			try {
 				datenbank.Datenbank.saveDataR(selectedPerson, alter);
 			} catch (Exception e) {
@@ -339,7 +347,7 @@ public class PersonController {
 		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
 			Resultat selectedResultat = resultTable.getSelectionModel().getSelectedItem();
-			mainApp.showReslutatView(selectedResultat);
+			boolean okClicked = mainApp.showReslutatView(selectedResultat);
 			try {
 				datenbank.Datenbank.updateDataR(selectedResultat);
 			} catch (Exception e) {

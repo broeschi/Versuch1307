@@ -11,24 +11,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Datei öffnen" />
               <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Close" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Bundesübung">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#handleStandblatt" text="Standblatt/Resultat" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Stammdaten">
-              <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleLimite" text="Limiten" />
-                <MenuItem mnemonicParsing="false" onAction="#handleAlterKat" text="Alterskategorien" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Einstellungen">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Drucker" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Help">

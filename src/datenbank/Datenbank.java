@@ -2,26 +2,20 @@ package datenbank;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
-import com.healthmarketscience.jackcess.*;
+import com.healthmarketscience.jackcess.CursorBuilder;
+import com.healthmarketscience.jackcess.Database;
+import com.healthmarketscience.jackcess.DatabaseBuilder;
+import com.healthmarketscience.jackcess.Row;
+import com.healthmarketscience.jackcess.Table;
+
 import Person.Person;
 import Person.Resultat;
-import Stammdaten.altersKategorie;
-import Stammdaten.limiten;
-import Stammdaten.Waffen;
-import converter.KategorieConverter;
-import converter.LimitenConverter;
 import converter.PersonConverter;
 import converter.ResultatConverter;
-import converter.WaffenConverter;
+
 
 public class Datenbank {
 
@@ -68,6 +62,7 @@ public class Datenbank {
 		for (Row row : table) {
 			ResultatConverter converter = new ResultatConverter();
 			Resultat r = converter.dbToModelR(row);
+			r.setPerson(person);
 			if (r.getResAdrref().getValue().longValue() == person.getAdrId()) {
 
 				resultate.add(r);
@@ -75,79 +70,6 @@ public class Datenbank {
 		}
 
 		return resultate;
-	}
-
-	/**
-	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Alterskategorien
-	 * laden
-	 * 
-	 * @author Rudolf Broger
-	 * @throws Exception
-	 */
-	public static ArrayList<altersKategorie> loadKat() throws Exception {
-
-		ArrayList<altersKategorie> alterskat = new ArrayList<altersKategorie>();
-
-		Database db = DatabaseBuilder.open(new File(getDataFile()));
-
-		Table table = db.getTable("tblAlterKat");
-
-		for (Row row : table) {
-			KategorieConverter converter = new KategorieConverter();
-			altersKategorie k = converter.dbToModelK(row);
-			alterskat.add(k);
-
-		}
-
-		return alterskat;
-	}
-
-	/**
-	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
-	 * 
-	 * @author Rudolf Broger
-	 * @throws Exception
-	 */
-	public static ArrayList<limiten> loadLim() throws Exception {
-
-		ArrayList<limiten> limite = new ArrayList<limiten>();
-
-		Database db = DatabaseBuilder.open(new File(getDataFile()));
-
-		Table table = db.getTable("tblLimitenBU");
-
-		for (Row row : table) {
-			LimitenConverter converter = new LimitenConverter();
-			limiten l = converter.dbToModelL(row);
-			limite.add(l);
-
-		}
-
-		return limite;
-	}
-
-	/**
-	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
-	 * 
-	 * @author Rudolf Broger
-	 * @throws Exception
-	 */
-	public static ArrayList<Waffen> loadWaf() throws Exception {
-
-		ArrayList<Waffen> waffen = new ArrayList<Waffen>();
-
-		Database db = DatabaseBuilder.open(new File(getDataFile()));
-
-		Table table = db.getTable("tblWaffe");
-
-		for (Row row : table) {
-			WaffenConverter converter = new WaffenConverter();
-			Waffen w = converter.dbToModelW(row);
-			waffen.add(w);
-
-		}
-
-		return waffen;
 	}
 
 	/**
@@ -239,7 +161,7 @@ public class Datenbank {
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 		Table table = db.getTable("tblResultateBU");
 
-		Row row = CursorBuilder.findRowByPrimaryKey(table, selectedResultat.getRes_id());
+		Row row = CursorBuilder.findRowByPrimaryKey(table, selectedResultat.getRes_id().get());
 		if (row != null) {
 			row.putAll(map);
 			table.updateRow(row);

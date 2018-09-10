@@ -114,20 +114,5 @@ public class RootLayoutController {
 
 	}
 
-	@FXML
-	private void handleLimite() {
-		mainApp.showLimitenDialog();
-
-	}
-
-	@FXML
-	private void handleAlterKat() {
-		mainApp.showAlterKatDialog();
-	}
-
-	@FXML
-	private void handleDrucker() {
-		mainApp.showDruckerEinstellungen();
-	}
 
 }

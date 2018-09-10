@@ -3,9 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -18,8 +18,7 @@
          <bottom>
             <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <buttons>
-                <Button mnemonicParsing="false" text="Speichern" />
-                  <Button mnemonicParsing="false" text="Drucken" />
+                <Button mnemonicParsing="false" onAction="#handleOk" text="Ok" />
                   <Button mnemonicParsing="false" text="Abbrechen" />
               </buttons>
             </ButtonBar>
@@ -86,17 +85,15 @@
                                                    <children>
                                                       <Label text="Resultat" GridPane.rowIndex="1" />
                                                       <Label text="Wiederholung 1" GridPane.rowIndex="2" />
-                                                      <Label contentDisplay="CENTER" text="Resultat" GridPane.columnIndex="1" />
-                                                      <Label alignment="CENTER" text="Anzahl Nuller" GridPane.columnIndex="2" />
                                                       <Label text="Wiederholung 2" GridPane.rowIndex="3" />
-                                                      <Label fx:id="ResultatOpLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <Label fx:id="AnzNullerOpLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                      <Label fx:id="ResWhg1OpLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                      <Label fx:id="AnzNullerWhg1Label" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                      <Label fx:id="ResWhg2OpLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                                      <Label fx:id="AnzNullerWhg2Label" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                                      <ChoiceBox prefHeight="25.0" prefWidth="89.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                                      <Label text="Waffe OP" GridPane.rowIndex="4" />
+                                                      <Label contentDisplay="CENTER" text="Resultat" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="ResultatOpField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="AnzNullerOpField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="ResWhg1OpField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="AnzNullerWhg1Field" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="ResWhg2OpField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="AnzNullerWhg2Field" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                      <Label alignment="CENTER" text="Anzahl Nuller" GridPane.columnIndex="2" />
                                                    </children>
                                                 </GridPane>
                                              </center>
@@ -108,10 +105,8 @@
                                           <Label text="Resultat FS" AnchorPane.leftAnchor="15.0" />
                                           <Label layoutX="15.0" layoutY="93.0" text="Resultat" />
                                           <Label layoutX="15.0" layoutY="145.0" text="Figurentreffer" />
-                                          <Label layoutX="15.0" layoutY="252.0" text="Waffe FS" />
-                                          <Label fx:id="ResultatFsLabel" layoutX="124.0" layoutY="93.0" text="Label" />
-                                          <Label fx:id="FigurentrefferFsLabel" layoutX="124.0" layoutY="145.0" text="Label" />
-                                          <ChoiceBox layoutX="77.0" layoutY="248.0" prefHeight="25.0" prefWidth="89.0" />
+                                          <TextField fx:id="ResultatFsField" layoutX="101.0" layoutY="89.0" prefHeight="25.0" prefWidth="77.0" />
+                                          <TextField fx:id="FigurentrefferFsField" layoutX="104.0" layoutY="141.0" prefHeight="25.0" prefWidth="73.0" />
                                        </children>
                                     </AnchorPane>
                                 </items>

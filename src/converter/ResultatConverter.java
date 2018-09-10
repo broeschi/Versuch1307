@@ -76,7 +76,7 @@ public class ResultatConverter {
 
 	public static Map<String, Object> convertToMap(Resultat resultat) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("res_id", resultat.getRes_id().get());
+		map.put("res_id", resultat.getRes_id());
 		map.put("resJahr", util.DateUtil.getYear());
 		// map.put("resJahr", resultat.getResJahr());
 		map.put("resAdrref", resultat.getResAdrref().get());

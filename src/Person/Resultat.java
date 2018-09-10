@@ -33,6 +33,7 @@ public class Resultat {
 	private final StringProperty resAnzNullerW2Op;
 	private final StringProperty resFs;
 	private final StringProperty resFigFs;
+	private Person person;
 
 	/**
 	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte
@@ -252,6 +253,14 @@ public class Resultat {
 
 	public StringProperty getResFigFs() {
 		return resFigFs;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;		
+	}
+	
+	public Person getPerson() {
+		return this.person;
 	}
 
 }

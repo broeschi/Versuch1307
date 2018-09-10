@@ -1,26 +1,18 @@
 package Start;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import GUI.LimitenController;
 import GUI.PersonController;
 import GUI.PersonMutierenController;
 import GUI.ResultatController;
 import GUI.RootLayoutController;
-import GUI.WaffenAuswahlController;
 import Person.Person;
 import Person.Resultat;
-import Stammdaten.altersKategorie;
-import Stammdaten.limiten;
-import Stammdaten.Waffen;
-import datenbank.Datenbank;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -90,46 +82,6 @@ public class MainApp extends Application {
 	/**
 	 * Zeigt die gültigen Limiten der Bundesübungen an
 	 */
-	public void showLimitenDialog() {
-		try {
-			// Load person overview.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/Limiten.fxml"));
-			AnchorPane limiten = (AnchorPane) loader.load();
-
-			// Set person overview into the center of root layout.
-			rootLayout.setCenter(limiten);
-
-			// Give the controller access to the main app.
-			LimitenController controller = loader.getController();
-			controller.setMainApp(this); // hier gibt es einen NPE
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Zeigt das Mapping des Alters der Teilnehmer auf die Alterskategorien
-	 */
-	public void showAlterKatDialog() {
-		try {
-			// Load person overview.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/Alterskategorie.fxml"));
-			AnchorPane personOverview = (AnchorPane) loader.load();
-
-			// Set person overview into the center of root layout.
-			rootLayout.setCenter(personOverview);
-
-			// Give the controller access to the main app.
-			LimitenController controller = loader.getController();
-			controller.setMainApp(this); // hier gibt es einen NPE
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Returns the main stage.
@@ -171,10 +123,6 @@ public class MainApp extends Application {
 	 */
 	public MainApp() throws Exception {
 		personData.addAll(datenbank.Datenbank.loadData());
-		katData.addAll(datenbank.Datenbank.loadKat());
-		limitData.addAll(datenbank.Datenbank.loadLim());
-		waffenData.addAll(datenbank.Datenbank.loadWaf());
-
 	}
 
 	/**
@@ -216,78 +164,6 @@ public class MainApp extends Application {
 		}
 	}
 
-	// Liste für die Tabelle mit den Limiten
-	public ObservableList<limiten> limitData = FXCollections.observableArrayList();
-
-	// Liste mit Daten der Limitentabelle mit Daten befüllen
-	public ObservableList<limiten> getLimitData() {
-
-		return limitData;
-	}
-
-	// Liste für die Tabelle mit den Alterskategorien
-	public static ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
-
-	// Liste mit Daten der Alterskategorien mit Daten befüllen
-	public static ObservableList<altersKategorie> getKatData() {
-		try {
-			datenbank.Datenbank.loadKat();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return katData;
-	}
-
-	public void showDruckerEinstellungen() {
-
-	}
-
-	// Liste für die Auswahl in der Combobox mit den Waffenkategorien
-	public ObservableList<Waffen> waffenData = FXCollections.observableArrayList();
-
-	// Waffenliste mit Daten befüllen
-	public ObservableList<Waffen> getWaffenData() {
-		try {
-			datenbank.Datenbank.loadWaf();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return waffenData;
-	}
-
-	/**
-	 * Zeigt den Auswahldialog mit den verfügbaren Waffen an
-	 */
-	public boolean showWaffenDialog(Waffen waffe) {
-		try {
-			// Load the fxml file and create a new stage for the popup dialog.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/WaffenAuswahl.fxml"));
-			AnchorPane page = (AnchorPane) loader.load();
-
-			// Create the dialog Stage.
-			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Waffe wählen");
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(primaryStage);
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
-
-			// Waffe im controller einsetzen
-			WaffenAuswahlController controller = loader.getController();
-			controller.setDialogStage(dialogStage);
-			controller.setWaffe(waffenData);
-
-			// Show the dialog and wait until the user closes it
-			dialogStage.showAndWait();
-
-			return controller.isOkClicked();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
 
 	public ObservableList<Resultat> getResultData() {
 
@@ -326,7 +202,7 @@ public class MainApp extends Application {
 			// Set the person into the controller.
 			ResultatController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
-			controller.setResultat(resultatData);
+			controller.setResultat(selectedResultat);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
