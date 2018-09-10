@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Vereinsverwaltung.jnlp">
+  <information>
+    <title>Vereinsverwaltung</title>
+    <vendor>Broger</vendor>
+    <description>Vereinsverwaltung</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Vereinsverwaltung.jar" size="13775306" download="eager" />
+    <jar href="libs\access-bridge-64.jar" size="196916" download="eager" />
+    <jar href="libs\charsets.jar" size="3036922" download="eager" />
+    <jar href="libs\cldrdata.jar" size="3860502" download="eager" />
+    <jar href="libs\commons-lang-2.6.jar" size="284220" download="eager" />
+    <jar href="libs\commons-logging-1.1.1.jar" size="60686" download="eager" />
+    <jar href="libs\deploy.jar" size="5052269" download="eager" />
+    <jar href="libs\dnsns.jar" size="8286" download="eager" />
+    <jar href="libs\hsqldb-2.3.1.jar" size="1467326" download="eager" />
+    <jar href="libs\jaccess.jar" size="44516" download="eager" />
+    <jar href="libs\jackcess-2.1.11.jar" size="882908" download="eager" />
+    <jar href="libs\javaws.jar" size="946663" download="eager" />
+    <jar href="libs\jce.jar" size="115651" download="eager" />
+    <jar href="libs\jfr.jar" size="560713" download="eager" />
+    <jar href="libs\jfxrt.jar" size="18233516" download="eager" />
+    <jar href="libs\jfxswt.jar" size="33932" download="eager" />
+    <jar href="libs\jsse.jar" size="595679" download="eager" />
+    <jar href="libs\localedata.jar" size="2204307" download="eager" />
+    <jar href="libs\management-agent.jar" size="381" download="eager" />
+    <jar href="libs\nashorn.jar" size="2023885" download="eager" />
+    <jar href="libs\plugin.jar" size="1923798" download="eager" />
+    <jar href="libs\resources.jar" size="3492528" download="eager" />
+    <jar href="libs\rt.jar" size="54666846" download="eager" />
+    <jar href="libs\sunec.jar" size="41672" download="eager" />
+    <jar href="libs\sunjce_provider.jar" size="277834" download="eager" />
+    <jar href="libs\sunmscapi.jar" size="33143" download="eager" />
+    <jar href="libs\sunpkcs11.jar" size="250131" download="eager" />
+    <jar href="libs\ucanaccess-4.0.1.jar" size="356386" download="eager" />
+    <jar href="libs\zipfs.jar" size="68964" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="Start.MainApp"  name="Vereinsverwaltung" />
+  <update check="background"/>
+</jnlp>
