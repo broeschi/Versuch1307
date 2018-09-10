@@ -96,8 +96,7 @@ public class Datenbank {
 	 * @return
 	 */
 	public static String getDataFile() {
-
-		return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be2.accdb";
+		return "./MSV_be2.accdb";
 	}
 
 	/**
