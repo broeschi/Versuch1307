@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/charsets.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/deploy.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/javaws.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/jce.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/jfr.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/jfxswt.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/jsse.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/management-agent.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/plugin.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/resources.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/rt.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/access-bridge-64.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/cldrdata.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/dnsns.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/jaccess.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/jfxrt.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/localedata.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/nashorn.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/sunec.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/sunjce_provider.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/sunmscapi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/sunpkcs11.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_172/lib/ext/zipfs.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/MSACC/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/MSACC/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/MSACC/hsqldb-2.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/MSACC/jackcess-2.1.11.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/MSACC/ucanaccess-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/charsets.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/deploy.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/javaws.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/jce.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/jfr.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/jfxswt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/jsse.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/management-agent.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/plugin.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/rt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/access-bridge-64.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/cldrdata.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/dnsns.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/jaccess.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/jfxrt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/localedata.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/nashorn.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/sunec.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/sunjce_provider.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/sunmscapi.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/sunpkcs11.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/zipfs.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/hsqldb-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/jackcess-2.1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/ucanaccess-4.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
