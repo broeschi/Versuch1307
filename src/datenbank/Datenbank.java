@@ -149,6 +149,31 @@ public class Datenbank {
 
 		return waffen;
 	}
+	/**
+	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Scheibe laden
+	 * 
+	 * @author Rudolf Broger
+	 * @throws Exception
+	 */
+	public static ArrayList<Person> loadData() throws Exception {
+
+		ArrayList<Person> personen = new ArrayList<Person>();
+
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+
+		Table table = db.getTable("tblScheibe");
+
+		for (Row row : table) {
+			PersonConverter converter = new PersonConverter();
+			Person p = converter.dbToModelP(row);
+			personen.add(p);
+
+		}
+
+		return personen;
+
+	}
+
 
 	/**
 	 * neu erfasste Person in DB Format konvertieren und speichern
@@ -174,8 +199,8 @@ public class Datenbank {
 	 * @return
 	 */
 	public static String getDataFile() {
-
-		return "C:/Users/u117089/OneDrive/Wirtschaftsinformatik/FH/Kalaidos/Softwareentwickklung-Daten-K28480/Versuch1307/MSV_be2.accdb";
+	
+		return "C:/Eclipse/Versuch1307/MSV_be2.accdb";
 	}
 
 	/**
