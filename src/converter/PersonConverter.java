@@ -20,8 +20,7 @@ public class PersonConverter {
 	 * Daten aus Access transformieren
 	 * 
 	 * @author Ruedi Broger
-	 * @param row
-	 *            auslesen der Tabellenzeilen
+	 * @param row auslesen der Tabellenzeilen
 	 * @return persönliche Daten aus der DB Adressid, Name, Vorname, Strasse,
 	 *         Strassennummer, PLZ, Wohnort, AHV-Nr., Militärische Einteilung,
 	 *         Militärischer Grad
@@ -46,7 +45,7 @@ public class PersonConverter {
 	}
 
 	/**
-	 * Persönliche Daten aus GUI in das Datenbankformat konvertieren
+	 * Persönliche Daten aus gui in das Datenbankformat konvertieren
 	 * 
 	 * @author Rudolf Broger
 	 * @param person

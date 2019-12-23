@@ -7,4 +7,4 @@
  * @author Rudolf Broger
  *
  */
-package GUI;
+package gui;

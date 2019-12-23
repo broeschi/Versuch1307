@@ -16,8 +16,7 @@ public class LimitenConverter {
 	 * Daten aus Access transformieren
 	 * 
 	 * @author Ruedi Broger
-	 * @param row
-	 *            auslesen der Tabellenzeilen
+	 * @param row auslesen der Tabellenzeilen
 	 * @return Alterskategorien aus der DB
 	 */
 	public limiten dbToModelL(Row row) {

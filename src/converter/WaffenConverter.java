@@ -16,8 +16,7 @@ public class WaffenConverter {
 	 * Daten aus Access transformieren
 	 * 
 	 * @author Ruedi Broger
-	 * @param row
-	 *            auslesen der Tabellenzeilen
+	 * @param row auslesen der Tabellenzeilen
 	 * @return Liste von Waffen aus der DB
 	 */
 	public Waffen dbToModelW(Row row) {

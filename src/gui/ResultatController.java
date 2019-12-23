@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import Person.Person;
 import Person.Resultat;
@@ -128,7 +128,7 @@ public class ResultatController {
 
 	/**
 	 * Vorhandene Werte aus ObservableList Resultat in die enstsprechenden
-	 * GUI-Felder schreiben
+	 * gui-Felder schreiben
 	 * 
 	 * @param resultat
 	 */

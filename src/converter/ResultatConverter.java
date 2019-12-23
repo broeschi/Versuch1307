@@ -18,8 +18,7 @@ public class ResultatConverter {
 	 * Daten aus Access transformieren
 	 * 
 	 * @author Ruedi Broger
-	 * @param row
-	 *            auslesen der Tabellenzeilen
+	 * @param row auslesen der Tabellenzeilen
 	 * @return persönliche Daten aus der DB
 	 */
 	public Resultat dbToModelR(Row row) {
@@ -46,7 +45,7 @@ public class ResultatConverter {
 	}
 
 	/**
-	 * Resultate Daten aus GUI in das Datenbankformat konvertieren
+	 * Resultate Daten aus gui in das Datenbankformat konvertieren
 	 * 
 	 * @author Rudolf Broger
 	 * @param Resultat

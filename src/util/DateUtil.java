@@ -26,8 +26,7 @@ public class DateUtil {
 	 * Returns the given date as a well formatted String. The above defined
 	 * {@link DateUtil#DATE_PATTERN} is used.
 	 * 
-	 * @param date
-	 *            the date to be returned as a string
+	 * @param date the date to be returned as a string
 	 * @return formatted string
 	 */
 	public static String format(LocalDate date) {
@@ -43,8 +42,7 @@ public class DateUtil {
 	 * 
 	 * Returns null if the String could not be converted.
 	 * 
-	 * @param dateString
-	 *            the date as String
+	 * @param dateString the date as String
 	 * @return the date object or null if it could not be converted
 	 */
 	public static LocalDate parse(String dateString) {

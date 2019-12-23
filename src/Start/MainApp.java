@@ -3,18 +3,18 @@ package Start;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import GUI.LimitenController;
-import GUI.PersonController;
-import GUI.PersonMutierenController;
-import GUI.ResultatController;
-import GUI.RootLayoutController;
-import GUI.WaffenAuswahlController;
 import Person.Person;
 import Person.Resultat;
 import Stammdaten.altersKategorie;
 import Stammdaten.limiten;
 import Stammdaten.Waffen;
 import datenbank.Datenbank;
+import gui.LimitenController;
+import gui.PersonController;
+import gui.PersonMutierenController;
+import gui.ResultatController;
+import gui.RootLayoutController;
+import gui.WaffenAuswahlController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,7 +48,7 @@ public class MainApp extends Application {
 		try {
 			// Load root layout from fxml file.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/RootLayout.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
 
 			// Show the scene containing the root layout.
@@ -72,7 +72,7 @@ public class MainApp extends Application {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/Person.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/Person.fxml"));
 			AnchorPane personOverview = (AnchorPane) loader.load();
 
 			// Set person overview into the center of root layout.
@@ -94,7 +94,7 @@ public class MainApp extends Application {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/Limiten.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/Limiten.fxml"));
 			AnchorPane limiten = (AnchorPane) loader.load();
 
 			// Set person overview into the center of root layout.
@@ -116,7 +116,7 @@ public class MainApp extends Application {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/Alterskategorie.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/Alterskategorie.fxml"));
 			AnchorPane personOverview = (AnchorPane) loader.load();
 
 			// Set person overview into the center of root layout.
@@ -150,7 +150,7 @@ public class MainApp extends Application {
 	}
 
 	/**
-	 * Personendaten für GUI in JavaFX laden
+	 * Personendaten für gui in JavaFX laden
 	 * 
 	 * @return
 	 */
@@ -182,15 +182,14 @@ public class MainApp extends Application {
 	 * OK, the changes are saved into the provided person object and true is
 	 * returned.
 	 * 
-	 * @param person
-	 *            the person object to be edited
+	 * @param person the person object to be edited
 	 * @return true if the user clicked OK, false otherwise.
 	 */
 	public boolean showPersonMutierenDialog(Person person) {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/PersonMutieren.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/PersonMutieren.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
@@ -263,7 +262,7 @@ public class MainApp extends Application {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/WaffenAuswahl.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/WaffenAuswahl.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
@@ -312,7 +311,7 @@ public class MainApp extends Application {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/GUI/ResultatForm.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/ResultatForm.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.

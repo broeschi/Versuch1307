@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import datenbank.Datenbank;
 import javafx.collections.FXCollections;
@@ -93,19 +93,19 @@ public class PersonController {
 
 	@FXML
 	private TableColumn<Resultat, String> OpNullerColumn;
-	
+
 	@FXML
 	private TableColumn<Resultat, String> Whg1Column;
 
 	@FXML
 	private TableColumn<Resultat, String> OpWhg1NullerColumn;
-	
+
 	@FXML
 	private TableColumn<Resultat, String> Whg2Column;
 
 	@FXML
 	private TableColumn<Resultat, String> OpWhg2NullerColumn;
-	
+
 	@FXML
 	private TableColumn<Resultat, String> FigColumn;
 
@@ -198,8 +198,7 @@ public class PersonController {
 	 * Fills all text fields to show details about the person. If the specified
 	 * person is null, all text fields are cleared.
 	 * 
-	 * @param person
-	 *            the person or null
+	 * @param person the person or null
 	 */
 	void showPersonDetails(Person person) {
 		if (person != null) {

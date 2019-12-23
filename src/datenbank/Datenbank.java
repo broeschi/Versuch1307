@@ -22,6 +22,8 @@ import converter.LimitenConverter;
 import converter.PersonConverter;
 import converter.ResultatConverter;
 import converter.WaffenConverter;
+import converter.ScheibenConverter;
+import scheibe.Scheibe;
 
 public class Datenbank {
 
@@ -149,31 +151,31 @@ public class Datenbank {
 
 		return waffen;
 	}
+
 	/**
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Scheibe laden
 	 * 
 	 * @author Rudolf Broger
 	 * @throws Exception
 	 */
-	public static ArrayList<Person> loadData() throws Exception {
+	public static ArrayList<Scheibe> loadScheibe() throws Exception {
 
-		ArrayList<Person> personen = new ArrayList<Person>();
+		ArrayList<Scheibe> scheibe = new ArrayList<Scheibe>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
 		Table table = db.getTable("tblScheibe");
 
 		for (Row row : table) {
-			PersonConverter converter = new PersonConverter();
-			Person p = converter.dbToModelP(row);
-			personen.add(p);
+			ScheibenConverter converter = new ScheibenConverter();
+			Scheibe s = converter.dbToModelS(row);
+			scheibe.add(s);
 
 		}
 
-		return personen;
+		return scheibe;
 
 	}
-
 
 	/**
 	 * neu erfasste Person in DB Format konvertieren und speichern
@@ -199,7 +201,7 @@ public class Datenbank {
 	 * @return
 	 */
 	public static String getDataFile() {
-	
+
 		return "C:/Eclipse/Versuch1307/MSV_be2.accdb";
 	}
 
