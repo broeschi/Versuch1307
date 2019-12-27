@@ -12,13 +12,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.healthmarketscience.jackcess.*;
-import Person.Person;
-import Person.Resultat;
+
 import converter.KategorieConverter;
 import converter.LimitenConverter;
 import converter.PersonConverter;
 import converter.ResultatConverter;
 import converter.WaffenConverter;
+import person.Person;
+import person.Resultat;
 import converter.ScheibenConverter;
 import scheibe.Scheibe;
 import stammdaten.Waffen;
@@ -178,7 +179,7 @@ public class Datenbank {
 	}
 
 	/**
-	 * neu erfasste Person in DB Format konvertieren und speichern
+	 * neu erfasste person in DB Format konvertieren und speichern
 	 * 
 	 * @param tempPerson
 	 * @throws Exception
@@ -206,7 +207,7 @@ public class Datenbank {
 	}
 
 	/**
-	 * bestehender Eintrag einer Person mit änderungen in DB Format konvertieren und
+	 * bestehender Eintrag einer person mit änderungen in DB Format konvertieren und
 	 * diese in der DB speichern
 	 * 
 	 * @param selectedPerson

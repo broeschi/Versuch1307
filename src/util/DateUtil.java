@@ -101,7 +101,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * ermittelt das Geburtsjahr der Person auf Grund des Erfassten Geburtsdatums
+	 * ermittelt das Geburtsjahr der person auf Grund des Erfassten Geburtsdatums
 	 * 
 	 * @param gebJahr
 	 * @return

@@ -1,12 +1,12 @@
 package gui;
 
-import Person.Person;
-import Person.Resultat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import person.Person;
+import person.Resultat;
 import start.MainApp;
 import util.DateUtil;
 

@@ -37,13 +37,13 @@ org.eclipse.core.internal.resources.ResourceException: Invalid project descripti
 	at org.eclipse.egit.ui.internal.clone.GitImportWizard$4.run(GitImportWizard.java:206)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
 Contains: OK
-Contains: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\Person
+Contains: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\person
 !SUBENTRY 1 org.eclipse.core.resources 4 77 2018-06-27 06:49:39.606
 !MESSAGE Invalid project description.
 !SUBENTRY 2 unknown 0 0 2018-06-27 06:49:39.606
 !MESSAGE OK
 !SUBENTRY 2 org.eclipse.core.resources 4 77 2018-06-27 06:49:39.606
-!MESSAGE C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\Person
+!MESSAGE C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\person
 
 !ENTRY org.eclipse.egit.ui 4 0 2018-06-27 06:50:53.105
 !MESSAGE Invalid project description.
@@ -65,20 +65,20 @@ org.eclipse.core.internal.resources.ResourceException: Invalid project descripti
 	at org.eclipse.egit.ui.internal.clone.GitImportWizard$4.run(GitImportWizard.java:206)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
 Contains: OK
-Contains: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\Person
+Contains: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\person
 !SUBENTRY 1 org.eclipse.core.resources 4 77 2018-06-27 06:50:53.106
 !MESSAGE Invalid project description.
 !SUBENTRY 2 unknown 0 0 2018-06-27 06:50:53.106
 !MESSAGE OK
 !SUBENTRY 2 org.eclipse.core.resources 4 77 2018-06-27 06:50:53.106
-!MESSAGE C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\Person
+!MESSAGE C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit overlaps the workspace location: C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\person
 !SESSION 2018-06-27 14:03:21.635 -----------------------------------------------
 eclipse.buildId=4.7.3.M20180301-0715
 java.version=1.8.0_161
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
 Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\Person -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data C:\Users\Rudolf Broger\OneDrive\Wirtschaftsinformatik\FH\Kalaidos\Softwareentwicklung_I\Programmierarbeit\RemoteSystemsTempFiles\Programmierarbeit\src\person -product org.eclipse.epp.package.java.product
 
 !ENTRY org.eclipse.egit.ui 2 0 2018-06-27 14:03:44.646
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git

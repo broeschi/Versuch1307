@@ -1,4 +1,4 @@
-package Person;
+package person;
 
 import java.time.LocalDate;
 
@@ -27,7 +27,7 @@ public class Person {
 	private final StringProperty adrGrad;
 
 	/**
-	 * Konstruktor für eine Person (Modell)
+	 * Konstruktor für eine person (Modell)
 	 * 
 	 * @param adrId
 	 * @param adrName

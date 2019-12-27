@@ -8,7 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import Person.*;
+import person.*;
 import util.DateUtil;
 
 /**

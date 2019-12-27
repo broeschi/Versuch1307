@@ -5,8 +5,8 @@ import java.util.Map;
 
 import com.healthmarketscience.jackcess.Row;
 
-import Person.Person;
-import Person.Resultat;
+import person.Person;
+import person.Resultat;
 
 /**
  * Klasse zur Konvertierung der Resultatdaten zwischen DB und Javamodell

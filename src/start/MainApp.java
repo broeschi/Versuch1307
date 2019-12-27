@@ -3,8 +3,6 @@ package start;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Person.Person;
-import Person.Resultat;
 import datenbank.Datenbank;
 import gui.LimitenController;
 import gui.PersonController;
@@ -22,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import person.Person;
+import person.Resultat;
 import stammdaten.Waffen;
 import stammdaten.altersKategorie;
 import stammdaten.limiten;
@@ -72,7 +72,7 @@ public class MainApp extends Application {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("/gui/Person.fxml"));
+			loader.setLocation(MainApp.class.getResource("/gui/person.fxml"));
 			AnchorPane personOverview = (AnchorPane) loader.load();
 
 			// Set person overview into the center of root layout.

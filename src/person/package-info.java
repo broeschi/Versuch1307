@@ -16,4 +16,4 @@
  * @author Rudolf Broger
  *
  */
-package Person;
+package person;

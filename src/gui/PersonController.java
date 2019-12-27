@@ -21,11 +21,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import person.Person;
+import person.Resultat;
 import start.MainApp;
 
 import java.io.IOException;
-import Person.Person;
-import Person.Resultat;
 
 /**
  * Detailinfo der Personen bearbeiten
@@ -234,7 +234,7 @@ public class PersonController {
 			OpWhg2NullerColumn.setCellValueFactory(cellData -> cellData.getValue().getResAnzNullerW2Op());
 
 		} else {
-			// Person is null, remove all the text.
+			// person is null, remove all the text.
 			VornameLabel.setText("");
 			NameLabel.setText("");
 			AdresseLabel.setText("");
@@ -292,7 +292,7 @@ public class PersonController {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("No Selection");
-			alert.setHeaderText("No Person Selected");
+			alert.setHeaderText("No person Selected");
 			alert.setContentText("Please select a person in the table.");
 
 			alert.showAndWait();
@@ -300,7 +300,7 @@ public class PersonController {
 	}
 
 	/**
-	 * Ermittelt das Alter der Person, ordnet sie einer Alterskategorie zu und
+	 * Ermittelt das Alter der person, ordnet sie einer Alterskategorie zu und
 	 * steigt das Menu zur Auswahl des Sportgeräts. Es wird eine neue Zeile in der
 	 * Resultattabelle in der DB angelegt.
 	 * 
@@ -323,8 +323,8 @@ public class PersonController {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("Keine Auswahl");
-			alert.setHeaderText("keine Person wurde ausgewählt");
-			alert.setContentText("Bitte gewünschte Person auswählen.");
+			alert.setHeaderText("keine person wurde ausgewählt");
+			alert.setContentText("Bitte gewünschte person auswählen.");
 			alert.showAndWait();
 		}
 
@@ -351,8 +351,8 @@ public class PersonController {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("Keine Auswahl");
-			alert.setHeaderText("keine Person wurde ausgewählt");
-			alert.setContentText("Bitte gewünschte Person auswählen.");
+			alert.setHeaderText("keine person wurde ausgewählt");
+			alert.setContentText("Bitte gewünschte person auswählen.");
 			alert.showAndWait();
 		}
 

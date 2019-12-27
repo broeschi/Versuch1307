@@ -2,7 +2,7 @@ package converter;
 
 import com.healthmarketscience.jackcess.Row;
 
-import Person.Resultat;
+import person.Resultat;
 import stammdaten.Waffen;
 
 /**

@@ -1,4 +1,4 @@
-package Person;
+package person;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -36,7 +36,7 @@ public class Resultat {
 
 	/**
 	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte
-	 * Person
+	 * person
 	 * 
 	 * @param resAdrref
 	 */

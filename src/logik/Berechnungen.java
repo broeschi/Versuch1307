@@ -16,7 +16,7 @@ public class Berechnungen {
 
 	/**
 	 * aktuelles Alter berechnen die Genauigkeit bezieht sich auf den Jahrgang der
-	 * Person
+	 * person
 	 * 
 	 * @param objectProperty
 	 * @return
@@ -31,7 +31,7 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Auf Grund des Alters wird der Person in der Resultattabelle die aktuelle
+	 * Auf Grund des Alters wird der person in der Resultattabelle die aktuelle
 	 * Alterskategorie zugeordnet
 	 * 
 	 * @param alter
@@ -53,7 +53,7 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Es wird berechnet, ob die Person mit der erreichten Resultat die
+	 * Es wird berechnet, ob die person mit der erreichten Resultat die
 	 * Schiesspflicht für das aktuelle Jahr erfüllt hat
 	 */
 	public void schiesspflichtErfuellt() {
@@ -68,7 +68,7 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und
+	 * Es wird berechnet, ob die person auf Grund des geschossenen Resultats und
 	 * ihres Alters(Kategorie) die Anerkennungskarte für das Obligatorische Programm
 	 * erhält
 	 */
@@ -84,7 +84,7 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und
+	 * Es wird berechnet, ob die person auf Grund des geschossenen Resultats und
 	 * ihres Alters(Kategorie) die Anerkennungskarte für das Feldschiessen erhält
 	 */
 	public void karteFsErreicht() {
@@ -99,7 +99,7 @@ public class Berechnungen {
 	}
 
 	/**
-	 * Es wird berechnet, ob die Person auf Grund des geschossenen Resultats und
+	 * Es wird berechnet, ob die person auf Grund des geschossenen Resultats und
 	 * ihres Alters(Kategorie) den Kranz als Auszeichung für das Feldschiessen
 	 * erhält
 	 */
