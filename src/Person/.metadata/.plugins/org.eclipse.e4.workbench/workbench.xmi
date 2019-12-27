@@ -1488,7 +1488,7 @@
   </commands>
   <commands xmi:id="_HscNznnFEeibVanxDJjuoQ" elementId="org.eclipse.xtext.ui.editor.select.enclosing" commandName="Select Enclosing Element" description="Expand selection to include enclosing element" category="_HsXVQHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HscNz3nFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.tasks.ui.discoveryWizardCommand" commandName="Discovery Wizard" description="shows the connector discovery wizard" category="_HsXVSXnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HscN0HnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.textStart" commandName="Text Start" description="Go to the beginning of the text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HscN0HnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.textStart" commandName="Text start" description="Go to the beginning of the text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HscN0XnFEeibVanxDJjuoQ" elementId="org.eclipse.eclemma.ui.localJavaShortcut.coverage" commandName="Coverage Java Application" description="Coverage Java Application" category="_HsWuPXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HscN0nnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.paste" commandName="Paste" description="Paste from the clipboard" category="_HsWHInnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsc00HnFEeibVanxDJjuoQ" elementId="org.eclipse.oomph.setup.editor.refreshCache" commandName="Refresh Remote Cache" category="_HsWHKXnFEeibVanxDJjuoQ"/>
@@ -1770,7 +1770,7 @@
   <commands xmi:id="_HsiUeHnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.correction.extractMethodInplace.assist" commandName="Quick Assist - Extract method" description="Invokes quick assist and selects 'Extract to method'" category="_HsXVRXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsiUeXnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.window.closeAllPerspectives" commandName="Close All Perspectives" description="Close all open perspectives" category="_HsWuOHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsiUennFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.tasks.ui.command.disconnected" commandName="Disconnected" category="_HsXVSXnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HsiUe3nFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.select.lineStart" commandName="Select Line Start" description="Select to the beginning of the line of text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HsiUe3nFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.select.lineStart" commandName="Select Line start" description="Select to the beginning of the line of text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsi7cHnFEeibVanxDJjuoQ" elementId="org.eclipse.egit.ui.commit.Reword" commandName="Reword Commit" category="_HsXVSXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsi7cXnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.editors.lineNumberToggle" commandName="Show Line Numbers" description="Toggle display of line numbers" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsi7cnnFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.tasks.index.ui.command.ResetIndex" commandName="Refresh Search Index" category="_HsWuMXnFEeibVanxDJjuoQ"/>
@@ -1832,7 +1832,7 @@
   <commands xmi:id="_HskJmHnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.help.installationDialog" commandName="Installation Information" description="Open the installation dialog" category="_HsWuOnnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HskJmXnFEeibVanxDJjuoQ" elementId="org.eclipse.debug.ui.commands.ToggleStepFilters" commandName="Use Step Filters" description="Toggles enablement of debug step filters" category="_HsWuPXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HskJmnnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.lineUp" commandName="Line Up" description="Go up one line of text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HskJm3nFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.windowStart" commandName="Window Start" description="Go to the start of the window" category="_HsWHKHnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HskJm3nFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.windowStart" commandName="Window start" description="Go to the start of the window" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HskJnHnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.correction.addBlock.assist" commandName="Quick Assist - Replace statement with block" description="Invokes quick assist and selects 'Replace statement with block'" category="_HsXVRXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HskJnXnFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.commons.ui.command.AddRepository" commandName="Add Repository" category="_HsXVRHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HskJnnnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.edit.text.java.select.enclosing" commandName="Select Enclosing Element" description="Expand selection to include enclosing element" category="_HsWHInnFEeibVanxDJjuoQ"/>
@@ -1887,7 +1887,7 @@
   <commands xmi:id="_HslXtnnFEeibVanxDJjuoQ" elementId="org.eclipse.egit.ui.RebaseCurrent" commandName="Rebase" category="_HsXVSXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HslXt3nFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.edit.text.java.add.unimplemented.constructors" commandName="Generate Constructors from Superclass" description="Evaluate and add constructors from superclass" category="_HsXVRXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HslXuHnFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.tasks.ui.command.markTaskComplete" commandName="Mark Task Complete" category="_HsWuMXnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HslXuXnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.select.windowStart" commandName="Select Window Start" description="Select to the start of the window" category="_HsWHKHnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HslXuXnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.select.windowStart" commandName="Select Window start" description="Select to the start of the window" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HslXunnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.edit.text.java.source.quickMenu" commandName="Show Source Quick Menu" description="Shows the source quick menu" category="_HsXVRXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HslXu3nFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.project" commandName="Declaration in Project" description="Search for declarations of the selected element in the enclosing project" category="_HsWuPHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HslXvHnFEeibVanxDJjuoQ" elementId="org.eclipse.egit.ui.history.Revert" commandName="Revert Commit" category="_HsXVSXnFEeibVanxDJjuoQ"/>
@@ -2126,7 +2126,7 @@
   </commands>
   <commands xmi:id="_HsppKHnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.activeContextInfo" commandName="Show activeContext Info" category="_HsWuOHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsppKXnFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.tasks.ui.command.markTaskReadGoToPreviousUnread" commandName="Mark Task Read and Go To Previous Unread Task" category="_HsWuMXnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HsppKnnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.select.textStart" commandName="Select Text Start" description="Select to the beginning of the text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HsppKnnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.select.textStart" commandName="Select Text start" description="Select to the beginning of the text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsppK3nFEeibVanxDJjuoQ" elementId="org.eclipse.wst.sse.ui.cleanup.document" commandName="Cleanup Document..." description="Cleanup document" category="_HsWHInnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsppLHnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.edit.text.java.extract.constant" commandName="Extract Constant" description="Extracts a constant into a new static field and uses the new static field" category="_HsWuOXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsppLXnFEeibVanxDJjuoQ" elementId="org.eclipse.mylyn.builds.ui.command.ShowBuildOutput.url" commandName="Show Build Output" category="_HsXVSXnFEeibVanxDJjuoQ"/>
@@ -2264,7 +2264,7 @@
   <commands xmi:id="_HssscXnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.help.tipsAndTricksAction" commandName="Tips and Tricks" description="Open the tips and tricks help page" category="_HsWuOnnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HssscnnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.ui.edit.text.java.format" commandName="Format" description="Format the selected text" category="_HsXVRXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsssc3nFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.smartEnter" commandName="Insert Line Below Current Line" description="Adds a new line below the current line" category="_HsWHKHnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HsssdHnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.lineStart" commandName="Line Start" description="Go to the start of the line of text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HsssdHnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.edit.text.goto.lineStart" commandName="Line start" description="Go to the start of the line of text" category="_HsWHKHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsssdXnFEeibVanxDJjuoQ" elementId="org.eclipse.wst.xml.ui.cmnd.contentmodel.sych" commandName="Synch" category="_HsXVSXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsssdnnFEeibVanxDJjuoQ" elementId="org.eclipse.oomph.setup.editor.synchronizePreferences" commandName="Synchronize Preferences" category="_HsWHKXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsssd3nFEeibVanxDJjuoQ" elementId="org.eclipse.egit.ui.RepositoriesViewConfigureBranch" commandName="Configure Branch" category="_HsWuQHnFEeibVanxDJjuoQ"/>

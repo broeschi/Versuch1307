@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import Stammdaten.Waffen;
-import Stammdaten.altersKategorie;
-import Start.MainApp;
 import datenbank.Datenbank;
 import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import stammdaten.Waffen;
+import stammdaten.altersKategorie;
+import start.MainApp;
 
 public class Berechnungen {
 
@@ -46,7 +46,7 @@ public class Berechnungen {
 		// if (a >= ((altersKategorie) katData).getKatAlterMin().intValue() & a <
 		// ((altersKategorie) katData).getKatAlterMax().intValue()) {
 		// ((altersKategorie) katData).getKat_id().getValue();
-		// katId = Stammdaten.altersKategorie.getKat_id().intValue();
+		// katId = stammdaten.altersKategorie.getKat_id().intValue();
 		// }
 		return katId;
 

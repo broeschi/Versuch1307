@@ -21,10 +21,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import start.MainApp;
+
 import java.io.IOException;
 import Person.Person;
 import Person.Resultat;
-import Start.MainApp;
 
 /**
  * Detailinfo der Personen bearbeiten

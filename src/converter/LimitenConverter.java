@@ -1,7 +1,8 @@
 package converter;
 
 import com.healthmarketscience.jackcess.*;
-import Stammdaten.limiten;
+
+import stammdaten.limiten;
 
 /**
  * 

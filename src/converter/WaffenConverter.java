@@ -3,7 +3,7 @@ package converter;
 import com.healthmarketscience.jackcess.Row;
 
 import Person.Resultat;
-import Stammdaten.Waffen;
+import stammdaten.Waffen;
 
 /**
  * Klasse zur Konvertierung der Waffenkategorieren zwischen DB und Javamodell

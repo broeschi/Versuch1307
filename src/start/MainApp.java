@@ -1,13 +1,10 @@
-package Start;
+package start;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import Person.Person;
 import Person.Resultat;
-import Stammdaten.altersKategorie;
-import Stammdaten.limiten;
-import Stammdaten.Waffen;
 import datenbank.Datenbank;
 import gui.LimitenController;
 import gui.PersonController;
@@ -25,6 +22,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import stammdaten.Waffen;
+import stammdaten.altersKategorie;
+import stammdaten.limiten;
 
 public class MainApp extends Application {
 

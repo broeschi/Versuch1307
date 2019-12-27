@@ -6,18 +6,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
-import Start.MainApp;
+import start.MainApp;
 
 public class RootLayoutController {
 	// Reference to the main application
-	private Start.MainApp mainApp;
+	private start.MainApp mainApp;
 
 	/**
 	 * Is called by the main application to give a reference back to itself.
 	 * 
 	 * @param mainApp
 	 */
-	public void setMainApp(Start.MainApp mainApp) {
+	public void setMainApp(start.MainApp mainApp) {
 		this.mainApp = mainApp;
 	}
 

@@ -14,9 +14,6 @@ import java.util.Map;
 import com.healthmarketscience.jackcess.*;
 import Person.Person;
 import Person.Resultat;
-import Stammdaten.altersKategorie;
-import Stammdaten.limiten;
-import Stammdaten.Waffen;
 import converter.KategorieConverter;
 import converter.LimitenConverter;
 import converter.PersonConverter;
@@ -24,6 +21,9 @@ import converter.ResultatConverter;
 import converter.WaffenConverter;
 import converter.ScheibenConverter;
 import scheibe.Scheibe;
+import stammdaten.Waffen;
+import stammdaten.altersKategorie;
+import stammdaten.limiten;
 
 public class Datenbank {
 

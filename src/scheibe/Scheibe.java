@@ -10,10 +10,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Scheibe {
-	private final IntegerProperty schId;
-	private final StringProperty schName;
-	private final StringProperty schScheibent;
-	private final IntegerProperty schWert;
+	private IntegerProperty schId;
+	private StringProperty schName;
+	private StringProperty schScheibent;
+	private IntegerProperty schWert;
 
 	public Scheibe(Integer schId, String schName, String schScheibent, Integer schWert) {
 		this.schId = new SimpleIntegerProperty(schId);
@@ -36,6 +36,22 @@ public class Scheibe {
 
 	public IntegerProperty getSchWert() {
 		return schWert;
+	}
+
+	public void setSchId(IntegerProperty schId) {
+		this.schId = schId;
+	}
+
+	public void setSchName(StringProperty schName) {
+		this.schName = schName;
+	}
+
+	public void setSchScheibent(StringProperty schScheibent) {
+		this.schScheibent = schScheibent;
+	}
+
+	public void setSchWert(IntegerProperty schWert) {
+		this.schWert = schWert;
 	}
 
 }

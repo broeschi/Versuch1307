@@ -2,7 +2,7 @@ package converter;
 
 import com.healthmarketscience.jackcess.Row;
 
-import Stammdaten.altersKategorie;;
+import stammdaten.altersKategorie;;
 
 /**
  * Klasse zur Konvertierung der Alterskategorie

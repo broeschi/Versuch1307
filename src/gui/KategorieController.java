@@ -10,9 +10,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import Stammdaten.altersKategorie;
-import Stammdaten.limiten;
-import Start.MainApp;
+import stammdaten.altersKategorie;
+import stammdaten.limiten;
+import start.MainApp;
 import util.DateUtil;
 
 /**

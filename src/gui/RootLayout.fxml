@@ -20,7 +20,7 @@
                 <MenuItem mnemonicParsing="false" onAction="#handleStandblatt" text="Standblatt/Resultat" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Stammdaten">
+            <Menu mnemonicParsing="false" text="stammdaten">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleLimite" text="Limiten" />
                 <MenuItem mnemonicParsing="false" onAction="#handleAlterKat" text="Alterskategorien" />

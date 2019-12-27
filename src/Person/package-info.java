@@ -11,7 +11,7 @@
  * wiederum die Subklassen FS und OP. In der Klasse Resultate wird berechnet, ob
  * ein Teilnehmer die Schiesspflicht erfüllt hat und ob der Schütze die Limite
  * erreicht hat, um ausgezeichnet zu werden. Für die Berchnung wird das Package
- * Stammdaten benötigt. Dort sind die erfolderlichen Limiten abgebildet.
+ * stammdaten benötigt. Dort sind die erfolderlichen Limiten abgebildet.
  * 
  * @author Rudolf Broger
  *

@@ -10,13 +10,12 @@ import javafx.scene.control.Labeled;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import stammdaten.Waffen;
+import start.MainApp;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import Stammdaten.Waffen;
-import Start.MainApp;
 
 /**
  * Dialog zur Auswahl und Einsetzen der Waffe
