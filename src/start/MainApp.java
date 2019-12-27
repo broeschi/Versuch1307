@@ -23,8 +23,8 @@ import javafx.stage.Stage;
 import person.Person;
 import person.Resultat;
 import stammdaten.Waffen;
-import stammdaten.altersKategorie;
-import stammdaten.limiten;
+import stammdaten.AltersKategorie;
+import stammdaten.Limiten;
 
 public class MainApp extends Application {
 
@@ -216,19 +216,19 @@ public class MainApp extends Application {
 	}
 
 	// Liste für die Tabelle mit den Limiten
-	public ObservableList<limiten> limitData = FXCollections.observableArrayList();
+	public ObservableList<Limiten> limitData = FXCollections.observableArrayList();
 
 	// Liste mit Daten der Limitentabelle mit Daten befüllen
-	public ObservableList<limiten> getLimitData() {
+	public ObservableList<Limiten> getLimitData() {
 
 		return limitData;
 	}
 
 	// Liste für die Tabelle mit den Alterskategorien
-	public static ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+	public static ObservableList<AltersKategorie> katData = FXCollections.observableArrayList();
 
 	// Liste mit Daten der Alterskategorien mit Daten befüllen
-	public static ObservableList<altersKategorie> getKatData() {
+	public static ObservableList<AltersKategorie> getKatData() {
 		try {
 			datenbank.Datenbank.loadKat();
 		} catch (Exception e) {

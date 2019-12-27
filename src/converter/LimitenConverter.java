@@ -2,7 +2,7 @@ package converter;
 
 import com.healthmarketscience.jackcess.*;
 
-import stammdaten.limiten;
+import stammdaten.Limiten;
 
 /**
  * 
@@ -20,7 +20,7 @@ public class LimitenConverter {
 	 * @param row auslesen der Tabellenzeilen
 	 * @return Alterskategorien aus der DB
 	 */
-	public limiten dbToModelL(Row row) {
+	public Limiten dbToModelL(Row row) {
 
 		Integer limId = (Integer) row.get("lim_id");
 		Integer limKatRef = (Integer) row.get("limKatRef");
@@ -32,7 +32,7 @@ public class LimitenConverter {
 		Integer limFsKranz = (Integer) row.get("limFS_Limite_Kranz");
 		Integer limFsFigur = (Integer) row.get("limFS_Figurentreffer");
 
-		limiten l = new limiten(limId, limKatRef, limAltKat, limOpErfuellt, limOpMax0, limOpKarte, limFsKarte,
+		Limiten l = new Limiten(limId, limKatRef, limAltKat, limOpErfuellt, limOpMax0, limOpKarte, limFsKarte,
 				limFsKranz, limFsFigur);
 		return l;
 

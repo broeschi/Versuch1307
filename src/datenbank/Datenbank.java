@@ -23,8 +23,8 @@ import person.Resultat;
 import converter.ScheibenConverter;
 import scheibe.Scheibe;
 import stammdaten.Waffen;
-import stammdaten.altersKategorie;
-import stammdaten.limiten;
+import stammdaten.AltersKategorie;
+import stammdaten.Limiten;
 
 public class Datenbank {
 
@@ -87,9 +87,9 @@ public class Datenbank {
 	 * @author Rudolf Broger
 	 * @throws Exception
 	 */
-	public static ArrayList<altersKategorie> loadKat() throws Exception {
+	public static ArrayList<AltersKategorie> loadKat() throws Exception {
 
-		ArrayList<altersKategorie> alterskat = new ArrayList<altersKategorie>();
+		ArrayList<AltersKategorie> alterskat = new ArrayList<AltersKategorie>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
@@ -97,7 +97,7 @@ public class Datenbank {
 
 		for (Row row : table) {
 			KategorieConverter converter = new KategorieConverter();
-			altersKategorie k = converter.dbToModelK(row);
+			AltersKategorie k = converter.dbToModelK(row);
 			alterskat.add(k);
 
 		}
@@ -111,9 +111,9 @@ public class Datenbank {
 	 * @author Rudolf Broger
 	 * @throws Exception
 	 */
-	public static ArrayList<limiten> loadLim() throws Exception {
+	public static ArrayList<Limiten> loadLim() throws Exception {
 
-		ArrayList<limiten> limite = new ArrayList<limiten>();
+		ArrayList<Limiten> limite = new ArrayList<Limiten>();
 
 		Database db = DatabaseBuilder.open(new File(getDataFile()));
 
@@ -121,7 +121,7 @@ public class Datenbank {
 
 		for (Row row : table) {
 			LimitenConverter converter = new LimitenConverter();
-			limiten l = converter.dbToModelL(row);
+			Limiten l = converter.dbToModelL(row);
 			limite.add(l);
 
 		}

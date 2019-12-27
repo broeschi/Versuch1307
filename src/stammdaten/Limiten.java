@@ -13,7 +13,7 @@ import javafx.beans.property.StringProperty;
  * @author Rudolf Broger
  *
  */
-public class limiten {
+public class Limiten {
 	private final IntegerProperty lim_id;
 	private final IntegerProperty limKatRef;
 	private final StringProperty limAltKat;
@@ -37,7 +37,7 @@ public class limiten {
 	 * @param limFsKranz
 	 * @param limFsFigur
 	 */
-	public limiten(int lim_id, int limKatRef, String limAltKat, int limOpErfuellt, int limOpMax0, int limOpKarte,
+	public Limiten(int lim_id, int limKatRef, String limAltKat, int limOpErfuellt, int limOpMax0, int limOpKarte,
 			int limFsKarte, int limFsKranz, int limFsFigur) {
 		this.lim_id = new SimpleIntegerProperty(lim_id);
 		this.limKatRef = new SimpleIntegerProperty(limKatRef);

@@ -9,7 +9,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import stammdaten.Waffen;
-import stammdaten.altersKategorie;
+import stammdaten.AltersKategorie;
 import start.MainApp;
 
 public class Berechnungen {
@@ -41,12 +41,12 @@ public class Berechnungen {
 	public static int alterKategorieSetzen(int alter) throws Exception {
 		Integer katId = 0;
 		Integer a = new Integer(alter);
-		ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+		ObservableList<AltersKategorie> katData = FXCollections.observableArrayList();
 		katData = MainApp.getKatData();
-		// if (a >= ((altersKategorie) katData).getKatAlterMin().intValue() & a <
-		// ((altersKategorie) katData).getKatAlterMax().intValue()) {
-		// ((altersKategorie) katData).getKat_id().getValue();
-		// katId = stammdaten.altersKategorie.getKat_id().intValue();
+		// if (a >= ((AltersKategorie) katData).getKatAlterMin().intValue() & a <
+		// ((AltersKategorie) katData).getKatAlterMax().intValue()) {
+		// ((AltersKategorie) katData).getKat_id().getValue();
+		// katId = stammdaten.AltersKategorie.getKat_id().intValue();
 		// }
 		return katId;
 

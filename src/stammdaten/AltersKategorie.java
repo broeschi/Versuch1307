@@ -13,7 +13,7 @@ import javafx.collections.ObservableList;
  * @author Rudolf Broger
  *
  */
-public class altersKategorie {
+public class AltersKategorie {
 	private final IntegerProperty kat_id;
 	private final StringProperty katAltersKat;
 	private final StringProperty katKatName;
@@ -31,7 +31,7 @@ public class altersKategorie {
 	 * @param katAlterMax
 	 * @param sort
 	 */
-	public altersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax,
+	public AltersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax,
 			int sort) {
 		this.kat_id = new SimpleIntegerProperty(kat_id);
 		this.katAltersKat = new SimpleStringProperty(katAltersKat);

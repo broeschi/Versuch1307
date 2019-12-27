@@ -2,7 +2,7 @@ package converter;
 
 import com.healthmarketscience.jackcess.Row;
 
-import stammdaten.altersKategorie;;
+import stammdaten.AltersKategorie;;
 
 /**
  * Klasse zur Konvertierung der Alterskategorie
@@ -21,7 +21,7 @@ public class KategorieConverter {
 	 * @param row auslesen der Tabellenzeilen
 	 * @return Alterskategorien aus der DB
 	 */
-	public altersKategorie dbToModelK(Row row) {
+	public AltersKategorie dbToModelK(Row row) {
 
 		Integer katId = (Integer) row.get("kat_id");
 		String katAlterKat = (String) row.get("katAlterskat");
@@ -30,7 +30,7 @@ public class KategorieConverter {
 		Integer katAlterMax = (Integer) row.get("katAlterMax");
 		Integer sort = (Integer) row.get("katSortierung");
 
-		altersKategorie k = new altersKategorie(katId, katAlterKat, katAlterName, katAlterMin, katAlterMax, sort);
+		AltersKategorie k = new AltersKategorie(katId, katAlterKat, katAlterName, katAlterMin, katAlterMax, sort);
 		return k;
 	}
 

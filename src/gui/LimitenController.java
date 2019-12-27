@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import stammdaten.limiten;
+import stammdaten.Limiten;
 import start.MainApp;
 import util.DateUtil;
 
@@ -21,7 +21,7 @@ import util.DateUtil;
  */
 public class LimitenController {
 	@FXML
-	private TableView<limiten> limitTable;
+	private TableView<Limiten> limitTable;
 
 	@FXML
 	private Label KategorieLabel;
@@ -39,7 +39,7 @@ public class LimitenController {
 	@FXML
 	private Label FigurFsLabel;
 
-	private ObservableList<limiten> limitData = FXCollections.observableArrayList();
+	private ObservableList<Limiten> limitData = FXCollections.observableArrayList();
 
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
@@ -54,7 +54,7 @@ public class LimitenController {
 		limitTable.setItems(limitData);
 	}
 
-	public ObservableList<limiten> getLimitData() {
+	public ObservableList<Limiten> getLimitData() {
 		return limitData;
 	}
 

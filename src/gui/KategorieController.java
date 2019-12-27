@@ -10,8 +10,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import stammdaten.altersKategorie;
-import stammdaten.limiten;
+import stammdaten.AltersKategorie;
+import stammdaten.Limiten;
 import start.MainApp;
 import util.DateUtil;
 
@@ -22,7 +22,7 @@ import util.DateUtil;
  */
 public class KategorieController {
 	@FXML
-	private TableView<limiten> katTable;
+	private TableView<Limiten> katTable;
 
 	@FXML
 	private Label AlterskategorieLabel;
@@ -36,7 +36,7 @@ public class KategorieController {
 	@FXML
 	private Label SortierungLabel;
 
-	private ObservableList<altersKategorie> katData = FXCollections.observableArrayList();
+	private ObservableList<AltersKategorie> katData = FXCollections.observableArrayList();
 
 	// referenziert auf die Main Applikation
 	private MainApp mainApp;
@@ -47,7 +47,7 @@ public class KategorieController {
 	}
 
 	// ObservableList mit Daten befüllen
-	public ObservableList<altersKategorie> getKatData() {
+	public ObservableList<AltersKategorie> getKatData() {
 		return katData;
 	}
 
