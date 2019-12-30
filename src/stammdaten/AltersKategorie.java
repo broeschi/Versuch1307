@@ -24,12 +24,12 @@ public class AltersKategorie {
 	/**
 	 * volständiger Konstruktor des Datenmodells der Alterskategorien
 	 * 
-	 * @param kat_id
-	 * @param katAltersKat
-	 * @param katKatName
-	 * @param katAlterMin
-	 * @param katAlterMax
-	 * @param sort
+	 * @param kat_id Primärschlüssel der Kategorie
+	 * @param katAltersKat Abkürzung
+	 * @param katKatName Name der Alterskategorie
+	 * @param katAlterMin Mindestalter für Kategoriezuteilung
+	 * @param katAlterMax Maximalalter für Kategoriezuteilung
+	 * @param sort Sortieren für Ranglisten
 	 */
 	public AltersKategorie(int kat_id, String katAltersKat, String katKatName, int katAlterMin, int katAlterMax,
 			int sort) {
