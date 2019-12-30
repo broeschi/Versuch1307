@@ -100,7 +100,7 @@ public class ResultatController {
 	/**
 	 * Sets the stage of this dialog.
 	 * 
-	 * @param dialogStage
+	 * @param dialogStage Sets the stage of this dialog
 	 */
 	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
@@ -130,7 +130,7 @@ public class ResultatController {
 	 * Vorhandene Werte aus ObservableList Resultat in die enstsprechenden
 	 * gui-Felder schreiben
 	 * 
-	 * @param resultat
+	 * @param resultat Vorhandene Werte aus ObservableList Resultat in die enstsprechenden GUI-Felder schreiben
 	 */
 	public void setResultat(ObservableList<Resultat> resultat) {
 		this.resultat = resultat;

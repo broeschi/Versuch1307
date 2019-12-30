@@ -18,8 +18,8 @@ public class Berechnungen {
 	 * aktuelles Alter berechnen die Genauigkeit bezieht sich auf den Jahrgang der
 	 * person
 	 * 
-	 * @param objectProperty
-	 * @return
+	 * @param objectProperty Alter des Schützen berechnen
+	 * @return Alter des Schützen
 	 */
 	public static int alterSetzen(ObjectProperty<LocalDate> objectProperty) {
 		LocalDate GebJahr = objectProperty.getValue();
@@ -34,9 +34,9 @@ public class Berechnungen {
 	 * Auf Grund des Alters wird der person in der Resultattabelle die aktuelle
 	 * Alterskategorie zugeordnet
 	 * 
-	 * @param alter
-	 * @return
-	 * @throws Exception
+	 * @param alter Auf Grund des Alters die Alterskategorie festlegen
+	 * @return Referenz auf die ALterskategorie
+	 * @throws Exception Fehler
 	 */
 	public static int alterKategorieSetzen(int alter) throws Exception {
 		Integer katId = 0;

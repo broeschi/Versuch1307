@@ -48,8 +48,8 @@ public class PersonConverter {
 	 * Persönliche Daten aus gui in das Datenbankformat konvertieren
 	 * 
 	 * @author Rudolf Broger
-	 * @param person
-	 * @return
+	 * @param person Person in Access speichern
+	 * @return Access-Datensatz zum speichern
 	 */
 	public static Map<String, Object> convertToMap(Person person) {
 		Map<String, Object> map = new HashMap<>();

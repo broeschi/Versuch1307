@@ -27,15 +27,15 @@ public class Limiten {
 	/**
 	 * vollständiger Konstruktor des Datenmodells für die Limiten
 	 * 
-	 * @param lim_id
-	 * @param limKatRef
-	 * @param limAltKat
-	 * @param limOpErfuellt
-	 * @param limOpMax0
-	 * @param limOpKarte
-	 * @param limFsKarte
-	 * @param limFsKranz
-	 * @param limFsFigur
+	 * @param lim_id Primärschlüssel für Limite
+	 * @param limKatRef Fremdschlüssel für Alterskategorie
+	 * @param limAltKat Abkürzung der Alterskategorie
+	 * @param limOpErfuellt Minimale Punktzahl zum erfüllen des OP
+	 * @param limOpMax0 maximale Anzahl erlauber Nuller "0"
+	 * @param limOpKarte Minimale Punktzahl zum Erstellen der OP-Anerkennungskarte
+	 * @param limFsKarte Minimale Punktzahl zum Erstellen der FS-Anerkennungskarte
+	 * @param limFsKranz Minimale Punktzahl zum Erstellen des FS-Anerkennungskranz
+	 * @param limFsFigur Anzahl der Figurentreffer beim FS
 	 */
 	public Limiten(int lim_id, int limKatRef, String limAltKat, int limOpErfuellt, int limOpMax0, int limOpKarte,
 			int limFsKarte, int limFsKranz, int limFsFigur) {

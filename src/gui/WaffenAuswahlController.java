@@ -59,7 +59,7 @@ public class WaffenAuswahlController {
 	/**
 	 * Sets the stage of this dialog.
 	 * 
-	 * @param dialogStage
+	 * @param dialogStage Sets the stage of this dialog
 	 */
 	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
@@ -68,7 +68,7 @@ public class WaffenAuswahlController {
 	/**
 	 * Waffenkategorien in die ObservableList eintragen
 	 * 
-	 * @return
+	 * @return Waffenliste
 	 */
 	public ObservableList<Waffen> getWaffenData() {
 		return waffenData;

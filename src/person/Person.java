@@ -29,17 +29,17 @@ public class Person {
 	/**
 	 * Konstruktor für eine person (Modell)
 	 * 
-	 * @param adrId
-	 * @param adrName
-	 * @param adrVorname
-	 * @param adrStrasse
-	 * @param adrGebDat
-	 * @param adrNr
-	 * @param adrPLZ
-	 * @param adrWohnort
-	 * @param adrAHV
-	 * @param adrEint
-	 * @param adrGrad
+	 * @param adrId Primärschlüssel der Personen
+	 * @param adrName Nachname
+	 * @param adrVorname Vorname
+	 * @param adrStrasse Adresse(Strasse ohne Nummer)
+	 * @param adrGebDat Geburtsdatum
+	 * @param adrNr Hausnummer
+	 * @param adrPLZ PLZ
+	 * @param adrWohnort Wohnort
+	 * @param adrAHV AHV-Nummer, neues Format (756...)
+	 * @param adrEint militärische Einteilung
+	 * @param adrGrad militärischer Grad
 	 */
 	public Person(Integer adrId, String adrName, String adrVorname, String adrStrasse, LocalDate adrGebDat,
 			String adrNr, Integer adrPLZ, String adrWohnort, String adrAHV, String adrEint, String adrGrad) {
@@ -60,8 +60,8 @@ public class Person {
 	/**
 	 * Konstruktor für die Erfassung von Vorname und Name
 	 * 
-	 * @param adrName
-	 * @param adrVorname
+	 * @param adrName Nachname
+	 * @param adrVorname Vorname
 	 */
 	public Person(String adrName, String adrVorname) {
 		this.adrId = new SimpleIntegerProperty();

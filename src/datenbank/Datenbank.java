@@ -32,7 +32,7 @@ public class Datenbank {
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Adressen laden
 	 * 
 	 * @author Rudolf Broger
-	 * @throws Exception
+	 * @throws Exception Fehler
 	 */
 	public static ArrayList<Person> loadData() throws Exception {
 
@@ -46,9 +46,7 @@ public class Datenbank {
 			PersonConverter converter = new PersonConverter();
 			Person p = converter.dbToModelP(row);
 			personen.add(p);
-
 		}
-
 		return personen;
 
 	}
@@ -57,8 +55,8 @@ public class Datenbank {
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle ResultatBU laden
 	 * 
 	 * @author Rudolf Broger
-	 * @param person
-	 * @throws Exception
+	 * @param person Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle ResultatBU laden
+	 * @throws Exception Fehler
 	 */
 	public static ArrayList<Resultat> loadRes(Person person) throws Exception {
 
@@ -85,7 +83,7 @@ public class Datenbank {
 	 * laden
 	 * 
 	 * @author Rudolf Broger
-	 * @throws Exception
+	 * @throws Exception Fehler
 	 */
 	public static ArrayList<AltersKategorie> loadKat() throws Exception {
 
@@ -109,7 +107,7 @@ public class Datenbank {
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
 	 * 
 	 * @author Rudolf Broger
-	 * @throws Exception
+	 * @throws Exception Fehler
 	 */
 	public static ArrayList<Limiten> loadLim() throws Exception {
 
@@ -133,7 +131,7 @@ public class Datenbank {
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Limiten laden
 	 * 
 	 * @author Rudolf Broger
-	 * @throws Exception
+	 * @throws Exception Fehler
 	 */
 	public static ArrayList<Waffen> loadWaf() throws Exception {
 
@@ -157,7 +155,7 @@ public class Datenbank {
 	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Scheibe laden
 	 * 
 	 * @author Rudolf Broger
-	 * @throws Exception
+	 * @throws Exception Fehler
 	 */
 	public static ArrayList<Scheibe> loadScheibe() throws Exception {
 
@@ -181,9 +179,9 @@ public class Datenbank {
 	/**
 	 * neu erfasste person in DB Format konvertieren und speichern
 	 * 
-	 * @param tempPerson
-	 * @throws Exception
-	 */
+	 * @param tempPerson neue Person erfassen
+	 * @throws Exception Fehler
+	 */ 
 	public static void saveDataP(Person tempPerson) throws Exception {
 
 		Map<String, Object> map = PersonConverter.convertToMap(tempPerson);
@@ -199,7 +197,7 @@ public class Datenbank {
 	/**
 	 * Dateipfad und Dateiname der MS Access DB
 	 * 
-	 * @return
+	 * @return Dateipfad zur DB
 	 */
 	public static String getDataFile() {
 
@@ -207,11 +205,11 @@ public class Datenbank {
 	}
 
 	/**
-	 * bestehender Eintrag einer person mit änderungen in DB Format konvertieren und
+	 * bestehender Eintrag einer Person mit änderungen in DB Format konvertieren und
 	 * diese in der DB speichern
 	 * 
-	 * @param selectedPerson
-	 * @throws IOException
+	 * @param selectedPerson Ausgewählte Person
+	 * @throws IOException Kein Datensatz gefunden
 	 */
 	public static void updateDataP(Person selectedPerson) throws IOException {
 		Map<String, Object> map = PersonConverter.convertToMap(selectedPerson);
@@ -234,9 +232,9 @@ public class Datenbank {
 	 * referenzieren der Adresstabelle mitgeben und das berechnete Alter mitgeben
 	 * Daten in DB Format konvertieren und auf DB speichern
 	 * 
-	 * @param selectedPerson
-	 * @param alter
-	 * @throws IOException
+	 * @param selectedPerson ausgewählte Person
+	 * @param alter Alter ausgewählter Person in Datenbank speichern
+	 * @throws IOException Fehler
 	 */
 	public static void saveDataR(Person selectedPerson, int alter) throws IOException {
 		Resultat r = new Resultat(selectedPerson.getAdrId());
@@ -258,8 +256,8 @@ public class Datenbank {
 	 * bestehender Eintrag in der Resultattabelle ändern und dieses zur Speicherung
 	 * in das DB Format konverieren
 	 * 
-	 * @param selectedResultat
-	 * @throws IOException
+	 * @param selectedResultat ausgewähltes Resultat
+	 * @throws IOException Kein Datensatz gefunden
 	 */
 	public static void updateDataR(Resultat selectedResultat) throws IOException {
 

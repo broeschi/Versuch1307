@@ -48,8 +48,8 @@ public class ResultatConverter {
 	 * Resultate Daten aus gui in das Datenbankformat konvertieren
 	 * 
 	 * @author Rudolf Broger
-	 * @param Resultat
-	 * @return
+	 * @param resultat Resultat in Access-Format bringen
+	 * @return resultat im Access-Format
 	 */
 	public static Map<String, Object> convertToMap(Resultat resultat, Integer a) {
 		Map<String, Object> map = new HashMap<>();

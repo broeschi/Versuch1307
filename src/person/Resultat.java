@@ -38,7 +38,7 @@ public class Resultat {
 	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte
 	 * person
 	 * 
-	 * @param resAdrref
+	 * @param resAdrref Fremdschlüssel/Referenz in Resultat auf Person 
 	 */
 	public Resultat(Integer resAdrref) {
 		this.res_id = new SimpleIntegerProperty();
@@ -62,21 +62,21 @@ public class Resultat {
 	 * vollständiger Konstruktor des Datenmodells für die Erfassung der
 	 * Resultatwerte
 	 * 
-	 * @param res_id
-	 * @param resJahr
-	 * @param resAdrref
-	 * @param resWfRefOp
-	 * @param resWfRefFs
-	 * @param resAlter
-	 * @param resLimRef
-	 * @param resOp
-	 * @param resWhg1
-	 * @param resWhg2
-	 * @param resAnzNullerOp
-	 * @param resAnzNullerW1Op
-	 * @param resAnzNullerW2Op
-	 * @param resFs
-	 * @param resFigFs
+	 * @param res_id Primärschlüssel des Resultats
+	 * @param resJahr Zuordnung Resultat zum Jahr der Teilnahme
+	 * @param resAdrref Fremdschlüssel zum Zuordnen des Resultats zur Person
+	 * @param resWfRefOp Referenz zu Waffe beim OP
+	 * @param resWfRefFs Referenz zu Waffe beim FS
+	 * @param resAlter Relevantes Alter der Person
+	 * @param resLimRef Referenz zu den erforderlichen Limiten
+	 * @param resOp Resultat OP
+	 * @param resWhg1 Resultat der 1. Wiederholung
+	 * @param resWhg2 Reslutat der 2. Wiederholung
+	 * @param resAnzNullerOp Anzahl geschossener 0 beim OP
+	 * @param resAnzNullerW1Op Anzahl geschossener 0 beim OP 1. Wiederholung
+	 * @param resAnzNullerW2Op Anzahl geschossener 0 beim OP 2. Wiederholung
+	 * @param resFs Resultat FS
+	 * @param resFigFs Anzahl der Figurentreffer beim FS
 	 */
 	public Resultat(Integer res_id, Integer resJahr, Integer resAdrref, Integer resWfRefOp, Integer resWfRefFs,
 			Integer resAlter, Integer resLimRef, Integer resOp, Integer resWhg1, Integer resWhg2,

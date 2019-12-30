@@ -29,5 +29,6 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/hsqldb-2.3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/jackcess-2.1.11.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/ucanaccess-4.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

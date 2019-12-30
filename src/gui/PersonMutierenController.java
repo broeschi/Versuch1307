@@ -63,7 +63,7 @@ public class PersonMutierenController {
 	/**
 	 * Sets the stage of this dialog.
 	 * 
-	 * @param dialogStage
+	 * @param dialogStage Sets the stage of this dialog
 	 */
 	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
@@ -72,7 +72,7 @@ public class PersonMutierenController {
 	/**
 	 * Sets the person to be edited in the dialog.
 	 * 
-	 * @param person
+	 * @param person Sets the person to be edited in the dialog
 	 */
 	public void setPerson(Person person) {
 		this.person = person;
@@ -93,7 +93,7 @@ public class PersonMutierenController {
 	/**
 	 * Returns true if the user clicked OK, false otherwise.
 	 * 
-	 * @return
+	 * @return true, wenn OK-Button geklickt ist
 	 */
 	public boolean isOkClicked() {
 		return okClicked;

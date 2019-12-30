@@ -15,7 +15,7 @@ public class RootLayoutController {
 	/**
 	 * Is called by the main application to give a reference back to itself.
 	 * 
-	 * @param mainApp
+	 * @param mainApp Is called by the main application to give a reference back to itself.
 	 */
 	public void setMainApp(start.MainApp mainApp) {
 		this.mainApp = mainApp;

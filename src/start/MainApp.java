@@ -134,7 +134,7 @@ public class MainApp extends Application {
 	/**
 	 * Returns the main stage.
 	 * 
-	 * @return
+	 * @return Zeigt die Hauptseite der Vereinsverwalung an
 	 */
 	public Stage getPrimaryStage() {
 		return primaryStage;
@@ -143,7 +143,7 @@ public class MainApp extends Application {
 	/**
 	 * Anwendung starten
 	 * 
-	 * @param args
+	 * @param args Startet Anwendung
 	 */
 	public static void main(String[] args) {
 		launch(args);
@@ -152,7 +152,7 @@ public class MainApp extends Application {
 	/**
 	 * Personendaten für gui in JavaFX laden
 	 * 
-	 * @return
+	 * @return Personendaten für gui in JavaFX laden
 	 */
 	public ObservableList<Person> getPersonData() {
 
@@ -167,7 +167,7 @@ public class MainApp extends Application {
 	/**
 	 * Constructor initiale Daten aus der DB laden
 	 * 
-	 * @throws Exception
+	 * @throws Exception Constructor initiale Daten aus der DB laden
 	 */
 	public MainApp() throws Exception {
 		personData.addAll(datenbank.Datenbank.loadData());
@@ -257,6 +257,8 @@ public class MainApp extends Application {
 
 	/**
 	 * Zeigt den Auswahldialog mit den verfügbaren Waffen an
+	 * @param waffe zeigt die verfügbaren Waffentypen an
+	 * @return gibt "true" zurück, wenn OK geklickt wird
 	 */
 	public boolean showWaffenDialog(Waffen waffe) {
 		try {
@@ -304,8 +306,8 @@ public class MainApp extends Application {
 	/**
 	 * öffent den Dialog für die Erfassung oder Mutation der geschossenen Resultate
 	 * 
-	 * @param selectedResultat
-	 * @return
+	 * @param selectedResultat öffent den Dialog für die Erfassung oder Mutation der geschossenen Resultate
+	 * @return Resultat in GUI anzeigen
 	 */
 	public boolean showReslutatView(Resultat selectedResultat) {
 		try {

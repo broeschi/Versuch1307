@@ -21,10 +21,10 @@ public class Waffen {
 	/**
 	 * vollständiger Konstruktor des Datenmodells für Waffen
 	 * 
-	 * @param waf_id
-	 * @param wafName
-	 * @param wafAbk
-	 * @param wafKat
+	 * @param waf_id Primärschlüsse für die Waffenbezeichnung
+	 * @param wafName Waffenbezeichung
+	 * @param wafAbk Waffenbezeichnung als Abkürzung (Stgw90, Stgw57, Kar, Stagw, FW)
+	 * @param wafKat Einordnung zur Waffenkategorie A bis D
 	 */
 	public Waffen(Integer waf_id, String wafName, String wafAbk, String wafKat) {
 		this.waf_id = new SimpleIntegerProperty(waf_id);
