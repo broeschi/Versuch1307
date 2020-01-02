@@ -2278,7 +2278,7 @@
   <commands xmi:id="_Hsssf3nFEeibVanxDJjuoQ" elementId="org.eclipse.egit.ui.RepositoriesViewConfigureGerritRemote" commandName="Gerrit Configuration..." category="_HsWuQHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsssgHnFEeibVanxDJjuoQ" elementId="org.eclipse.jdt.debug.ui.commands.StepIntoSelection" commandName="Step Into Selection" description="Step into the current selected statement" category="_HsWuPXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HsssgXnFEeibVanxDJjuoQ" elementId="org.eclipse.ui.ide.configureColumns" commandName="Configure Columns..." description="Configure the columns in the markers view" category="_HsXVSXnFEeibVanxDJjuoQ"/>
-  <commands xmi:id="_HsssgnnFEeibVanxDJjuoQ" elementId="org.eclipse.buildship.ui.shortcut.test.run" commandName="Run Gradle Test" description="Run Gradle test based on the current selection" category="_HsWuPXnFEeibVanxDJjuoQ"/>
+  <commands xmi:id="_HsssgnnFEeibVanxDJjuoQ" elementId="org.eclipse.buildship.ui.shortcut.test.run" commandName="Run Gradle Test" description="Run Gradle testRunners based on the current selection" category="_HsWuPXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_Hsssg3nFEeibVanxDJjuoQ" elementId="org.eclipse.egit.ui.team.ReplaceWithCommit" commandName="Replace with commit" category="_HsWuQHnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HssshHnFEeibVanxDJjuoQ" elementId="org.eclipse.xtend.ide.refactoring.ExtractMethod" commandName="Extract Method" description="Replaces the given expression with a call to a newly declared method" category="_HsXVSXnFEeibVanxDJjuoQ"/>
   <commands xmi:id="_HssshXnFEeibVanxDJjuoQ" elementId="org.eclipse.debug.ui.commands.DebugLast" commandName="Debug" description="Launch in debug mode" category="_HsWuPXnFEeibVanxDJjuoQ"/>
