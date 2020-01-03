@@ -10,9 +10,11 @@ package stich;
 public class Stich {
 	
 	private int stch_id;
+	private String stchName;
 
-	public Stich (int stch_id) {
+	public Stich (int stch_id, String stchName) {
 		this.setStch_id(stch_id);
+		this.setStchName(stchName);
 	}
 
 	public int getStch_id() {
@@ -25,6 +27,14 @@ public class Stich {
 	
 	public void stichErstellen() {
 		
+	}
+
+	public String getStchName() {
+		return stchName;
+	}
+
+	public void setStchName(String stchName) {
+		this.stchName = stchName;
 	}
 
 }

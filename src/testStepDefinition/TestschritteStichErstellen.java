@@ -3,15 +3,16 @@ package testStepDefinition;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+//import org.openqa.selenium.*;
 import stich.Stich;
 
 
 public class TestschritteStichErstellen {
 	
-	StichErstellen stichErstellen = new StichErstellen();
+	Stich stich = new Stich(0);
 	
 	@Given("^Vereinsverwaltung laeuft$")
-	public void vereinsverwaltung_laeuft throws Exception {
+	public void vereinsverwaltung_laeuft() throws Exception {
 		System.out.println("Vereinsverwaltung läuft");
 		neuerStichErstellen();
 	}
