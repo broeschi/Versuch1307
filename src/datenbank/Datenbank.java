@@ -21,8 +21,10 @@ import converter.WaffenConverter;
 import person.Person;
 import person.Resultat;
 import converter.ScheibenConverter;
+import converter.StichConverter;
 import scheibe.Scheibe;
 import stammdaten.Waffen;
+import stich.Stich;
 import stammdaten.AltersKategorie;
 import stammdaten.Limiten;
 
@@ -275,6 +277,31 @@ public class Datenbank {
 
 		db.close();
 
+	}
+
+	/**
+	 * Verbindung zu MS Access DB aufbauen und Inhalt der Tabelle Scheibe laden
+	 * 
+	 * @author Rudolf Broger
+	 * @throws Exception Fehler
+	 */
+	public static ArrayList<Stich> loadStich() throws Exception {
+	
+		ArrayList<Stich> stich = new ArrayList<Stich>();
+	
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+	
+		Table table = db.getTable("tblStich");
+	
+		for (Row row : table) {
+			StichConverter converter = new StichConverter();
+			Stich st = converter.dbToModelSt(row);
+			stich.add(st);
+	
+		}
+	
+		return stich;
+	
 	}
 
 }
