@@ -36,7 +36,7 @@ public class Datenbank {
 	 * @author Rudolf Broger
 	 * @throws Exception Fehler
 	 */
-	public static ArrayList<Person> loadData() throws Exception {
+	public static ArrayList<Person> loadPersonData() throws Exception {
 
 		ArrayList<Person> personen = new ArrayList<Person>();
 

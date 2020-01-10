@@ -170,7 +170,7 @@ public class MainApp extends Application {
 	 * @throws Exception Constructor initiale Daten aus der DB laden
 	 */
 	public MainApp() throws Exception {
-		personData.addAll(datenbank.Datenbank.loadData());
+		personData.addAll(datenbank.Datenbank.loadPersonData());
 		katData.addAll(datenbank.Datenbank.loadKat());
 		limitData.addAll(datenbank.Datenbank.loadLim());
 		waffenData.addAll(datenbank.Datenbank.loadWaf());

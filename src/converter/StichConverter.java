@@ -2,11 +2,11 @@ package converter;
 
 import com.healthmarketscience.jackcess.Row;
 
-import stammdaten.AltersKategorie;
+
 import stich.Stich;;
 
 /**
- * Klasse zur Konvertierung der Alterskategorie
+ * Klasse zur Konvertierung der Stiche
  * 
  * 
  * @author Rudolf Broger
@@ -22,7 +22,7 @@ public class StichConverter {
 	 * @param row auslesen der Tabellenzeilen
 	 * @return Stiche aus der DB
 	 */
-	public AltersKategorie dbToModelK(Row row) {
+	public Stich dbToModelSt(Row row) {
 
 		Integer katId = (Integer) row.get("kat_id");
 		String katAlterKat = (String) row.get("katAlterskat");
@@ -31,13 +31,10 @@ public class StichConverter {
 		Integer katAlterMax = (Integer) row.get("katAlterMax");
 		Integer sort = (Integer) row.get("katSortierung");
 
-		AltersKategorie k = new AltersKategorie(katId, katAlterKat, katAlterName, katAlterMin, katAlterMax, sort);
-		return k;
+		Stich st = new Stich(sort, katAlterName);
+		return st;
 	}
 
-	public Stich dbToModelSt(Row row) {
-		// TODO Automatisch generierter Methodenstub
-		return null;
 	}
 
-}
+
