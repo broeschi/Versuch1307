@@ -36,7 +36,7 @@ public class Resultat {
 
 	/**
 	 * Konstruktor für die übergabe einer einzelnen Referenz auf eine bestimmte
-	 * person
+	 * Person auf Grund des Adressreferenz
 	 * 
 	 * @param resAdrref Fremdschlüssel/Referenz in Resultat auf Person 
 	 */

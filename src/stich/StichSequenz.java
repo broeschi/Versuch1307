@@ -1,4 +1,7 @@
 package stich;
+
+import javafx.beans.property.SimpleIntegerProperty;
+
 /**
  * 
  * Klasse für das Erstellen einer Sequenz eines Stiches. Ein Stich kann unterschiedliche Scheiben (A oder B), 
@@ -9,7 +12,12 @@ package stich;
  *
  */
 
-public class StichSequenz extends Stich{
+public class StichSequenz{
+	
+	public StichSequenz(Integer sseqRefStch) {
+		this.sseqAnzahl = new SimpleIntegerProperty();
+	}
+	
 	public int getSseqReihe() {
 		return sseqReihe;
 	}
@@ -20,12 +28,12 @@ public class StichSequenz extends Stich{
 	}
 
 
-	public int getSseqAnzahl() {
+	public SimpleIntegerProperty getSseqAnzahl() {
 		return sseqAnzahl;
 	}
 
 
-	public void setSseqAnzahl(int sseqAnzahl) {
+	public void setSseqAnzahl(SimpleIntegerProperty sseqAnzahl) {
 		this.sseqAnzahl = sseqAnzahl;
 	}
 
@@ -51,15 +59,15 @@ public class StichSequenz extends Stich{
 
 
 	int sseqReihe;
-	int sseqAnzahl;
+	SimpleIntegerProperty sseqAnzahl;
 	int sseqScheibe;
 	int sseqRefStch;
 	
 	
 	//Konstruktor der Scheibensequenz inklusive der übergeortneten Klasse Scheibe
 	
-	public StichSequenz(int stch_id, String stchName, int sseqReihe, int sseqAnzahl, int sseqScheibe, int sseqRefStch) {
-		super(stch_id, stchName);
+	public StichSequenz(int stch_id, String stchName, int sseqReihe, SimpleIntegerProperty sseqAnzahl, int sseqScheibe, int sseqRefStch) {
+		super();
 		this.sseqReihe = sseqReihe;
 		this.sseqAnzahl = sseqAnzahl;
 		this.sseqScheibe = sseqScheibe;

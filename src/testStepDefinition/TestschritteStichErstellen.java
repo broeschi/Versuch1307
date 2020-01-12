@@ -9,7 +9,7 @@ import stich.Stich;
 
 public class TestschritteStichErstellen {
 	
-	Stich stich = new Stich(0);
+	Stich stich = new Stich(0, null);
 	
 	@Given("^Vereinsverwaltung laeuft$")
 	public void vereinsverwaltung_laeuft() throws Exception {
