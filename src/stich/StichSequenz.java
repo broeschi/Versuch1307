@@ -1,5 +1,6 @@
 package stich;
 
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 /**
@@ -14,26 +15,39 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public class StichSequenz{
 	
-	public StichSequenz(Integer sseqRefStch) {
-		this.sseqAnzahl = new SimpleIntegerProperty();
+
+	public StichSequenz(Integer sseq_id, Integer sseqReihe, Integer sseqAnzahl, Integer sseqScheibe, Integer sseqRefStch) {
+		
+		this.sseq_id = sseq_id;
+		this.sseqReihe = sseqReihe;
+		this.sseqAnzahl = sseqAnzahl;
+		this.sseqScheibe = sseqScheibe;
+		this.sseqRefStch = sseqRefStch;
+		
 	}
 	
-	public int getSseqReihe() {
+	public Integer sseqReihe() {
+		return sseqReihe;
+	}
+
+	
+	
+	public Integer getSseqReihe() {
 		return sseqReihe;
 	}
 
 
-	public void setSseqReihe(int sseqReihe) {
+	public void setSseqReihe(Integer sseqReihe) {
 		this.sseqReihe = sseqReihe;
 	}
 
 
-	public SimpleIntegerProperty getSseqAnzahl() {
+	public Integer getSseqAnzahl() {
 		return sseqAnzahl;
 	}
 
 
-	public void setSseqAnzahl(SimpleIntegerProperty sseqAnzahl) {
+	public void setSseqAnzahl(Integer sseqAnzahl) {
 		this.sseqAnzahl = sseqAnzahl;
 	}
 
@@ -58,21 +72,14 @@ public class StichSequenz{
 	}
 
 
-	int sseqReihe;
-	SimpleIntegerProperty sseqAnzahl;
+	Integer sseq_id;
+	Integer sseqReihe;
+	Integer sseqAnzahl;
 	int sseqScheibe;
 	int sseqRefStch;
 	
 	
 	//Konstruktor der Scheibensequenz inklusive der übergeortneten Klasse Scheibe
 	
-	public StichSequenz(int stch_id, String stchName, int sseqReihe, SimpleIntegerProperty sseqAnzahl, int sseqScheibe, int sseqRefStch) {
-		super();
-		this.sseqReihe = sseqReihe;
-		this.sseqAnzahl = sseqAnzahl;
-		this.sseqScheibe = sseqScheibe;
-		this.sseqRefStch = sseqRefStch;
-		
-	}
 
 }

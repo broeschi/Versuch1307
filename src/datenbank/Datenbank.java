@@ -22,9 +22,11 @@ import person.Person;
 import person.Resultat;
 import converter.ScheibenConverter;
 import converter.StichConverter;
+import converter.StichSeqConverter;
 import scheibe.Scheibe;
 import stammdaten.Waffen;
 import stich.Stich;
+import stich.StichSequenz;
 import stammdaten.AltersKategorie;
 import stammdaten.Limiten;
 
@@ -303,5 +305,25 @@ public class Datenbank {
 		return stich;
 	
 	}
+	
+	public static ArrayList<StichSequenz> loadStichseq() throws Exception {
+		
+		ArrayList<StichSequenz> stichSeq = new ArrayList<StichSequenz>();
+	
+		Database db = DatabaseBuilder.open(new File(getDataFile()));
+	
+		Table table = db.getTable("tblStichSequenz");
+	
+		for (Row row : table) {
+			StichSeqConverter converter = new StichSeqConverter();
+			StichSequenz stq = converter.dbToModelStq(row);
+			stichSeq.add(stq);
+	
+		}
+	
+		return stichSeq;
+	
+	}
+
 
 }
