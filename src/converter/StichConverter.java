@@ -24,14 +24,15 @@ public class StichConverter {
 	 */
 	public Stich dbToModelSt(Row row) {
 
-		Integer katId = (Integer) row.get("kat_id");
-		String katAlterKat = (String) row.get("katAlterskat");
-		String katAlterName = (String) row.get("katKat_Name");
-		Integer katAlterMin = (Integer) row.get("katAlterMin");
-		Integer katAlterMax = (Integer) row.get("katAlterMax");
-		Integer sort = (Integer) row.get("katSortierung");
-
-		Stich st = new Stich(sort, katAlterName);
+		Integer stchId = (Integer) row.get("stch_id");
+		String stchName = (String) row.get("stchName");
+		/**String katAlterName = (String) row.get("katKat_Name");
+		*Integer katAlterMin = (Integer) row.get("katAlterMin");
+		*Integer katAlterMax = (Integer) row.get("katAlterMax");
+		*Integer sort = (Integer) row.get("katSortierung");
+*/
+		
+		Stich st = new Stich(stchId, stchName);
 		return st;
 	}
 
